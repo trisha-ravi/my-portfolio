@@ -7,7 +7,7 @@ function Header() {
             PHOTO
           </div>
         </div>
-        <h1>portfólio</h1>
+        <h1>profile</h1>
       </div>
       
       <div className="year">2025</div>
