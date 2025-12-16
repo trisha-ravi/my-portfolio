@@ -6,6 +6,7 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Education from './components/Education'
 import Skills from './components/Skills'
+import trishaPhoto from './assets/trisha.png'
 
 function App() {
   useEffect(() => {
@@ -28,14 +29,30 @@ function App() {
     <div className="container">
       <Header />
       
-      <div className="content-single-column">
-        <div className="info-section">
-          <AboutMe />
-          <Experience />
-          <Projects />
-          <Education />
-          <Skills />
+      <div className="main-layout">
+        <div className="photo-column">
+          <div className="main-photo-container">
+            <div className="main-photo-placeholder">
+              <img src={trishaPhoto} alt="Trisha Salerno" />
+            </div>
+          </div>
         </div>
+        
+        <div className="content-columns">
+          <div className="content-column">
+            <AboutMe />
+            <Skills />
+            <Education />
+          </div>
+          
+          <div className="content-column">
+            <Experience />
+          </div>
+        </div>
+      </div>
+      
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <Projects />
       </div>
     </div>
   )

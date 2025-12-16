@@ -1,30 +1,34 @@
-
-
 function Experience() {
   const experiences = [
     {
-      title: 'SRE Manager',
-      subtitle: 'Target: Microsoft, Google, AWS',
-      description: 'Leading initiatives in site reliability, infrastructure automation, and team management. Focusing on senior leadership opportunities at top-tier tech companies.',
-      date: 'current role'
-    },
-    {
-      title: 'Associate Director',
-      subtitle: 'Artificial Intelligence @ GT',
-      description: 'Managing a creative team of 8 designers, overseeing design strategy and execution for AI-focused initiatives at Georgia Tech\'s premier AI organization.',
-      date: 'current // ongoing'
-    },
-    {
-      title: 'Co-Founder',
-      subtitle: 'Apex Reviews // CREATE-X Program',
-      description: 'Founded and developed a product review platform through Georgia Tech\'s CREATE-X accelerator program. Led product development, UX design, and business strategy.',
-      date: '2023 // 2024'
+      title: 'Senior iOS Designer',
+      subtitle: 'iOS Development Club, Georgia Institute of Technology',
+      description: 'Leading design operations for a team of 3-4 junior designers per project. Directing the full design process for semester-long mobile app initiatives and collaborating with developer leads to align engineering and design timelines.',
+      date: 'aug. 2025 // present'
     },
     {
       title: 'Software Engineering Intern',
       subtitle: 'Narb',
-      description: 'Contributed to full-stack development projects, implementing features and optimizing system performance in a fast-paced startup environment.',
-      date: '2023'
+      description: 'Architected and shipped 5+ production features using TypeScript, Next.js, and Node.js, impacting 10,000+ active users. Optimized API performance with Redis caching, reducing backend response times by 20%.',
+      date: 'may 2025 // present'
+    },
+    {
+      title: 'Co-Founder',
+      subtitle: 'Apex Reviews // Georgia Tech CREATE-X Program',
+      description: 'Co-founded startup through competitive CREATE-X accelerator program, building AI-powered gaming feedback platform. Engineered high-performance React 18 application with micro-frontend architecture.',
+      date: 'aug. 2024 // present'
+    },
+    {
+      title: 'Undergraduate Researcher',
+      subtitle: 'PARCE-Lab, Georgia Institute of Technology',
+      description: 'Conducting research on user trust and perception of AI. Designed and distributed user surveys to collect quantitative and qualitative feedback, increasing engagement by 25% through improved UX design.',
+      date: 'jan. 2025 // present'
+    },
+    {
+      title: 'Associate Director & Graphic Designer',
+      subtitle: 'Artificial Intelligence @ GT',
+      description: 'Spearheaded comprehensive brand transformation, increasing social media engagement by 150% and membership by 40%. Built and managed creative team of 8 designers, implementing agile design processes.',
+      date: 'mar. 2024 // present'
     }
   ]
 

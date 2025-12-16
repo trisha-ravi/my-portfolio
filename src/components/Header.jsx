@@ -11,7 +11,7 @@ function Header() {
       </div>
       
       <div className="year">2025</div>
-      <div className="pronunciation">[trisha salerno]</div>
+      <div className="pronunciation">[trisha ravichandran]</div>
     </header>
   )
 }

@@ -1,4 +1,3 @@
-
 function AboutMe() {
   return (
     <div className="section">
@@ -8,14 +7,15 @@ function AboutMe() {
       <div className="section-content">
         <p className="subtitle">hello! nice to meet you :)</p>
         <p className="description">
-          I'm a Site Reliability Engineering Manager with a passion for building resilient, scalable systems. 
-          Currently pursuing my Computer Science degree at Georgia Tech while targeting senior SRE leadership 
-          roles at major tech companies. With 3+ years in the industry, I combine technical depth with 
-          strategic thinking, always with an eye toward innovation and reliability.
+          I'm a Computer Science student at Georgia Tech specializing in Human-Computer Interaction, 
+          with a passion for creating intuitive and impactful user experiences. I combine technical 
+          expertise in software engineering with strong design sensibilities, bridging the gap between 
+          engineering and design.
         </p>
         <p className="description">
-          My professional practice is grounded in creating robust infrastructure solutions and leading 
-          high-performing teams, while maintaining a commitment to continuous learning and growth.
+          Currently working as a Software Engineering Intern at Narb and serving as a Senior iOS Designer 
+          at Georgia Tech's iOS Development Club, I'm dedicated to building products that are both 
+          technically robust and delightfully user-friendly.
         </p>
       </div>
     </div>

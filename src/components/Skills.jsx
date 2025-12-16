@@ -1,14 +1,12 @@
-
-
 function Skills() {
   const skills = [
-    { name: 'Infrastructure & SRE', level: 95 },
-    { name: 'System Design', level: 92 },
-    { name: 'Python / Java', level: 90 },
-    { name: 'Cloud Platforms', level: 88 },
-    { name: 'Kubernetes / Docker', level: 87 },
-    { name: 'Leadership', level: 93 },
-    { name: 'UX/UI Design', level: 85 }
+    { name: 'React & TypeScript', level: 95 },
+    { name: 'UX/UI Design', level: 92 },
+    { name: 'Mobile Development', level: 88 },
+    { name: 'Figma & Prototyping', level: 90 },
+    { name: 'Java/Kotlin & Swift', level: 85 },
+    { name: 'User Research', level: 87 },
+    { name: 'Leadership & Mentoring', level: 93 }
   ]
 
   return (
@@ -35,4 +33,4 @@ function Skills() {
   )
 }
 
-export default Skills
+export default Skills;

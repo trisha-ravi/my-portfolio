@@ -1,30 +1,30 @@
-
+import TabbedFolder from './TabbedFolder'
 
 function Projects() {
   const projects = [
     {
-      title: 'Apex Reviews Platform',
-      subtitle: 'Product Review Application // React, Node.js',
-      description: 'Full-stack product review platform developed through Georgia Tech\'s CREATE-X accelerator. Features include user authentication, dynamic review systems, and responsive UI design. Led end-to-end development from concept to deployment.',
-      date: '2023 // 2024'
+      title: 'Apex Reviews',
+      subtitle: 'React 18, TypeScript, Node.js // CREATE-X Startup',
+      description: 'AI-powered gaming feedback platform built through Georgia Tech\'s CREATE-X accelerator. Engineered high-performance application with micro-frontend architecture, achieving 45% bundle size reduction. Built enterprise-grade component library with 47+ reusable elements.',
+      date: 'aug. 2024 // present'
     },
     {
-      title: 'Music Editor Application',
-      subtitle: 'Java // Advanced HCI',
-      description: 'Sophisticated music notation software with gesture recognition integration and spatial snapping features. Implements advanced interaction techniques for intuitive music composition and editing.',
-      date: '2024'
+      title: 'Spotify Wrapped',
+      subtitle: 'Android Studio, Java/Kotlin, Firebase',
+      description: 'Developed feature-rich native Android app leveraging Material Design 3 principles and Firebase real-time database, supporting 1000+ concurrent users. Implemented responsive design patterns reducing app load time by 40%.',
+      date: 'feb. 2024 // mar. 2024'
     },
     {
-      title: 'Infrastructure Automation Suite',
-      subtitle: 'Python, Kubernetes, Terraform',
-      description: 'Developed automated deployment pipelines and infrastructure-as-code solutions for scalable cloud environments. Reduced deployment time by 60% and improved system reliability metrics.',
-      date: '2024 // ongoing'
+      title: 'College Scheduler',
+      subtitle: 'Android Studio, Java/Kotlin',
+      description: 'Built comprehensive academic planning solution with intuitive drag-and-drop scheduling interface and offline-first architecture. Designed end-to-end UX through iterative prototyping in Figma, achieving 85% task completion rate.',
+      date: 'jan. 2024 // feb. 2024'
     },
     {
-      title: 'AI @ GT Design System',
-      subtitle: 'Figma, React // Design Leadership',
-      description: 'Created comprehensive design system and brand guidelines for Georgia Tech\'s AI organization. Managed team of 8 designers to ensure consistent visual identity across all platforms.',
-      date: '2023 // present'
+      title: 'iOS Dev Club Apps',
+      subtitle: 'Swift, UIKit, SwiftUI // Team Leadership',
+      description: 'Led design for multiple mobile apps including Skill Swap, Jot Down, Rey, and Yes Chef. Directed feature ideation and UX architecture with dynamic UIs, AI integration, and intuitive data visualization.',
+      date: 'aug. 2025 // present'
     }
   ]
 
@@ -33,18 +33,9 @@ function Projects() {
       <div className="section-header">
         <h2>projects</h2>
       </div>
-      <div className="section-content">
-        {projects.map((project, index) => (
-          <div key={index} className="experience-item">
-            <h3>{project.title}</h3>
-            <div className="subtitle">{project.subtitle}</div>
-            <p className="description">{project.description}</p>
-            <div className="date">{project.date}</div>
-          </div>
-        ))}
-      </div>
+      <TabbedFolder projects={projects} />
     </div>
   )
 }
 
-export default Projects
+export default Projects;

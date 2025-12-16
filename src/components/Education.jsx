@@ -1,17 +1,10 @@
-
-
 function Education() {
   const education = [
     {
-      title: 'Computer Science',
+      title: 'Bachelor of Science in Computer Science',
       subtitle: 'Georgia Institute of Technology',
-      date: 'graduating dec. 2026'
-    },
-    {
-      title: 'Master of Business Administration',
-      subtitle: 'Purdue University Global',
-      description: 'Concentrations in Marketing Management and Corporate Finance',
-      date: 'in progress // 2025'
+      description: 'Concentration in Human-Computer Interaction',
+      date: 'expected dec. 2026'
     }
   ]
 
@@ -34,4 +27,4 @@ function Education() {
   )
 }
 
-export default Education
+export default Education;
