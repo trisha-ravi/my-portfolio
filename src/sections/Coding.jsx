@@ -1,12 +1,4 @@
-interface CardProps {
-  n: string;
-  name: string;
-  stack: string;
-  desc: string;
-  metric: string;
-}
-
-function CodeCard({ n, name, stack, desc, metric }: CardProps) {
+function CodeCard({ n, name, stack, desc, metric }) {
   return (
     <article className="code-card">
       <header>
@@ -39,8 +31,7 @@ export default function Coding() {
           <span>.</span>
         </h2>
         <p className="coding__lede">
-          From React micro-frontends and TypeScript APIs to native Android in Kotlin —
-          a sample of the engineering work I do when prototypes deserve to be real.
+          From React micro-frontends and TypeScript APIs to native Android in Kotlin — a sample of the engineering work I do when prototypes deserve to be real.
         </p>
       </div>
 
@@ -82,8 +73,7 @@ export default function Coding() {
           <span className="term__dot" />
           <span className="term__title">~/apex-reviews — zsh</span>
         </div>
-        <pre className="term__body">
-{`$ pnpm dev
+        <pre className="term__body">{`$ pnpm dev
   ▲ next dev --turbo
   ─ ready  in 318ms
   ─ local  http://localhost:3000
@@ -95,8 +85,7 @@ $ git log --oneline -3
 
 $ trisha — gatech.edu
   ↳ status   building
-  ↳ ship-it  ✓`}
-        </pre>
+  ↳ ship-it  ✓`}</pre>
       </div>
     </section>
   );

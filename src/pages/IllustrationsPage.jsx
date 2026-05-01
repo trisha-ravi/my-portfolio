@@ -1,20 +1,19 @@
-import { useMemo, useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import { ILLUSTRATIONS } from "../data";
-import aigtImg from "../assets/aigt.png";
-import cafeDoodleImg from "../assets/cafe_doodle.png";
+import aigt from "../assets/aigt.png";
+import cafeDoodle from "../assets/cafe_doodle.png";
 
-const ILLO_IMAGES: Record<string, string> = {
-  "i00a": aigtImg,
-  "i00b": cafeDoodleImg,
+const ILLO_IMAGES = {
+  "i00a": aigt,
+  "i00b": cafeDoodle,
 };
 
-const SERIES = ["All", "Identity", "Editorial", "Marks", "Charcoal", "Print"] as const;
-type Series = typeof SERIES[number];
+const SERIES = ["All", "Identity", "Editorial", "Marks", "Charcoal", "Print"];
 
 export default function IllustrationsPage() {
-  const [series, setSeries] = useState<Series>("All");
+  const [series, setSeries] = useState("All");
   const list = useMemo(
     () =>
       series === "All"
@@ -29,9 +28,7 @@ export default function IllustrationsPage() {
 
       <header className="archive__head">
         <span className="section-eyebrow">D — Drawn things</span>
-        <span className="section-eyebrow section-eyebrow--right">
-          /illustrations · 2024 — 2026
-        </span>
+        <span className="section-eyebrow section-eyebrow--right">/illustrations · 2024 — 2026</span>
       </header>
 
       <h1 className="section-title">
@@ -44,8 +41,7 @@ export default function IllustrationsPage() {
       </h1>
 
       <p className="archive__lede">
-        A long-running notebook of identity work, editorial spots, and personal
-        charcoal studies — kept loose so it can stay honest. Filters below.
+        A long-running notebook of identity work, editorial spots, and personal charcoal studies — kept loose so it can stay honest. Filters below.
       </p>
 
       <div className="archive__filters" role="tablist">
@@ -71,7 +67,10 @@ export default function IllustrationsPage() {
 
       <div className="archive__grid">
         {list.map((it) => (
-          <figure key={it.id} className={`archive__item${!ILLO_IMAGES[it.id] ? " archive__item--no-img" : ""}`}>
+          <figure
+            key={it.id}
+            className={`archive__item${!ILLO_IMAGES[it.id] ? " archive__item--no-img" : ""}`}
+          >
             {ILLO_IMAGES[it.id] && (
               <div className="archive__real-img" style={{ aspectRatio: it.ratio }}>
                 <img src={ILLO_IMAGES[it.id]} alt={it.label} />

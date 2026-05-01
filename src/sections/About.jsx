@@ -34,16 +34,10 @@ export default function About() {
 
           <div className="about__bio">
             <p>
-              I'm a CS · HCI student at Georgia Tech (B.S. expected Dec 2026), a Senior
-              iOS Designer at the GT iOS Dev Club, and an AI tester for Google's Search
-              Priority User Program — evaluating early AI-powered discovery features and
-              feeding structured insights back to product and research teams.
+              I'm a CS · HCI student at Georgia Tech (B.S. expected Dec 2026), a Senior iOS Designer at the GT iOS Dev Club, and an AI tester for Google's Search Priority User Program — evaluating early AI-powered discovery features and feeding structured insights back to product and research teams.
             </p>
             <p>
-              I co-founded <em>Apex Reviews</em> through Georgia Tech's CREATE-X accelerator,
-              shipped 5+ production features as a SWE intern at Narb, and led a research
-              thread at PARCE-Lab on user trust in AI agents — moving perceived reliability
-              up 15%. Outside the studio, I run brand & creative for AI @ GT.
+              I co-founded <em>Apex Reviews</em> through Georgia Tech's CREATE-X accelerator, shipped 5+ production features as a SWE intern at Narb, and led a research thread at PARCE-Lab on user trust in AI agents — moving perceived reliability up 15%. Outside the studio, I run brand & creative for AI @ GT.
             </p>
           </div>
 

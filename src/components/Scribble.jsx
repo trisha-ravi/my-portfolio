@@ -1,11 +1,4 @@
-import type { CSSProperties } from "react";
-
-interface Props {
-  className?: string;
-  style?: CSSProperties;
-}
-
-export default function Scribble({ className = "", style }: Props) {
+export default function Scribble({ className = "", style }) {
   return (
     <svg
       className={`scribble ${className}`}

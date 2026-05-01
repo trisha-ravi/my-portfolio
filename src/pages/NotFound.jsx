@@ -14,8 +14,7 @@ export default function NotFound() {
           <span className="section-title__period">.</span>
         </h1>
         <p className="not-found__lede">
-          The address you followed isn't part of the portfolio. Head back to the home
-          page or browse the full illustration archive.
+          The address you followed isn't part of the portfolio. Head back to the home page or browse the full illustration archive.
         </p>
         <div className="not-found__actions">
           <Link to="/" className="ghost-btn">← Back to home</Link>

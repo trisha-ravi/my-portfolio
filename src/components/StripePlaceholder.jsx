@@ -1,18 +1,11 @@
 import { shade } from "../utils";
 
-interface Props {
-  label: string;
-  ratio?: string;
-  swatch?: string;
-  index?: number;
-}
-
 export default function StripePlaceholder({
   label,
   ratio = "4 / 5",
   swatch = "#2a2622",
   index = 0,
-}: Props) {
+}) {
   const stripeAngle = (index * 23) % 180;
   return (
     <div

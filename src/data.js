@@ -1,36 +1,4 @@
-export type ProjectType = "ux/ui" | "coding" | "illustration";
-
-export interface GalleryItem {
-  label: string;
-  ratio: string;
-  swatch: string;
-}
-
-export interface Project {
-  id: string;
-  slug: string;
-  no: string;
-  title: string;
-  kicker: string;
-  year: string;
-  type: ProjectType;
-  summary: string;
-  role: string;
-  tags: string[];
-  swatch: string;
-  problem: string;
-  approach: string;
-  outcome: string;
-  context: string;
-  team?: string;
-  duration?: string;
-  platform?: string;
-  links?: { label: string; href: string }[];
-  image?: string; // cover image path
-  gallery: GalleryItem[];
-}
-
-export const PROJECTS: Project[] = [
+export const PROJECTS = [
   {
     id: "p03",
     slug: "apex-reviews",
@@ -56,13 +24,6 @@ export const PROJECTS: Project[] = [
     duration: "Aug 2024 — Present",
     platform: "Web · React 18 · Node · AI",
     links: [{ label: "create-x.gatech.edu", href: "#" }],
-    image: "/src/assets/apex-reviews.png",
-    gallery: [
-      { label: "Studio dashboard", ratio: "16 / 10", swatch: "#1f1c1a" },
-      { label: "Ingest console", ratio: "4 / 3", swatch: "#231f1c" },
-      { label: "Component library", ratio: "1 / 1", swatch: "#2a2622" },
-      { label: "Public review page", ratio: "3 / 4", swatch: "#26211d" },
-    ],
   },
   {
     id: "p05",
@@ -89,29 +50,10 @@ export const PROJECTS: Project[] = [
     duration: "Oct 2024 — Dec 2024",
     platform: "Android · Kotlin · Jetpack Compose · Spotify API",
     links: [{ label: "View project", href: "https://mewkat36.wixstudio.com/spotifywrapped" }],
-    image: "/src/assets/spotifywrapped.png",
-    gallery: [
-      { label: "Onboarding card", ratio: "3 / 4", swatch: "#231f1c" },
-      { label: "Wrap reel", ratio: "9 / 16", swatch: "#1f1c1a" },
-      { label: "Top-tracks panel", ratio: "4 / 5", swatch: "#2a2622" },
-      { label: "Share sheet", ratio: "1 / 1", swatch: "#332d27" },
-    ],
   },
 ];
 
-export interface IllustrationItem {
-  id: string;
-  no: string;
-  label: string;
-  series: string;
-  year: string;
-  ratio: string;
-  swatch: string;
-  note: string;
-  image?: string; // optional real image path
-}
-
-export const ILLUSTRATIONS: IllustrationItem[] = [
+export const ILLUSTRATIONS = [
   {
     id: "i00a",
     no: "01",
@@ -121,7 +63,6 @@ export const ILLUSTRATIONS: IllustrationItem[] = [
     ratio: "3 / 4",
     swatch: "#0a0a0a",
     note: "Poster for AI @ GT — GT Tower illustration over hand-lettered type. Brand campaign, Spring 2024.",
-    image: "/src/assets/aigt.png",
   },
   {
     id: "i00b",
@@ -132,20 +73,10 @@ export const ILLUSTRATIONS: IllustrationItem[] = [
     ratio: "1 / 1",
     swatch: "#d4c9b0",
     note: "On-location sketch — doodles layered over a café shot. Part of an ongoing series of annotated places.",
-    image: "/src/assets/cafe_doodle.png",
   },
 ];
 
-export interface Role {
-  no: string;
-  role: string;
-  org: string;
-  time: string;
-  where: string;
-  bullets: string[];
-}
-
-export const ROLES: Role[] = [
+export const ROLES = [
   {
     no: "01",
     role: "AI Tester — Search Priority User Program",

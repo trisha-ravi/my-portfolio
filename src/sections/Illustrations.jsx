@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import StripePlaceholder from "../components/StripePlaceholder";
 import { ILLUSTRATIONS } from "../data";
 
 export default function Illustrations() {
@@ -21,18 +20,15 @@ export default function Illustrations() {
       </h2>
 
       <p className="illos__lede">
-        A rolling notebook of identity work, editorial spots, and personal charcoal
-        studies. The five below are recent — the full archive lives on its own page.
+        A rolling notebook of identity work, editorial spots, and personal charcoal studies. The five below are recent — the full archive lives on its own page.
       </p>
 
       <div className="illos__grid">
         {teaser.map((it, i) => (
           <figure key={it.id} className={`illo illo--${i}`}>
-            <StripePlaceholder
-              label={it.label}
-              ratio={it.ratio}
-              swatch={it.swatch}
-              index={i + 4}
+            <div
+              className="stripe-ph"
+              style={{ aspectRatio: it.ratio, background: it.swatch }}
             />
             <figcaption>
               <span>{String(i + 1).padStart(2, "0")} — {it.label}</span>

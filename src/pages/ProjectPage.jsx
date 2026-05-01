@@ -5,13 +5,13 @@ import NotFound from "./NotFound";
 import apexImg from "../assets/apex-reviews.png";
 import spotifyImg from "../assets/spotifywrapped.png";
 
-const PROJECT_IMAGES: Record<string, string> = {
+const PROJECT_IMAGES = {
   "apex-reviews": apexImg,
   "spotify-wrapped": spotifyImg,
 };
 
 export default function ProjectPage() {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug } = useParams();
   const idx = PROJECTS.findIndex((p) => p.slug === slug);
   if (idx === -1) return <NotFound />;
 
@@ -26,9 +26,7 @@ export default function ProjectPage() {
       <header className="case__head">
         <div className="case__head-row">
           <span className="section-eyebrow">B — Selected works</span>
-          <span className="section-eyebrow section-eyebrow--right">
-            /work/{project.slug}
-          </span>
+          <span className="section-eyebrow section-eyebrow--right">/work/{project.slug}</span>
         </div>
         <span className="case__no">{project.no}</span>
         <h1 className="case__title">
@@ -53,36 +51,12 @@ export default function ProjectPage() {
 
       <section className="case__meta">
         <dl className="case__meta-grid">
-          <div>
-            <dt>Role</dt>
-            <dd>{project.role}</dd>
-          </div>
-          <div>
-            <dt>Year</dt>
-            <dd>{project.year}</dd>
-          </div>
-          {project.duration ? (
-            <div>
-              <dt>Duration</dt>
-              <dd>{project.duration}</dd>
-            </div>
-          ) : null}
-          {project.team ? (
-            <div>
-              <dt>Team</dt>
-              <dd>{project.team}</dd>
-            </div>
-          ) : null}
-          {project.platform ? (
-            <div>
-              <dt>Platform</dt>
-              <dd>{project.platform}</dd>
-            </div>
-          ) : null}
-          <div>
-            <dt>Tags</dt>
-            <dd>{project.tags.join(" · ")}</dd>
-          </div>
+          <div><dt>Role</dt><dd>{project.role}</dd></div>
+          <div><dt>Year</dt><dd>{project.year}</dd></div>
+          {project.duration && <div><dt>Duration</dt><dd>{project.duration}</dd></div>}
+          {project.team && <div><dt>Team</dt><dd>{project.team}</dd></div>}
+          {project.platform && <div><dt>Platform</dt><dd>{project.platform}</dd></div>}
+          <div><dt>Tags</dt><dd>{project.tags.join(" · ")}</dd></div>
         </dl>
       </section>
 
@@ -114,7 +88,7 @@ export default function ProjectPage() {
         </article>
       </section>
 
-      {project.links && project.links.length > 0 ? (
+      {project.links && project.links.length > 0 && (
         <section className="case__links">
           <span className="section-eyebrow">Links</span>
           <ul>
@@ -127,27 +101,21 @@ export default function ProjectPage() {
             ))}
           </ul>
         </section>
-      ) : null}
+      )}
 
       <nav className="case__pager" aria-label="Project pagination">
         <Link to={`/work/${prev.slug}`} className="case__pager-link case__pager-link--prev">
           <span className="case__pager-arrow" aria-hidden="true">←</span>
           <span className="case__pager-label">
             <span className="case__pager-eyebrow">Previous</span>
-            <span className="case__pager-title">
-              {prev.no} — {prev.title}
-            </span>
+            <span className="case__pager-title">{prev.no} — {prev.title}</span>
           </span>
         </Link>
-        <Link to="/#work" className="case__pager-index">
-          All work
-        </Link>
+        <Link to="/#work" className="case__pager-index">All work</Link>
         <Link to={`/work/${next.slug}`} className="case__pager-link case__pager-link--next">
           <span className="case__pager-label case__pager-label--right">
             <span className="case__pager-eyebrow">Next</span>
-            <span className="case__pager-title">
-              {next.no} — {next.title}
-            </span>
+            <span className="case__pager-title">{next.no} — {next.title}</span>
           </span>
           <span className="case__pager-arrow" aria-hidden="true">→</span>
         </Link>

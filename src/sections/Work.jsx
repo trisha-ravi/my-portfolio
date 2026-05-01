@@ -1,18 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { PROJECTS, type Project } from "../data";
+import { PROJECTS } from "../data";
 
 const FILTERS = [
   { id: "all", label: "All" },
   { id: "ux/ui", label: "UX / UI" },
   { id: "coding", label: "Coding" },
   { id: "illustration", label: "Illustration" },
-] as const;
-
-type FilterId = typeof FILTERS[number]["id"];
+];
 
 export default function Work() {
-  const [filter, setFilter] = useState<FilterId>("all");
+  const [filter, setFilter] = useState("all");
   const list = filter === "all" ? PROJECTS : PROJECTS.filter((p) => p.type === filter);
 
   return (
@@ -60,7 +58,7 @@ export default function Work() {
   );
 }
 
-function ProjectRow({ p, i: _i }: { p: Project; i: number }) {
+function ProjectRow({ p }) {
   return (
     <li className="row">
       <Link to={`/work/${p.slug}`} className="row__link" aria-label={`Open ${p.title} case study`}>
@@ -78,7 +76,6 @@ function ProjectRow({ p, i: _i }: { p: Project; i: number }) {
           <span className="row__year">{p.year}</span>
           <span className="row__arrow" aria-hidden="true">→</span>
         </div>
-
       </Link>
     </li>
   );

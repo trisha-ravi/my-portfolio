@@ -27,17 +27,29 @@ export default function Footer() {
 
         <div className="foot__r">
           <ul className="foot__links">
-            <li><a href="https://www.linkedin.com/in/trisha-ravichandran" target="_blank" rel="noreferrer">LinkedIn</a><span>/in/trisha-ravichandran</span></li>
-            <li><a href="https://www.instagram.com/trisha.ravichandran/" target="_blank" rel="noreferrer">Instagram</a><span>/trisha.ravichandran</span></li>
-            <li><a href="#">GitHub</a><span>/trisha-r</span></li>
-            <li><a href="#">Read.cv</a><span>/trisha</span></li>
+            <li>
+              <a href="https://www.linkedin.com/in/trisha-ravichandran" target="_blank" rel="noreferrer">LinkedIn</a>
+              <span>/in/trisha-ravichandran</span>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/trisha.ravichandran/" target="_blank" rel="noreferrer">Instagram</a>
+              <span>/trisha.ravichandran</span>
+            </li>
+            <li>
+              <a href="#">GitHub</a>
+              <span>/trisha-r</span>
+            </li>
+            <li>
+              <a href="#">Read.cv</a>
+              <span>/trisha</span>
+            </li>
           </ul>
         </div>
       </div>
 
       <div className="foot__bottom">
         <span>© 2026 — Trisha Ravichandran</span>
-        <span>Designed &amp; built in Atlanta, GA</span>
+        <span>Designed & built in Atlanta, GA</span>
         <span>v.4 · Spring</span>
       </div>
     </footer>

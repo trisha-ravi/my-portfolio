@@ -4,12 +4,12 @@ import portrait from "../assets/portrait.jpg";
 export default function Hero() {
   return (
     <section className="hero" data-screen-label="01 Hero">
-      {/* ── left: portrait ── */}
+      {/* left: portrait */}
       <div className="hero__photo">
         <img src={portrait} alt="Trisha Ravichandran" />
       </div>
 
-      {/* ── right: editorial copy ── */}
+      {/* right: editorial copy */}
       <div className="hero__editorial">
         <p className="hero__kicker">
           <span className="dot" /> UX / UI Designer · Software Engineer
@@ -25,10 +25,8 @@ export default function Hero() {
 
         <div className="hero__foot">
           <p className="hero__byline">
-            <strong>Trisha Ravichandran</strong> — UX/UI designer &amp; software engineer.
-            <br />
-            CS · HCI at <em>Georgia Tech</em>. Currently testing AI&nbsp;search
-            at Google &amp; leading iOS at GT Dev Club.
+            <strong>Trisha Ravichandran</strong> — UX/UI designer & software engineer.
+            <br />CS · HCI at <em>Georgia Tech</em>. Currently testing AI search at Google & leading iOS at GT Dev Club.
           </p>
           <Link className="hero__cta" to="/work">
             <span>See the work</span>

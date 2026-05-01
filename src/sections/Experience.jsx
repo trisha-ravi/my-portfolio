@@ -12,7 +12,7 @@ export default function Experience() {
         <span>where I've </span>
         <span className="italic">worked</span>
         <br />
-        <span>&amp; what I </span>
+        <span>& what I </span>
         <span className="italic">shipped</span>
         <span className="section-title__period">.</span>
       </h2>
@@ -45,7 +45,7 @@ export default function Experience() {
 
       <div className="exp__skills">
         <div className="exp__skills-head">
-          <span className="section-eyebrow">Stack &amp; tools</span>
+          <span className="section-eyebrow">Stack & tools</span>
         </div>
         <div className="exp__skills-grid">
           <div>

@@ -5,7 +5,6 @@ export default function Frame() {
   const { pathname } = useLocation();
   const isHome = pathname === "/";
 
-  // Bottom corners are only meaningful on the home cover page.
   if (!isHome) return null;
 
   return (

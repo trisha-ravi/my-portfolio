@@ -1,9 +1,4 @@
-interface Props {
-  items: string[];
-  reverse?: boolean;
-}
-
-export default function MarqueeRow({ items, reverse = false }: Props) {
+export default function MarqueeRow({ items, reverse = false }) {
   const row = [...items, ...items, ...items];
   return (
     <div className={`marquee ${reverse ? "marquee--rev" : ""}`} aria-hidden="true">
