@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Redirect all 404s back to the app root so React Router can handle them.
+      const repo = '/my-portfolio';
+      const path = window.location.pathname.replace(repo, '');
+      window.location.replace(repo + '/#' + (path || '/'));
+    </script>
+  </head>
+  <body></body>
+</html>
