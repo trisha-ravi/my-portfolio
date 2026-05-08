@@ -1,16 +1,19 @@
 import Scribble from "../components/Scribble";
 import portrait from "../assets/portrait.jpg";
+import { useReveal } from "../hooks/useReveal";
 
 export default function About() {
+  const ref = useReveal();
+
   return (
-    <section className="about" id="about" data-screen-label="02 About">
+    <section className="about" id="about" data-screen-label="02 About" ref={ref}>
       <div className="about__head">
-        <span className="section-eyebrow">A — About</span>
-        <span className="section-eyebrow section-eyebrow--right">Section 01 / 04</span>
+        <span className="section-eyebrow" data-reveal="fade" data-delay="1">A — About</span>
+        <span className="section-eyebrow section-eyebrow--right" data-reveal="fade" data-delay="1">Section 01 / 04</span>
       </div>
 
       <div className="about__grid">
-        <div className="about__portrait">
+        <div className="about__portrait" data-reveal="left" data-delay="2">
           <div className="about__portrait-frame">
             <img src={portrait} alt="Portrait of Trisha Ravichandran" />
             <span className="about__portrait-tag">
@@ -20,19 +23,20 @@ export default function About() {
         </div>
 
         <div className="about__copy">
-          <p className="about__kicker">
+          <p className="about__kicker" data-reveal data-delay="2">
             <span className="dot" /> UX / UI Designer · Software Engineer
           </p>
-          <h2 className="about__headline">
+          <h2 className="about__headline" data-reveal data-delay="3">
             I sit at the seam between <span className="italic">design</span> and
-            <span className="italic"> engineering</span> — building products
+            <span className="italic"> engineering</span> — building{" "}
             <span className="about__sweep">
+              products
               <Scribble />
             </span>
-            people actually want to use.
+            <br />people actually want to use.
           </h2>
 
-          <div className="about__bio">
+          <div className="about__bio" data-reveal data-delay="4">
             <p>
               I'm a CS · HCI student at Georgia Tech (B.S. expected Dec 2026), a Senior iOS Designer at the GT iOS Dev Club, and an AI tester for Google's Search Priority User Program — evaluating early AI-powered discovery features and feeding structured insights back to product and research teams.
             </p>
@@ -41,7 +45,7 @@ export default function About() {
             </p>
           </div>
 
-          <dl className="about__facts">
+          <dl className="about__facts" data-reveal data-delay="5">
             <div><dt>Based</dt><dd>Atlanta, GA</dd></div>
             <div><dt>School</dt><dd>Georgia Tech · CS · HCI · '26</dd></div>
             <div><dt>Design</dt><dd>Figma · Sketch · Framer · Adobe CC</dd></div>

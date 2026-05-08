@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { PROJECTS } from "../data";
+import { useReveal } from "../hooks/useReveal";
 
 const FILTERS = [
   { id: "all", label: "All" },
@@ -12,15 +13,16 @@ const FILTERS = [
 export default function Work() {
   const [filter, setFilter] = useState("all");
   const list = filter === "all" ? PROJECTS : PROJECTS.filter((p) => p.type === filter);
+  const ref = useReveal();
 
   return (
-    <section className="work" id="work" data-screen-label="03 Work">
+    <section className="work" id="work" data-screen-label="03 Work" ref={ref}>
       <div className="work__head">
-        <span className="section-eyebrow">B — Selected works</span>
-        <span className="section-eyebrow section-eyebrow--right">Section 02 / 04</span>
+        <span className="section-eyebrow" data-reveal="fade" data-delay="1">B — Selected works</span>
+        <span className="section-eyebrow section-eyebrow--right" data-reveal="fade" data-delay="1">Section 02 / 04</span>
       </div>
 
-      <h2 className="section-title">
+      <h2 className="section-title" data-reveal data-delay="2">
         <span>The </span>
         <span className="italic">work</span>
         <span>, one piece</span>
@@ -30,7 +32,7 @@ export default function Work() {
         <span className="section-title__period">.</span>
       </h2>
 
-      <div className="work__filters" role="tablist">
+      <div className="work__filters" role="tablist" data-reveal data-delay="3">
         {FILTERS.map((f) => (
           <button
             key={f.id}
@@ -58,11 +60,14 @@ export default function Work() {
   );
 }
 
-function ProjectRow({ p }) {
+function ProjectRow({ p, i }) {
+  const ref = useReveal({ threshold: 0.1 });
+  const delay = Math.min(i + 1, 6);
+
   return (
-    <li className="row">
+    <li className="row" ref={ref}>
       <Link to={`/work/${p.slug}`} className="row__link" aria-label={`Open ${p.title} case study`}>
-        <div className="row__inner">
+        <div className="row__inner" data-reveal data-delay={String(delay)}>
           <span className="row__no">{p.no}</span>
           <span className="row__title">
             {p.title}
