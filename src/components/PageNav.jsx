@@ -16,9 +16,6 @@ export default function PageNav({ showBack = true }) {
         <Link to="/work">Work</Link>
         <Link to="/illustrations">Illustrations</Link>
         <Link to="/about">About</Link>
-        <Link to="/" className="page-nav__brand">
-          Trisha R. <span className="italic">— Charcoal</span>
-        </Link>
       </div>
     </nav>
   );

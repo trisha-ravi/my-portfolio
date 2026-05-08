@@ -26,11 +26,6 @@ export default function IllustrationsPage() {
     <main className="page page--archive">
       <PageNav />
 
-      <header className="archive__head">
-        <span className="section-eyebrow">D — Drawn things</span>
-        <span className="section-eyebrow section-eyebrow--right">/illustrations · 2024 — 2026</span>
-      </header>
-
       <h1 className="section-title">
         <span>the </span>
         <span className="italic">archive</span>
@@ -43,6 +38,11 @@ export default function IllustrationsPage() {
       <p className="archive__lede">
         A long-running notebook of identity work, editorial spots, and personal charcoal studies — kept loose so it can stay honest. Filters below.
       </p>
+
+      <div className="archive__head">
+        <span className="section-eyebrow">D — Drawn things</span>
+        <span className="section-eyebrow section-eyebrow--right">/illustrations · 2024 — 2026</span>
+      </div>
 
       <div className="archive__filters" role="tablist">
         {SERIES.map((s) => {
