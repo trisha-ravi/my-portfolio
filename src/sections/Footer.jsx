@@ -35,14 +35,6 @@ export default function Footer() {
               <a href="https://www.instagram.com/trisha.ravichandran/" target="_blank" rel="noreferrer">Instagram</a>
               <span>/trisha.ravichandran</span>
             </li>
-            <li>
-              <a href="#">GitHub</a>
-              <span>/trisha-r</span>
-            </li>
-            <li>
-              <a href="#">Read.cv</a>
-              <span>/trisha</span>
-            </li>
           </ul>
         </div>
       </div>
