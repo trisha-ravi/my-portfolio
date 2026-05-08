@@ -23,7 +23,6 @@ export const PROJECTS = [
     team: "2 co-founders",
     duration: "Aug 2024 — Present",
     platform: "Web · React 18 · Node · AI",
-    links: [{ label: "create-x.gatech.edu", href: "#" }],
   },
   {
     id: "p05",
@@ -47,8 +46,8 @@ export const PROJECTS = [
     outcome:
       "Tested with 12 users: 100% preferred year-round access over the annual format; 10 of 12 found mobile visualizations significantly easier to explore than Spotify's web interface. Achieved consistent 60fps with 10,000+ listening records; offline caching cut API calls by 70%; average load time under 1.2 seconds. Design system reduced iteration time by 50%. Key learning: performance is a feature — users abandon interactions that feel sluggish, regardless of utility.",
     team: "Solo",
-    duration: "Oct 2024 — Dec 2024",
-    platform: "Android · Kotlin · Jetpack Compose · Spotify API",
+    duration: "Feb 2024 — Mar 2024",
+    platform: "Android · Java/Kotlin · Firebase · Material Design 3",
     links: [{ label: "View project", href: "https://mewkat36.wixstudio.com/spotifywrapped" }],
   },
 ];
@@ -140,7 +139,7 @@ export const ROLES = [
     no: "06",
     role: "Associate Director & Graphic Designer",
     org: "Artificial Intelligence @ GT",
-    time: "Mar 2024 — January 2025",
+    time: "Mar 2024 — Present",
     where: "Atlanta, GA",
     bullets: [
       "Spearheaded a brand transformation — cohesive design system → +150% social engagement, +40% membership.",

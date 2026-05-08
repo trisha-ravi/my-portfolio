@@ -1,6 +1,41 @@
-function CodeCard({ n, name, stack, desc, metric }) {
-  return (
-    <article className="code-card">
+import { Link } from "react-router-dom";
+
+const CODE_PROJECTS = [
+  {
+    n: "i.",
+    name: "narb (intern)",
+    stack: "TypeScript · Next.js · Node",
+    desc: "Shipped 5+ production features touching 10k+ users. Redis caching cut response times 20%.",
+    metric: "+30% test cov.",
+    href: "https://www.narb.cc/",
+    external: true,
+    cta: "company site ↗",
+  },
+  {
+    n: "ii.",
+    name: "apex-reviews",
+    stack: "React 18 · micro-frontend",
+    desc: "AI gaming-feedback platform from CREATE-X. 47-component library, sub-2s loads.",
+    metric: "−45% bundle",
+    href: "/work/apex-reviews",
+    external: false,
+    cta: "view case study →",
+  },
+  {
+    n: "iii.",
+    name: "spotify-wrapped",
+    stack: "Java/Kotlin · Firebase · M3",
+    desc: "Native Android app with realtime sync, supporting 1k+ concurrent users.",
+    metric: "−40% load",
+    href: "https://mewkat36.wixstudio.com/spotifywrapped",
+    external: true,
+    cta: "view project ↗",
+  },
+];
+
+function CodeCard({ n, name, stack, desc, metric, href, external, cta }) {
+  const content = (
+    <>
       <header>
         <span className="code-card__n">{n}</span>
         <span className="code-card__metric">{metric}</span>
@@ -8,8 +43,22 @@ function CodeCard({ n, name, stack, desc, metric }) {
       <h3 className="code-card__name">{name}</h3>
       <p className="code-card__stack">{stack}</p>
       <p className="code-card__desc">{desc}</p>
-      <span className="code-card__link">view repo →</span>
-    </article>
+      <span className="code-card__link">{cta}</span>
+    </>
+  );
+
+  if (external) {
+    return (
+      <a className="code-card" href={href} target="_blank" rel="noreferrer">
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link className="code-card" to={href}>
+      {content}
+    </Link>
   );
 }
 
@@ -36,34 +85,9 @@ export default function Coding() {
       </div>
 
       <div className="coding__grid">
-        <CodeCard
-          n="i."
-          name="narb (intern)"
-          stack="TypeScript · Next.js · Node"
-          desc="Shipped 5+ production features touching 10k+ users. Redis caching cut response times 20%."
-          metric="+30% test cov."
-        />
-        <CodeCard
-          n="ii."
-          name="apex-reviews"
-          stack="React 18 · micro-frontend"
-          desc="AI gaming-feedback platform from CREATE-X. 47-component library, sub-2s loads."
-          metric="−45% bundle"
-        />
-        <CodeCard
-          n="iii."
-          name="spotify-wrapped"
-          stack="Kotlin · Firebase · M3"
-          desc="Native Android app with realtime sync, supporting 1k+ concurrent users."
-          metric="−40% load"
-        />
-        <CodeCard
-          n="iv."
-          name="college-scheduler"
-          stack="Kotlin · Offline-first"
-          desc="Drag-and-drop academic planner. Iterated to 85% task completion in usability testing."
-          metric="85% UTC"
-        />
+        {CODE_PROJECTS.map((project) => (
+          <CodeCard key={project.name} {...project} />
+        ))}
       </div>
 
       <div className="coding__terminal">
