@@ -44,6 +44,7 @@ export default function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/illustrations" element={<IllustrationsPage />} />
         <Route path="/journal" element={<JournalPage />} />
+        <Route path="/journal/:slug" element={<JournalPage />} />
         <Route path="/work/:slug" element={<ProjectPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

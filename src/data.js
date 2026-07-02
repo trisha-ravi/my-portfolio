@@ -187,6 +187,7 @@ export const ROLES = [
 export const JOURNAL = [
   {
     id: "j01",
+    slug: "on-building-in-public",
     date: "Mar 2026",
     title: "On building in public",
     excerpt:
@@ -196,6 +197,7 @@ export const JOURNAL = [
   },
   {
     id: "j02",
+    slug: "design-notes-from-a-crowded-calendar",
     date: "Feb 2026",
     title: "Design notes from a crowded calendar",
     excerpt:
@@ -205,6 +207,7 @@ export const JOURNAL = [
   },
   {
     id: "j03",
+    slug: "faces-feelings-and-five-seconds",
     date: "Jan 2026",
     title: "Faces, feelings, and five seconds",
     excerpt:
@@ -213,3 +216,11 @@ export const JOURNAL = [
       "Most mood tools ask for a paragraph when a glance would do. Moodles started from a simpler question: what if checking in felt as easy as noticing the weather?\n\nTwelve faces, one tap, no guilt. The design is playful on purpose — emotional awareness should not feel like homework.",
   },
 ];
+
+export function getJournalBySlug(slug) {
+  return JOURNAL.find((entry) => entry.slug === slug);
+}
+
+export function getJournalIndexBySlug(slug) {
+  return JOURNAL.findIndex((entry) => entry.slug === slug);
+}

@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
-import { JOURNAL } from "../data";
+import { useNavigate, useParams } from "react-router-dom";
+import Ipad from "./Ipad";
+import { JOURNAL, getJournalIndexBySlug } from "../data";
 import lockBg from "../assets/journal-lock-bg.png";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -83,131 +85,157 @@ function CalendarWidget({ activeIndex, onSelect, now }) {
   );
 }
 
-/** iPad lock screen journal — set SHOW_IPAD_JOURNAL in JournalPage to enable. */
+/** iPad lock screen journal — wire JournalIpadPage to /journal and /journal/:slug. */
 export default function JournalLockScreen() {
+  const { slug } = useParams();
+  const navigate = useNavigate();
   const now = useLiveNow(1000);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [sheetOpen, setSheetOpen] = useState(false);
+
+  const slugIndex = slug ? getJournalIndexBySlug(slug) : -1;
+  const [activeIndex, setActiveIndex] = useState(() => (slugIndex >= 0 ? slugIndex : 0));
+  const [sheetOpen, setSheetOpen] = useState(() => slugIndex >= 0);
   const active = JOURNAL[activeIndex];
+
+  const openEntry = useCallback((index, { push = true } = {}) => {
+    setActiveIndex(index);
+    setSheetOpen(true);
+    if (push) navigate(`/journal/${JOURNAL[index].slug}`);
+  }, [navigate]);
+
+  const closeSheet = useCallback(() => {
+    setSheetOpen(false);
+    if (slug) navigate("/journal");
+  }, [navigate, slug]);
 
   const step = useCallback((dir) => {
     setActiveIndex((i) => {
       const next = i + (dir === "next" ? 1 : -1);
       if (next < 0 || next >= JOURNAL.length) return i;
+      navigate(`/journal/${JOURNAL[next].slug}`);
       return next;
     });
-  }, []);
+  }, [navigate]);
+
+  useEffect(() => {
+    if (!slug) {
+      setSheetOpen(false);
+      return;
+    }
+
+    const index = getJournalIndexBySlug(slug);
+    if (index >= 0) {
+      setActiveIndex(index);
+      setSheetOpen(true);
+    }
+  }, [slug]);
 
   useEffect(() => {
     const onKeyDown = (event) => {
       if (event.key === "ArrowRight") step("next");
       if (event.key === "ArrowLeft") step("prev");
-      if (event.key === "Escape") setSheetOpen(false);
+      if (event.key === "Escape") closeSheet();
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [step]);
+  }, [step, closeSheet]);
 
   return (
     <div className="journal-lock">
-      <div className="journal-lock__ipad" role="img" aria-label="iPad lock screen showing journal">
-        <div className="journal-lock__camera" aria-hidden="true" />
-        <div className="journal-lock__device">
-          <img className="journal-lock__bg" src={lockBg} alt="" aria-hidden="true" />
+      <Ipad ariaLabel="iPad lock screen showing journal">
+        <img className="journal-lock__bg" src={lockBg} alt="" aria-hidden="true" />
 
-          <p className="journal-lock__date">{formatLockDate(now)}</p>
+        <p className="journal-lock__date">{formatLockDate(now)}</p>
 
-          <aside className="journal-lock__widgets" aria-label="Journal widgets">
-            <CalendarWidget activeIndex={activeIndex} onSelect={setActiveIndex} now={now} />
-
-            <button
-              type="button"
-              className="journal-lock__widget journal-lock__widget--now"
-              onClick={() => setSheetOpen(true)}
-            >
-              <div className="journal-lock__now-art" aria-hidden="true">
-                <span>{String(activeIndex + 1).padStart(2, "0")}</span>
-              </div>
-              <div className="journal-lock__now-meta">
-                <p className="journal-lock__now-kicker">Now reading</p>
-                <p className="journal-lock__now-title">{active.title}</p>
-                <p className="journal-lock__now-sub">{active.excerpt}</p>
-              </div>
-              <span className="journal-lock__now-icon" aria-hidden="true">▶</span>
-            </button>
-
-            <div className="journal-lock__widget journal-lock__widget--status">
-              <span className="journal-lock__status-icon" aria-hidden="true">✎</span>
-              <div className="journal-lock__status-copy">
-                <span className="journal-lock__status-label">Journal</span>
-                <span className="journal-lock__status-value">{JOURNAL.length} entries</span>
-              </div>
-              <div className="journal-lock__status-bar" aria-hidden="true">
-                <span style={{ width: `${((activeIndex + 1) / JOURNAL.length) * 100}%` }} />
-              </div>
-            </div>
-          </aside>
-
-          <div className="journal-lock__clock-zone" aria-hidden="true">
-            <p className="journal-lock__clock">{formatLockClock(now)}</p>
-          </div>
-
-          <div
-            className="journal-lock__depth"
-            style={{ backgroundImage: `url(${lockBg})` }}
-            aria-hidden="true"
-          />
-
-          <div className="journal-lock__shortcuts" aria-hidden="true">
-            <span className="journal-lock__shortcut" />
-            <span className="journal-lock__shortcut" />
-          </div>
-
-          {sheetOpen && (
-            <button
-              type="button"
-              className="journal-lock__sheet-backdrop"
-              onClick={() => setSheetOpen(false)}
-              aria-label="Close entry"
-            />
-          )}
-
-          <div className={`journal-lock__sheet${sheetOpen ? " journal-lock__sheet--open" : ""}`}>
-            <button
-              type="button"
-              className="journal-lock__sheet-grabber"
-              onClick={() => setSheetOpen(false)}
-              aria-label="Close entry"
-            />
-            <section className="journal-lock__sheet-inner" aria-labelledby="journal-entry-title">
-              <div className="journal-lock__sheet-nav">
-                <button type="button" onClick={() => step("prev")} disabled={activeIndex === 0} aria-label="Previous entry">
-                  ←
-                </button>
-                <span>{activeIndex + 1} / {JOURNAL.length}</span>
-                <button type="button" onClick={() => step("next")} disabled={activeIndex === JOURNAL.length - 1} aria-label="Next entry">
-                  →
-                </button>
-              </div>
-              <time className="journal-lock__sheet-date" dateTime={active.date}>{active.date}</time>
-              <h1 id="journal-entry-title" className="journal-lock__sheet-title">{active.title}</h1>
-              <p className="journal-lock__sheet-excerpt">{active.excerpt}</p>
-              {active.body?.split("\n\n").map((paragraph) => (
-                <p key={paragraph.slice(0, 24)} className="journal-lock__sheet-body">
-                  {paragraph}
-                </p>
-              ))}
-            </section>
-          </div>
+        <aside className="journal-lock__widgets" aria-label="Journal widgets">
+          <CalendarWidget activeIndex={activeIndex} onSelect={openEntry} now={now} />
 
           <button
             type="button"
-            className="journal-lock__home-bar"
-            onClick={() => setSheetOpen(true)}
-            aria-label="Open journal entry"
-          />
+            className="journal-lock__widget journal-lock__widget--now"
+            onClick={() => openEntry(activeIndex, { push: false })}
+          >
+            <div className="journal-lock__now-art" aria-hidden="true">
+              <span>{String(activeIndex + 1).padStart(2, "0")}</span>
+            </div>
+            <div className="journal-lock__now-meta">
+              <p className="journal-lock__now-kicker">Now reading</p>
+              <p className="journal-lock__now-title">{active.title}</p>
+              <p className="journal-lock__now-sub">{active.excerpt}</p>
+            </div>
+            <span className="journal-lock__now-icon" aria-hidden="true">▶</span>
+          </button>
+
+          <div className="journal-lock__widget journal-lock__widget--status">
+            <span className="journal-lock__status-icon" aria-hidden="true">✎</span>
+            <div className="journal-lock__status-copy">
+              <span className="journal-lock__status-label">Journal</span>
+              <span className="journal-lock__status-value">{JOURNAL.length} entries</span>
+            </div>
+            <div className="journal-lock__status-bar" aria-hidden="true">
+              <span style={{ width: `${((activeIndex + 1) / JOURNAL.length) * 100}%` }} />
+            </div>
+          </div>
+        </aside>
+
+        <div className="journal-lock__clock-zone" aria-hidden="true">
+          <p className="journal-lock__clock">{formatLockClock(now)}</p>
         </div>
-      </div>
+
+        <div
+          className="journal-lock__depth"
+          style={{ backgroundImage: `url(${lockBg})` }}
+          aria-hidden="true"
+        />
+
+        <div className="journal-lock__shortcuts" aria-hidden="true">
+          <span className="journal-lock__shortcut" />
+          <span className="journal-lock__shortcut" />
+        </div>
+
+        {sheetOpen && (
+          <button
+            type="button"
+            className="journal-lock__sheet-backdrop"
+            onClick={closeSheet}
+            aria-label="Close entry"
+          />
+        )}
+
+        <div className={`journal-lock__sheet${sheetOpen ? " journal-lock__sheet--open" : ""}`}>
+          <button
+            type="button"
+            className="journal-lock__sheet-grabber"
+            onClick={closeSheet}
+            aria-label="Close entry"
+          />
+          <section className="journal-lock__sheet-inner" aria-labelledby="journal-entry-title">
+            <div className="journal-lock__sheet-nav">
+              <button type="button" onClick={() => step("prev")} disabled={activeIndex === 0} aria-label="Previous entry">
+                ←
+              </button>
+              <span>{activeIndex + 1} / {JOURNAL.length}</span>
+              <button type="button" onClick={() => step("next")} disabled={activeIndex === JOURNAL.length - 1} aria-label="Next entry">
+                →
+              </button>
+            </div>
+            <time className="journal-lock__sheet-date" dateTime={active.date}>{active.date}</time>
+            <h1 id="journal-entry-title" className="journal-lock__sheet-title">{active.title}</h1>
+            <p className="journal-lock__sheet-excerpt">{active.excerpt}</p>
+            {active.body?.split("\n\n").map((paragraph) => (
+              <p key={paragraph.slice(0, 24)} className="journal-lock__sheet-body">
+                {paragraph}
+              </p>
+            ))}
+          </section>
+        </div>
+
+        <button
+          type="button"
+          className="journal-lock__home-bar"
+          onClick={() => openEntry(activeIndex, { push: false })}
+          aria-label="Open journal entry"
+        />
+      </Ipad>
     </div>
   );
 }

@@ -1,11 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 
-const SHOW_JOURNAL_NAV = false;
-
 const LINKS = [
   { to: "/work", label: "Work" },
   { to: "/illustrations", label: "Illustrations" },
-  ...(SHOW_JOURNAL_NAV ? [{ to: "/journal", label: "Journal" }] : []),
+  { to: "/journal", label: "Journal" },
   { to: "/about", label: "About" },
 ];
 
