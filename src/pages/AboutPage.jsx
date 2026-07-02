@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <>
       <PageNav />
-      <main>
+      <main className="site-main">
         <About />
         <Experience />
         <Footer />

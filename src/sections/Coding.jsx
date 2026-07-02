@@ -64,14 +64,9 @@ function CodeCard({ n, name, stack, desc, metric, href, external, cta }) {
 
 export default function Coding() {
   return (
-    <section className="coding" id="coding" data-screen-label="04 Coding">
-      <div className="coding__head">
-        <span className="section-eyebrow">C — In code</span>
-        <span className="section-eyebrow section-eyebrow--right">Section 03 / 04</span>
-      </div>
-
+    <section className="coding" id="coding">
       <div className="coding__top">
-        <h2 className="section-title section-title--small">
+        <h2 className="section-title section-title--page">
           <span>shipping </span>
           <span className="italic">production</span>
           <br />

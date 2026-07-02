@@ -1,23 +1,12 @@
-import MarqueeRow from "../components/MarqueeRow";
 import { useReveal } from "../hooks/useReveal";
 
 export default function Footer() {
   const ref = useReveal();
 
   return (
-    <footer className="foot" data-screen-label="07 Contact" ref={ref}>
-      <MarqueeRow
-        items={[
-          "Open to summer 26 internships",
-          "Atlanta · Remote",
-          "Say hi",
-          "Currently @ Google + GT",
-        ]}
-      />
-
+    <footer className="foot" ref={ref}>
       <div className="foot__main">
         <div className="foot__l">
-          <span className="section-eyebrow" data-reveal="fade" data-delay="1">F — Get in touch</span>
           <h2 className="foot__display" data-reveal data-delay="2">
             let's build
             <br />

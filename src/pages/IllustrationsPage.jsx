@@ -4,6 +4,7 @@ import PageNav from "../components/PageNav";
 import { ILLUSTRATIONS } from "../data";
 import aigt from "../assets/aigt.png";
 import cafeDoodle from "../assets/cafe_doodle.png";
+import mAnimated from "../assets/manimated.png";
 import { useReveal } from "../hooks/useReveal";
 
 const ILLO_IMAGES = {
@@ -25,26 +26,28 @@ export default function IllustrationsPage() {
   const ref = useReveal({ threshold: 0.05 });
 
   return (
-    <main className="page page--archive" ref={ref}>
+    <main className="site-main" ref={ref}>
       <PageNav />
 
-      <h1 className="section-title">
-        <span data-reveal data-delay="1">the </span>
-        <span className="italic" data-reveal data-delay="2">archive</span>
-        <br />
-        <span data-reveal data-delay="3">of </span>
-        <span className="italic" data-reveal data-delay="4">drawn</span>
-        <span data-reveal data-delay="4"> things.</span>
-      </h1>
+      <header className="archive__intro">
+        <h1 className="section-title section-title--page archive__title">
+          <span className="archive__title-line">
+            <span data-reveal data-delay="1">
+              the <span className="italic">archive</span>
+            </span>
+            <span className="archive__intro-art" data-reveal="scale" data-delay="3">
+              <img src={mAnimated} alt="3D character illustration" />
+            </span>
+            <span data-reveal data-delay="4">
+              of <span className="italic">drawn</span> things.
+            </span>
+          </span>
+        </h1>
 
-      <p className="archive__lede" data-reveal data-delay="5">
-        A long-running notebook of identity work, editorial spots, and personal charcoal studies — kept loose so it can stay honest. Filters below.
-      </p>
-
-      <div className="archive__head" data-reveal="fade" data-delay="5">
-        <span className="section-eyebrow">D — Drawn things</span>
-        <span className="section-eyebrow section-eyebrow--right">/illustrations · 2024 — 2026</span>
-      </div>
+        <p className="archive__lede" data-reveal data-delay="5">
+          A long-running notebook of identity work, editorial spots, and personal charcoal studies — kept loose so it can stay honest.
+        </p>
+      </header>
 
       <div className="archive__filters" role="tablist" data-reveal data-delay="6">
         {SERIES.map((s) => {
@@ -98,7 +101,7 @@ export default function IllustrationsPage() {
         <p className="archive__foot-line">
           Want a print or a commission? <Link to="/#contact">say hi →</Link>
         </p>
-        <Link to="/" className="ghost-btn">← Back to home</Link>
+        <Link to="/" className="hero__cta hero__cta--sm">← Back to home</Link>
       </footer>
     </main>
   );

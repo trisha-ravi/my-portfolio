@@ -1,14 +1,39 @@
 export const PROJECTS = [
   {
+    id: "p06",
+    slug: "moodles",
+    no: "01",
+    title: "Moodles",
+    kicker: "iOS · UX/UI",
+    year: "2025",
+    type: "ux/ui",
+    summary:
+      "A mood-tracking app that makes emotional check-ins effortless.",
+    role: "Product Designer (UX/UI)",
+    tags: ["iOS", "UX/UI", "Figma", "Mobile"],
+    swatch: "#3db8b0",
+    context:
+      "Moodles is a mood-tracking app designed around one simple idea: checking in with your emotions should take seconds, not minutes. Instead of asking users to write journal entries or answer long questionnaires, Moodles uses 12 expressive illustrated faces — each representing a different mood — making it easy to identify how you're feeling with a single tap.",
+    problem:
+      "Most mood-tracking apps expect too much from users. They ask people to write about their day, rate multiple emotions, answer prompts, and remember to journal consistently. Over time, these steps become time-consuming, causing many people to stop using the app.",
+    approach:
+      "Moodles removes that friction with a 5-second daily check-in: open the app, tap the face that best matches how you feel, and save. Twelve carefully designed faces represent common emotional states — happy, calm, excited, motivated, loved, okay, thoughtful, tired, confused, anxious, sad, and frustrated. Daily check-ins build a personal mood history with simple insights: happiest days, weekly summaries, monthly trends, streaks, and most common moods. The design is playful, calming, welcoming, and non-judgmental — built for students, busy professionals, and anyone who finds journaling difficult.",
+    outcome:
+      "Moodles encourages emotional awareness through the simplest daily habit possible. By making mood tracking effortless, the app helps users recognize patterns in their emotions without adding stress or extra work to their day. Tagline: A face for every mood.",
+    team: "Solo",
+    duration: "4–6 weeks (concept project)",
+    platform: "iOS · Figma",
+  },
+  {
     id: "p03",
     slug: "apex-reviews",
-    no: "01",
+    no: "02",
     title: "Apex Reviews",
     kicker: "Web · CREATE-X",
     year: "2024",
     type: "coding",
     summary:
-      "Frontier technology company reimagining how game developers understand player feedback — AI that turns scattered opinions into actionable insights at scale.",
+      "Frontier technology company reimagining how game developers understand player feedback. Apex Reviews uses AI to synthesize scattered player opinions from forums, Steam, Reddit, and social media into precise, real-time insights — so studios can move faster and iterate smarter.",
     role: "Co-Founder · Product",
     tags: ["React", "AI", "CREATE-X"],
     swatch: "#1f1c1a",
@@ -27,13 +52,13 @@ export const PROJECTS = [
   {
     id: "p05",
     slug: "spotify-wrapped",
-    no: "02",
+    no: "03",
     title: "Spotify Wrapped",
     kicker: "Android · Native",
     year: "2024",
     type: "coding",
     summary:
-      "A mobile-first Spotify analytics app redesigned for year-round discovery. Touch-optimized visualizations, AI-powered pattern insights, and real-time Spotify API sync — built natively on Android with Jetpack Compose and Material Design 3.",
+      "A mobile-first Spotify analytics app redesigned for year-round discovery. Built natively on Android with Jetpack Compose, it offers touch-optimized visualizations, AI-powered pattern insights, and real-time Spotify API sync — because music data shouldn't only surface once a year.",
     role: "Solo Designer & Developer",
     tags: ["Android", "Kotlin", "UX Research", "Figma"],
     swatch: "#231f1c",
@@ -51,6 +76,13 @@ export const PROJECTS = [
     links: [{ label: "View project", href: "https://mewkat36.wixstudio.com/spotifywrapped" }],
   },
 ];
+
+export const SHOW_MOODLES_PROJECT = false;
+
+export function getVisibleProjects() {
+  if (SHOW_MOODLES_PROJECT) return PROJECTS;
+  return PROJECTS.filter((p) => p.slug !== "moodles");
+}
 
 export const ILLUSTRATIONS = [
   {
@@ -145,5 +177,35 @@ export const ROLES = [
       "Spearheaded a brand transformation — cohesive design system → +150% social engagement, +40% membership.",
       "Built and managed a creative team of 8 designers; agile processes tripled project delivery speed.",
     ],
+  },
+];
+
+export const JOURNAL = [
+  {
+    id: "j01",
+    date: "Mar 2026",
+    title: "On building in public",
+    excerpt:
+      "Shipping small, sharing early, and learning that the messy middle is usually where the interesting work lives.",
+    body:
+      "There is a version of this work that only exists once it leaves the notebook. The sketches, the half-formed ideas, the prototypes that never ship — they matter, but they are not the whole story.\n\nBuilding in public is less about performance and more about pressure-testing your thinking before it hardens into something you can no longer revise.",
+  },
+  {
+    id: "j02",
+    date: "Feb 2026",
+    title: "Design notes from a crowded calendar",
+    excerpt:
+      "What I am noticing about attention, pace, and making room for the kind of thinking that does not fit in a sprint.",
+    body:
+      "Some weeks feel like a relay race — handoffs, standups, reviews, and the quiet hope that clarity will appear somewhere between meetings.\n\nI am trying to protect small pockets of uninterrupted time, not because slowness is virtuous, but because certain decisions only show up when the noise drops.",
+  },
+  {
+    id: "j03",
+    date: "Jan 2026",
+    title: "Faces, feelings, and five seconds",
+    excerpt:
+      "Early reflections while building Moodles — why lowering the cost of check-ins changes how people actually show up.",
+    body:
+      "Most mood tools ask for a paragraph when a glance would do. Moodles started from a simpler question: what if checking in felt as easy as noticing the weather?\n\nTwelve faces, one tap, no guilt. The design is playful on purpose — emotional awareness should not feel like homework.",
   },
 ];

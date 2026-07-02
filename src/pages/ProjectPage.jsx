@@ -1,125 +1,130 @@
 import { Link, useParams } from "react-router-dom";
+import BlurText from "../components/BlurText";
+import { ProjectShowcaseMedia } from "../components/ProjectMedia";
 import PageNav from "../components/PageNav";
-import { PROJECTS } from "../data";
+import { getVisibleProjects } from "../data";
 import NotFound from "./NotFound";
-import apexImg from "../assets/apex-reviews.png";
-import spotifyImg from "../assets/spotifywrapped.png";
+import { getProjectMedia } from "../projectImages";
+import { getCaseStudy } from "../data/caseStudies";
+import ProjectCaseStudy from "../components/ProjectCaseStudy";
 
-const PROJECT_IMAGES = {
-  "apex-reviews": apexImg,
-  "spotify-wrapped": spotifyImg,
-};
+const CONTACT_URL = "https://www.linkedin.com/in/trisha-ravichandran";
 
 export default function ProjectPage() {
   const { slug } = useParams();
-  const idx = PROJECTS.findIndex((p) => p.slug === slug);
+  const projects = getVisibleProjects();
+  const idx = projects.findIndex((p) => p.slug === slug);
   if (idx === -1) return <NotFound />;
 
-  const project = PROJECTS[idx];
-  const prev = PROJECTS[(idx - 1 + PROJECTS.length) % PROJECTS.length];
-  const next = PROJECTS[(idx + 1) % PROJECTS.length];
+  const project = projects[idx];
+  const prev = projects[(idx - 1 + projects.length) % projects.length];
+  const next = projects[(idx + 1 + projects.length) % projects.length];
+  const liveLink = project.links?.[0];
+  const media = getProjectMedia(project.slug, project);
+  const cover = media[0];
+  const gallery = media.slice(1);
+  const caseStudy = getCaseStudy(project.slug);
 
   return (
-    <main className="page page--case">
+    <main className="site-main">
       <PageNav />
 
-      <header className="case__head">
-        <div className="case__head-row">
-          <span className="section-eyebrow">B — Selected works</span>
-          <span className="section-eyebrow section-eyebrow--right">/work/{project.slug}</span>
-        </div>
-        <span className="case__no">{project.no}</span>
-        <h1 className="case__title">
-          <span>{project.title.split(" ")[0]}</span>{" "}
-          <span className="italic">
-            {project.title.split(" ").slice(1).join(" ") || project.title}
-          </span>
-          <span className="section-title__period">.</span>
-        </h1>
-        <p className="case__kicker">{project.kicker}</p>
-      </header>
+      <article className={`project project--${project.slug}`} key={slug}>
+        <header className="project__header">
+          <div className="project__top">
+            <div className="project__intro">
+              <BlurText
+                as="h1"
+                className="project__title"
+                text={project.title}
+                by="char"
+                delay={0.15}
+                stagger={0.022}
+              />
+              <BlurText
+                as="p"
+                className="project__desc"
+                text={project.summary}
+                delay={0.45}
+                stagger={0.028}
+              />
+            </div>
 
-      {PROJECT_IMAGES[project.slug] && (
-        <div className="case__cover">
-          <img
-            src={PROJECT_IMAGES[project.slug]}
-            alt={`${project.title} cover`}
-            className="case__cover-img"
-          />
-        </div>
-      )}
+            <div className="project__tags" aria-label="Project tags">
+              {project.tags.map((tag, i) => (
+                <span
+                  key={tag}
+                  className="project__tag project__tag--blur"
+                  style={{ animationDelay: `${0.7 + i * 0.08}s` }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
 
-      <section className="case__meta">
-        <dl className="case__meta-grid">
-          <div><dt>Role</dt><dd>{project.role}</dd></div>
-          <div><dt>Year</dt><dd>{project.year}</dd></div>
-          {project.duration && <div><dt>Duration</dt><dd>{project.duration}</dd></div>}
-          {project.team && <div><dt>Team</dt><dd>{project.team}</dd></div>}
-          {project.platform && <div><dt>Platform</dt><dd>{project.platform}</dd></div>}
-          <div><dt>Tags</dt><dd>{project.tags.join(" · ")}</dd></div>
-        </dl>
-      </section>
+          {cover && (
+            <div
+              className="project__hero project__hero--blur"
+              style={{ animationDelay: "0.55s" }}
+            >
+              <ProjectShowcaseMedia
+                item={cover}
+                project={project}
+                className="project__hero-img"
+              />
+            </div>
+          )}
 
-      <section className="case__summary">
-        <span className="section-eyebrow">Summary</span>
-        <p className="case__summary-body">{project.summary}</p>
-      </section>
+          <div className="project__actions project__actions--blur" style={{ animationDelay: "0.9s" }}>
+            {liveLink && (
+              <a
+                className="hero__cta hero__cta--sm"
+                href={liveLink.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Live Link</span>
+                <span className="hero__cta-icon" aria-hidden="true">↗</span>
+              </a>
+            )}
+            <a
+              className="ghost-btn"
+              href={CONTACT_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Contact me
+            </a>
+          </div>
+        </header>
 
-      <section className="case__story">
-        <article className="case__block">
-          <span className="case__block-no">i.</span>
-          <h2 className="case__block-title">Context</h2>
-          <p>{project.context}</p>
-        </article>
-        <article className="case__block">
-          <span className="case__block-no">ii.</span>
-          <h2 className="case__block-title">Problem</h2>
-          <p>{project.problem}</p>
-        </article>
-        <article className="case__block">
-          <span className="case__block-no">iii.</span>
-          <h2 className="case__block-title">Approach</h2>
-          <p>{project.approach}</p>
-        </article>
-        <article className="case__block">
-          <span className="case__block-no">iv.</span>
-          <h2 className="case__block-title">Outcome</h2>
-          <p>{project.outcome}</p>
-        </article>
-      </section>
+        {caseStudy && <ProjectCaseStudy study={caseStudy} project={project} />}
 
-      {project.links && project.links.length > 0 && (
-        <section className="case__links">
-          <span className="section-eyebrow">Links</span>
-          <ul>
-            {project.links.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} target="_blank" rel="noreferrer">
-                  {l.label} <span aria-hidden="true">↗</span>
-                </a>
-              </li>
+        {gallery.length > 0 && (
+          <div className="project__gallery">
+            {gallery.map((item, i) => (
+              <div
+                key={`${item.type}-${item.index ?? i}`}
+                className="project__showcase project__showcase--blur"
+                style={{ animationDelay: `${1.1 + i * 0.12}s` }}
+              >
+                <ProjectShowcaseMedia item={item} project={project} ratio="4 / 5" />
+              </div>
             ))}
-          </ul>
-        </section>
-      )}
+          </div>
+        )}
 
-      <nav className="case__pager" aria-label="Project pagination">
-        <Link to={`/work/${prev.slug}`} className="case__pager-link case__pager-link--prev">
-          <span className="case__pager-arrow" aria-hidden="true">←</span>
-          <span className="case__pager-label">
-            <span className="case__pager-eyebrow">Previous</span>
-            <span className="case__pager-title">{prev.no} — {prev.title}</span>
-          </span>
-        </Link>
-        <Link to="/#work" className="case__pager-index">All work</Link>
-        <Link to={`/work/${next.slug}`} className="case__pager-link case__pager-link--next">
-          <span className="case__pager-label case__pager-label--right">
-            <span className="case__pager-eyebrow">Next</span>
-            <span className="case__pager-title">{next.no} — {next.title}</span>
-          </span>
-          <span className="case__pager-arrow" aria-hidden="true">→</span>
-        </Link>
-      </nav>
+        <nav className="project__pager" aria-label="Project navigation">
+          <Link to={`/work/${prev.slug}`} className="project__pager-link">
+            ← {prev.title}
+          </Link>
+          <Link to="/work" className="project__pager-index">All work</Link>
+          <Link to={`/work/${next.slug}`} className="project__pager-link project__pager-link--next">
+            {next.title} →
+          </Link>
+        </nav>
+      </article>
     </main>
   );
 }

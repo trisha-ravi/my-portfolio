@@ -2,13 +2,8 @@ import { ROLES } from "../data";
 
 export default function Experience() {
   return (
-    <section className="exp" id="experience" data-screen-label="06 Experience">
-      <div className="exp__head">
-        <span className="section-eyebrow">E — Experience</span>
-        <span className="section-eyebrow section-eyebrow--right">Section 05 / 06</span>
-      </div>
-
-      <h2 className="section-title">
+    <section className="exp" id="experience">
+      <h2 className="section-title section-title--page">
         <span>where I've </span>
         <span className="italic">worked</span>
         <br />
@@ -44,9 +39,7 @@ export default function Experience() {
       </ol>
 
       <div className="exp__skills">
-        <div className="exp__skills-head">
-          <span className="section-eyebrow">Stack & tools</span>
-        </div>
+        <h3 className="exp__skills-title">Stack &amp; tools</h3>
         <div className="exp__skills-grid">
           <div>
             <p className="exp__skill-label">Design</p>
@@ -62,7 +55,7 @@ export default function Experience() {
           </div>
           <div>
             <p className="exp__skill-label">Education</p>
-            <p className="exp__skill-list">Georgia Institute of Technology · B.S. CS — Human-Computer Interaction · Dec 2026</p>
+            <p className="exp__skill-list">Georgia Institute of Technology · B.S. CS — Human-Computer Interaction · Dec 2027</p>
           </div>
         </div>
       </div>

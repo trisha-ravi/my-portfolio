@@ -6,7 +6,7 @@ export default function WorkPage() {
   return (
     <>
       <PageNav />
-      <main>
+      <main className="site-main">
         <Work />
         <Coding />
       </main>

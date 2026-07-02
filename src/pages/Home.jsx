@@ -1,19 +1,15 @@
-import { useEffect } from "react";
 import Hero from "../sections/Hero";
+import HomeProjects from "../sections/HomeProjects";
 import PageNav from "../components/PageNav";
 
 export default function Home() {
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = ""; };
-  }, []);
-
   return (
-    <>
-      <PageNav showBack={false} />
-      <main className="home-main">
+    <div className="home">
+      <PageNav />
+      <main className="home-main site-main site-main--home">
         <Hero />
+        <HomeProjects />
       </main>
-    </>
+    </div>
   );
 }

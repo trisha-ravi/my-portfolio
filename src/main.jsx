@@ -5,13 +5,8 @@ import App from "./App";
 import "./styles/index.css";
 
 // Self-hosted fonts — avoids GitHub Pages CSP restrictions on external URLs
-import "@fontsource/playfair-display/400.css";
-import "@fontsource/playfair-display/700.css";
-import "@fontsource/playfair-display/900.css";
-import "@fontsource/playfair-display/400-italic.css";
-import "@fontsource/playfair-display/700-italic.css";
-import "@fontsource/cormorant-garamond/400.css";
-import "@fontsource/cormorant-garamond/400-italic.css";
+import "@fontsource/instrument-serif/400.css";
+import "@fontsource/instrument-serif/400-italic.css";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
