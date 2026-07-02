@@ -25,10 +25,11 @@ export default function Work() {
         <span className="section-title__period">.</span>
       </h1>
 
-      <div className="work__filters" role="tablist" data-reveal data-delay="2">
+      <div className="work__filters" role="tablist">
         {FILTERS.map((f) => (
           <button
             key={f.id}
+            type="button"
             role="tab"
             aria-selected={filter === f.id}
             className={`pill ${filter === f.id ? "pill--on" : ""}`}
@@ -58,10 +59,7 @@ export default function Work() {
               data-delay={String(Math.min(i + 1, 6))}
             >
               <div className="home-projects__media">
-                <ProjectThumbnail
-                  project={{ ...project, cover: cover.type === "image" ? cover.src : null }}
-                  index={i}
-                />
+                <ProjectThumbnail project={project} cover={cover} index={i} />
               </div>
             </Link>
           );

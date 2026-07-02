@@ -49,7 +49,7 @@ export default function IllustrationsPage() {
         </p>
       </header>
 
-      <div className="archive__filters" role="tablist" data-reveal data-delay="6">
+      <div className="archive__filters" role="tablist">
         {SERIES.map((s) => {
           const count =
             s === "All"
@@ -58,6 +58,7 @@ export default function IllustrationsPage() {
           return (
             <button
               key={s}
+              type="button"
               role="tab"
               aria-selected={series === s}
               className={`pill ${series === s ? "pill--on" : ""}`}

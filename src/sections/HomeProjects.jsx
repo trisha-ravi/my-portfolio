@@ -24,10 +24,7 @@ export default function HomeProjects() {
               data-delay={String(i + 1)}
             >
               <div className="home-projects__media">
-                <ProjectThumbnail
-                  project={{ ...project, cover: cover.type === "image" ? cover.src : null }}
-                  index={i}
-                />
+                <ProjectThumbnail project={project} cover={cover} index={i} />
               </div>
             </Link>
           );

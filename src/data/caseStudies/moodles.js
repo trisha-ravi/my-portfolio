@@ -1,6 +1,5 @@
-import moodles1 from "../../assets/moodles-1.png";
-import moodles2 from "../../assets/moodles-2.png";
-import moodles3 from "../../assets/moodles-3.png";
+import moodlesCalm from "../../assets/moodles-calm.png";
+import moodlesCare from "../../assets/moodles-care.png";
 
 export default {
   overview: {
@@ -197,18 +196,6 @@ export default {
       title: "Wireframes",
       body:
         "I started with low-fidelity sketches to test layout and flow, then moved to mid-fidelity screens in Figma to validate spacing, hierarchy, and the 12-face grid before applying visual polish.",
-      images: [
-        {
-          src: moodles1,
-          alt: "Moodles low-fidelity wireframe exploring the mood selection grid",
-          caption: "Early layout exploration — testing grid density and tap targets.",
-        },
-        {
-          src: moodles2,
-          alt: "Moodles mid-fidelity wireframe for home and history screens",
-          caption: "Mid-fidelity screens — refining navigation and check-in flow.",
-        },
-      ],
     },
     {
       id: "visual",
@@ -254,9 +241,14 @@ export default {
       ],
       images: [
         {
-          src: moodles3,
-          alt: "Moodles high-fidelity screen showing the final mood check-in interface",
-          caption: "Final high-fidelity check-in screen with illustrated mood faces.",
+          src: moodlesCalm,
+          alt: "Moodles calm check-in screen on iPhone showing mood summary and tags",
+          caption: "Check-in — calm mood with context tags and a daily reflection.",
+        },
+        {
+          src: moodlesCare,
+          alt: "Moodles care screen on iPhone with feel-better quick actions sheet",
+          caption: "Care — instant relief actions and buddy missions.",
         },
       ],
     },

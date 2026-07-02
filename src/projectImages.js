@@ -1,24 +1,28 @@
 import apexImg from "./assets/apex-reviews.png";
 import spotifyImg from "./assets/spotifywrapped.png";
-import moodlesImg from "./assets/moodles-portfolio.png";
+import moodlesPortfolio from "./assets/moodles-portfolio.png";
 
 export const PROJECT_IMAGES = {
   "apex-reviews": [apexImg],
   "spotify-wrapped": [spotifyImg],
-  moodles: [moodlesImg],
+  moodles: [moodlesPortfolio],
 };
 
 const PLACEHOLDER_COUNTS = {};
 
 export function getProjectCover(slug) {
-  return PROJECT_IMAGES[slug]?.[0] ?? null;
+  const entry = PROJECT_IMAGES[slug]?.[0];
+  if (!entry) return null;
+  return typeof entry === "string" ? entry : entry.images?.[0] ?? null;
 }
 
 export function getProjectMedia(slug, project) {
   const images = PROJECT_IMAGES[slug] ?? [];
 
   if (images.length > 0) {
-    return images.map((src) => ({ type: "image", src }));
+    return images.map((entry) =>
+      typeof entry === "string" ? { type: "image", src: entry } : entry
+    );
   }
 
   const count = PLACEHOLDER_COUNTS[slug] ?? 0;

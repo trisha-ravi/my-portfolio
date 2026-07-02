@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 /**
  * Attaches an IntersectionObserver to a container ref.
  * Any child with [data-reveal] gets [data-visible] when it enters the viewport.
- * Pass `threshold` (0–1) and `rootMargin` to tune timing.
+ * Re-scans for new [data-reveal] nodes when the subtree changes (e.g. filters).
  */
 export function useReveal({ threshold = 0.15, rootMargin = "0px 0px -60px 0px" } = {}) {
   const ref = useRef(null);
@@ -11,9 +11,6 @@ export function useReveal({ threshold = 0.15, rootMargin = "0px 0px -60px 0px" }
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
-    const targets = el.querySelectorAll("[data-reveal]");
-    if (!targets.length) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -27,8 +24,25 @@ export function useReveal({ threshold = 0.15, rootMargin = "0px 0px -60px 0px" }
       { threshold, rootMargin }
     );
 
-    targets.forEach((t) => observer.observe(t));
-    return () => observer.disconnect();
+    const observed = new WeakSet();
+
+    const observePending = () => {
+      el.querySelectorAll("[data-reveal]:not([data-visible])").forEach((target) => {
+        if (observed.has(target)) return;
+        observed.add(target);
+        observer.observe(target);
+      });
+    };
+
+    observePending();
+
+    const mutationObserver = new MutationObserver(observePending);
+    mutationObserver.observe(el, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, [threshold, rootMargin]);
 
   return ref;
