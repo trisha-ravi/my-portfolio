@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
-import { ILLUSTRATIONS } from "../data";
+import { ILLUSTRATIONS, ILLUSTRATION_SERIES } from "../data";
 import aigt from "../assets/aigt.png";
 import cafeDoodle from "../assets/cafe_doodle.png";
 import mAnimated from "../assets/manimated.png";
@@ -12,7 +12,7 @@ const ILLO_IMAGES = {
   "i00b": cafeDoodle,
 };
 
-const SERIES = ["All", "Identity", "Editorial", "Marks", "Charcoal", "Print"];
+const SERIES = ["All", ...ILLUSTRATION_SERIES];
 
 export default function IllustrationsPage() {
   const [series, setSeries] = useState("All");
@@ -99,7 +99,7 @@ export default function IllustrationsPage() {
 
       <footer className="archive__foot" data-reveal data-delay="2">
         <p className="archive__foot-line">
-          Want a print or a commission? <Link to="/#contact">say hi →</Link>
+          Want a print or a commission? <Link to="/about#contact">say hi →</Link>
         </p>
         <Link to="/" className="hero__cta hero__cta--sm">← Back to home</Link>
       </footer>

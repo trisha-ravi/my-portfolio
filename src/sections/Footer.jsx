@@ -4,7 +4,7 @@ export default function Footer() {
   const ref = useReveal();
 
   return (
-    <footer className="foot" ref={ref}>
+    <footer className="foot" id="contact" ref={ref}>
       <div className="foot__main">
         <div className="foot__l">
           <h2 className="foot__display" data-reveal data-delay="2">

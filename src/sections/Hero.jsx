@@ -4,9 +4,18 @@ import apexImg from "../assets/apex-reviews.png";
 import spotifyImg from "../assets/spotifywrapped.png";
 import { useReveal } from "../hooks/useReveal";
 
-function HeroPill({ src, alt = "", wide = false }) {
+function HeroPill({ src, alt = "", wide = false, contain = false, portrait = false }) {
   return (
-    <span className={`hero__pill-wrap${wide ? " hero__pill-wrap--wide" : ""}`}>
+    <span
+      className={[
+        "hero__pill-wrap",
+        wide && "hero__pill-wrap--wide",
+        contain && "hero__pill-wrap--contain",
+        portrait && "hero__pill-wrap--portrait",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
       <img src={src} alt={alt} />
     </span>
   );
@@ -22,7 +31,7 @@ export default function Hero() {
           <span className="hero__line" data-reveal data-delay="1">
             <span className="hero__bold">I&apos;m </span>
             <span className="hero__italic">Trisha</span>
-            <HeroPill src={portrait} wide />
+            <HeroPill src={portrait} wide portrait alt="Trisha Ravichandran" />
           </span>
           <span className="hero__line" data-reveal data-delay="2">
             <span className="hero__bold">a UX/Product </span>

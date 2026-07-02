@@ -379,6 +379,28 @@ main > section:first-child {
   object-position: 50% 22%;
 }
 
+.hero__pill-wrap--portrait img {
+  object-fit: cover;
+  object-position: 30% 42%;
+  transform: scale(1);
+  transform-origin: 30% 42%;
+}
+
+.hero__pill-wrap--contain {
+  background: #ffffff;
+}
+
+.hero__pill-wrap--contain img {
+  object-fit: contain;
+  transform: scale(1);
+  padding: 0.08em;
+}
+
+.hero__pill-wrap--wide.hero__pill-wrap--contain img {
+  object-position: center center;
+  padding: 0.06em;
+}
+
 .hero__sub {
   max-width: 520px;
   margin: 0 auto 36px;

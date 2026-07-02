@@ -10,7 +10,7 @@ export const PROJECTS = [
     summary:
       "A mood-tracking app that makes emotional check-ins effortless.",
     role: "Product Designer (UX/UI)",
-    tags: ["iOS", "UX/UI", "Figma", "Mobile"],
+    tags: ["iOS", "UX/UI", "Figma", "Mobile", "Supabase"],
     swatch: "#3db8b0",
     context:
       "Moodles is a mood-tracking app designed around one simple idea: checking in with your emotions should take seconds, not minutes. Instead of asking users to write journal entries or answer long questionnaires, Moodles uses 12 expressive illustrated faces — each representing a different mood — making it easy to identify how you're feeling with a single tap.",
@@ -35,7 +35,7 @@ export const PROJECTS = [
     summary:
       "Frontier technology company reimagining how game developers understand player feedback. Apex Reviews uses AI to synthesize scattered player opinions from forums, Steam, Reddit, and social media into precise, real-time insights — so studios can move faster and iterate smarter.",
     role: "Co-Founder · Product",
-    tags: ["React", "AI", "CREATE-X"],
+    tags: ["React JS", "MongoDB", "AI", "CREATE-X"],
     swatch: "#1f1c1a",
     context:
       "Co-founded through Georgia Tech's CREATE-X accelerator. Apex Reviews is a frontier technology company on a mission to empower studios with intelligent, accessible tools that bring clarity to chaos — turning player opinions into precise, real-time insights.",
@@ -77,7 +77,7 @@ export const PROJECTS = [
   },
 ];
 
-export const SHOW_MOODLES_PROJECT = false;
+export const SHOW_MOODLES_PROJECT = true;
 
 export function getVisibleProjects() {
   if (SHOW_MOODLES_PROJECT) return PROJECTS;
@@ -105,6 +105,10 @@ export const ILLUSTRATIONS = [
     swatch: "#d4c9b0",
     note: "On-location sketch — doodles layered over a café shot. Part of an ongoing series of annotated places.",
   },
+];
+
+export const ILLUSTRATION_SERIES = [
+  ...new Set(ILLUSTRATIONS.map((it) => it.series)),
 ];
 
 export const ROLES = [

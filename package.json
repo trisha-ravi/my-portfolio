@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist --dotfiles"
   },
   "dependencies": {
+    "@fontsource/bebas-neue": "^5.2.7",
     "@fontsource/cormorant-garamond": "^5.2.11",
     "@fontsource/dm-serif-display": "^5.2.8",
     "@fontsource/great-vibes": "^5.2.8",
