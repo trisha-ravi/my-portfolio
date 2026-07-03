@@ -99,7 +99,7 @@ export const ILLUSTRATIONS = [
     id: "i00b",
     no: "02",
     label: "Café Doodle",
-    series: "Editorial",
+    series: "Sketch",
     year: "2025",
     ratio: "1 / 1",
     swatch: "#d4c9b0",
@@ -114,6 +114,16 @@ export const ILLUSTRATIONS = [
     ratio: "3 / 4",
     swatch: "#d4d4d4",
     note: "Spent some time on this one. Six shapes, one center. Somewhere between black and bronze I started thinking about how things don't need to match to belong together. They just need to hold the same shape, the same direction.\n\nNot everything has to match to belong.",
+  },
+  {
+    id: "i00d",
+    no: "04",
+    label: "Ocean Trio",
+    series: "3D",
+    year: "2026",
+    ratio: "16 / 9",
+    swatch: "#f2a48c",
+    note: "Three little clay companions — a spiky dragon, a shy devil, and a bunny — drifting together in a warm coral glow.",
   },
 ];
 

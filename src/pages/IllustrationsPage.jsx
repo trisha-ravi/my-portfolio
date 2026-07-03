@@ -6,6 +6,7 @@ import { ILLUSTRATIONS, ILLUSTRATION_SERIES } from "../data";
 import aigt from "../assets/aigt.png";
 import cafeDoodle from "../assets/cafe_doodle.png";
 import unityInContrast from "../assets/unity-in-contrast.png";
+import oceanTrio from "../assets/ocean-trio.png";
 import mAnimated from "../assets/manimated.png";
 import { useReveal } from "../hooks/useReveal";
 
@@ -13,6 +14,7 @@ const ILLO_IMAGES = {
   "i00a": aigt,
   "i00b": cafeDoodle,
   "i00c": unityInContrast,
+  "i00d": oceanTrio,
 };
 
 const SERIES = ["All", ...ILLUSTRATION_SERIES];
@@ -116,7 +118,7 @@ export default function IllustrationsPage() {
             {ILLO_IMAGES[it.id] && (
               <button
                 type="button"
-                className="archive__real-img archive__real-img--btn"
+                className={`archive__real-img archive__real-img--btn${it.fit === "contain" ? " archive__real-img--contain" : ""}`}
                 style={{ aspectRatio: it.ratio }}
                 onClick={() => openLightbox(it.id)}
                 aria-label={`View ${it.label} full size`}

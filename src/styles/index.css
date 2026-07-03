@@ -1562,6 +1562,13 @@ main > section:first-child {
   object-fit: cover;
   display: block;
 }
+.archive__real-img--contain {
+  background: var(--bg-2);
+}
+.archive__real-img--contain img {
+  object-fit: contain;
+  image-rendering: auto;
+}
 .illo-lightbox {
   position: fixed;
   inset: 0;
