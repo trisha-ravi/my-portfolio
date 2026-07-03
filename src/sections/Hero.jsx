@@ -5,7 +5,7 @@ import spotifyImg from "../assets/spotifywrapped.png";
 import { useReveal } from "../hooks/useReveal";
 import { useMagnetic } from "../hooks/useMagnetic";
 
-function HeroPill({ src, alt = "", wide = false, contain = false, portrait = false, float = 0 }) {
+function HeroPill({ src, alt = "", wide = false, contain = false, portrait = false }) {
   return (
     <span
       className={[
@@ -16,7 +16,6 @@ function HeroPill({ src, alt = "", wide = false, contain = false, portrait = fal
       ]
         .filter(Boolean)
         .join(" ")}
-      style={{ "--float-delay": `${float}s` }}
     >
       <img src={src} alt={alt} />
     </span>
@@ -34,17 +33,17 @@ export default function Hero() {
           <span className="hero__line" data-reveal data-delay="1">
             <span className="hero__bold">I&apos;m </span>
             <span className="hero__italic">Trisha</span>
-            <HeroPill src={portrait} wide portrait alt="Trisha Ravichandran" float={0} />
+            <HeroPill src={portrait} wide portrait alt="Trisha Ravichandran" />
           </span>
           <span className="hero__line" data-reveal data-delay="2">
             <span className="hero__bold">a UX/Product </span>
-            <HeroPill src={apexImg} float={0.9} />
+            <HeroPill src={apexImg} />
             <span className="hero__italic">Designer</span>
           </span>
           <span className="hero__line" data-reveal data-delay="3">
             <span className="hero__bold">based in </span>
             <span className="hero__italic">Atlanta</span>
-            <HeroPill src={spotifyImg} float={1.7} />
+            <HeroPill src={spotifyImg} />
           </span>
         </h1>
 

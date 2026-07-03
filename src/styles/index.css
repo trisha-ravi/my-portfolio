@@ -3459,18 +3459,6 @@ body.illo-lightbox-open #root {
   }
 }
 
-/* ───────── floating hero pills ───────── */
-@keyframes hero-pill-float {
-  0%,
-  100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(-2deg); }
-}
-
-.hero__pill-wrap {
-  animation: hero-pill-float 5.5s ease-in-out infinite;
-  animation-delay: var(--float-delay, 0s);
-}
-
 /* ───────── hand-drawn scribble (draws in on scroll) ───────── */
 .scribble__loop {
   stroke-dasharray: 470;
@@ -3489,7 +3477,6 @@ body.illo-lightbox-open #root {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__pill-wrap { animation: none; }
   .hero__cta::before { display: none; }
   .scribble__loop {
     transition: none;
