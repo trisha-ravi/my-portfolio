@@ -134,6 +134,18 @@ export const ILLUSTRATION_SERIES = [
 export const ROLES = [
   {
     no: "01",
+    role: "Software Engineering Intern",
+    org: "JobAiro",
+    time: "Jun 2026 — Present",
+    where: "Remote",
+    bullets: [
+      "Own features end-to-end as a product designer and full-stack engineer — shaping UX and product direction, then building it out across frontend and backend.",
+      "Design and build both the interface and the services behind it, wiring UI to APIs, backend logic, and data.",
+      "Drive architecture decisions — structuring systems and data models so features stay clean and scale.",
+    ],
+  },
+  {
+    no: "02",
     role: "AI Tester — Search Priority User Program",
     org: "Google",
     time: "Apr 2026 — Present",
@@ -145,7 +157,7 @@ export const ROLES = [
     ],
   },
   {
-    no: "02",
+    no: "03",
     role: "Senior iOS Designer",
     org: "iOS Dev Club — Georgia Tech",
     time: "Aug 2025 — Present",
@@ -154,18 +166,6 @@ export const ROLES = [
       "Direct teams of 3–4 junior designers across semester-long app projects (Skill Swap, Jot Down, Rey, Yes Chef).",
       "Lead the full process — scoping, ideation, wireframing, prototyping — and ship final UI systems for each app.",
       "Bi-weekly syncs with developer leads to align engineering and design timelines, scope features, and balance manpower.",
-    ],
-  },
-  {
-    no: "03",
-    role: "Software Engineering Intern",
-    org: "JobAiro",
-    time: "Jun 2026 — Present",
-    where: "Remote",
-    bullets: [
-      "Own features end-to-end as a product designer and full-stack engineer — shaping UX and product direction, then building it out across frontend and backend.",
-      "Design and build both the interface and the services behind it, wiring UI to APIs, backend logic, and data.",
-      "Drive architecture decisions — structuring systems and data models so features stay clean and scale.",
     ],
   },
   {
@@ -182,6 +182,17 @@ export const ROLES = [
   },
   {
     no: "05",
+    role: "Undergraduate Researcher",
+    org: "PARCE-Lab — Georgia Tech",
+    time: "Jan 2025 — May 2025",
+    where: "Atlanta, GA",
+    bullets: [
+      "Studied user trust and perception of AI agents; designed surveys and prototype iterations.",
+      "Improved engagement +25% through UX changes; +15% perceived reliability via fidelity studies.",
+    ],
+  },
+  {
+    no: "06",
     role: "Co-Founder",
     org: "Apex Reviews — GT CREATE-X",
     time: "Aug 2024 — Present",
@@ -190,17 +201,6 @@ export const ROLES = [
       "Co-founded an AI-powered gaming feedback platform through Georgia Tech's CREATE-X accelerator.",
       "Engineered a React 18 micro-frontend; achieved 45% bundle reduction and sub-2s load times.",
       "Built a 47-component design system; ran 20+ user interviews to validate product-market fit.",
-    ],
-  },
-  {
-    no: "06",
-    role: "Undergraduate Researcher",
-    org: "PARCE-Lab — Georgia Tech",
-    time: "Jan 2025 — May 2025",
-    where: "Atlanta, GA",
-    bullets: [
-      "Studied user trust and perception of AI agents; designed surveys and prototype iterations.",
-      "Improved engagement +25% through UX changes; +15% perceived reliability via fidelity studies.",
     ],
   },
   {
