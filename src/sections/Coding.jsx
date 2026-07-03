@@ -24,7 +24,7 @@ const CODE_PROJECTS = [
   {
     n: "iii.",
     name: "spotify-wrapped",
-    stack: "Java/Kotlin · Firebase · M3",
+    stack: "Android Studio · Kotlin · Firebase · M3",
     desc: "Native Android app with realtime sync, supporting 1k+ concurrent users.",
     metric: "−40% load",
     href: "https://mewkat36.wixstudio.com/spotifywrapped",

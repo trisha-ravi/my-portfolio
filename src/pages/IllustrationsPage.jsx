@@ -1,21 +1,25 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
+import IllustrationLightbox from "../components/IllustrationLightbox";
 import { ILLUSTRATIONS, ILLUSTRATION_SERIES } from "../data";
 import aigt from "../assets/aigt.png";
 import cafeDoodle from "../assets/cafe_doodle.png";
+import unityInContrast from "../assets/unity-in-contrast.png";
 import mAnimated from "../assets/manimated.png";
 import { useReveal } from "../hooks/useReveal";
 
 const ILLO_IMAGES = {
   "i00a": aigt,
   "i00b": cafeDoodle,
+  "i00c": unityInContrast,
 };
 
 const SERIES = ["All", ...ILLUSTRATION_SERIES];
 
 export default function IllustrationsPage() {
   const [series, setSeries] = useState("All");
+  const [activeId, setActiveId] = useState(null);
   const list = useMemo(
     () =>
       series === "All"
@@ -23,7 +27,37 @@ export default function IllustrationsPage() {
         : ILLUSTRATIONS.filter((it) => it.series === series),
     [series]
   );
+  const activeIndex = activeId ? list.findIndex((it) => it.id === activeId) : -1;
+  const active = activeIndex >= 0 ? list[activeIndex] : null;
   const ref = useReveal({ threshold: 0.05 });
+
+  useEffect(() => {
+    if (activeId && !list.some((it) => it.id === activeId)) {
+      setActiveId(null);
+    }
+  }, [activeId, list]);
+
+  const openLightbox = (id) => {
+    if (ILLO_IMAGES[id]) setActiveId(id);
+  };
+
+  const closeLightbox = () => setActiveId(null);
+
+  const stepLightbox = (direction) => {
+    if (activeIndex < 0) return;
+    const withImages = list.filter((it) => ILLO_IMAGES[it.id]);
+    const currentInView = withImages.findIndex((it) => it.id === activeId);
+    if (currentInView < 0) return;
+
+    const nextIndex =
+      direction === "next"
+        ? (currentInView + 1) % withImages.length
+        : (currentInView - 1 + withImages.length) % withImages.length;
+
+    setActiveId(withImages[nextIndex].id);
+  };
+
+  const viewable = list.filter((it) => ILLO_IMAGES[it.id]);
 
   return (
     <main className="site-main" ref={ref}>
@@ -80,9 +114,16 @@ export default function IllustrationsPage() {
             data-delay={String(Math.min(i + 1, 6))}
           >
             {ILLO_IMAGES[it.id] && (
-              <div className="archive__real-img" style={{ aspectRatio: it.ratio }}>
-                <img src={ILLO_IMAGES[it.id]} alt={it.label} />
-              </div>
+              <button
+                type="button"
+                className="archive__real-img archive__real-img--btn"
+                style={{ aspectRatio: it.ratio }}
+                onClick={() => openLightbox(it.id)}
+                aria-label={`View ${it.label} full size`}
+              >
+                <img src={ILLO_IMAGES[it.id]} alt="" />
+                <span className="archive__expand-hint" aria-hidden="true">View larger</span>
+              </button>
             )}
             <figcaption className="archive__caption">
               <span className="archive__caption-no">{it.no}</span>
@@ -93,7 +134,6 @@ export default function IllustrationsPage() {
                 </span>
               </div>
             </figcaption>
-            <p className="archive__note">{it.note}</p>
           </figure>
         ))}
       </div>
@@ -104,6 +144,18 @@ export default function IllustrationsPage() {
         </p>
         <Link to="/" className="hero__cta hero__cta--sm">← Back to home</Link>
       </footer>
+
+      {active && (
+        <IllustrationLightbox
+          item={active}
+          src={ILLO_IMAGES[active.id]}
+          onClose={closeLightbox}
+          onPrev={() => stepLightbox("prev")}
+          onNext={() => stepLightbox("next")}
+          hasPrev={viewable.length > 1}
+          hasNext={viewable.length > 1}
+        />
+      )}
     </main>
   );
 }

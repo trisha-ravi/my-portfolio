@@ -60,19 +60,19 @@ export const PROJECTS = [
     summary:
       "A mobile-first Spotify analytics app redesigned for year-round discovery. Built natively on Android with Jetpack Compose, it offers touch-optimized visualizations, AI-powered pattern insights, and real-time Spotify API sync — because music data shouldn't only surface once a year.",
     role: "Solo Designer & Developer",
-    tags: ["Android", "Kotlin", "UX Research", "Figma"],
+    tags: ["Android Studio", "Kotlin", "UX Research", "Figma"],
     swatch: "#231f1c",
     context:
       "Spotify Wrapped is a cultural phenomenon — but music insights locked to one day a year create a frustrating gap. 85% of users interviewed wanted year-round access. 92% of streaming happens on mobile, yet analytics were built for quick social sharing, not deep personal discovery. I set out to fix both.",
     problem:
       "Three compounding pain points: music data only surfaces once a year in December; the mobile experience is optimized for shareability over exploration; and surface-level metrics (top songs, top artists) never explain why tastes evolve. Competitive analysis confirmed no existing solution — Last.fm, Apple Music Replay, Stats.fm — solved for mobile-first, continuous, meaningful analytics.",
     approach:
-      "Started with user interviews and competitive analysis to validate the problem, then moved through paper wireframes → Figma prototypes → native Android build. Core decisions: mobile-first architecture with thumb-friendly navigation and progressive disclosure across three levels (overview cards → expandable details → full-screen deep dives); real-time Spotify API sync with offline caching; touch-responsive charts with pinch, zoom, and swipe; and AI-powered mood and pattern analysis that explains listening shifts in plain language. Built with Jetpack Compose, Material Design 3, and a 40+ component Figma design system that translated to Android at 95% visual fidelity.",
+      "Started with user interviews and competitive analysis to validate the problem, then moved through paper wireframes → Figma prototypes → native Android build in Android Studio. Core decisions: mobile-first architecture with thumb-friendly navigation and progressive disclosure across three levels (overview cards → expandable details → full-screen deep dives); real-time Spotify API sync with offline caching; touch-responsive charts with pinch, zoom, and swipe; and AI-powered mood and pattern analysis that explains listening shifts in plain language. Built with Jetpack Compose, Material Design 3, and a 40+ component Figma design system that translated to Android at 95% visual fidelity.",
     outcome:
       "Tested with 12 users: 100% preferred year-round access over the annual format; 10 of 12 found mobile visualizations significantly easier to explore than Spotify's web interface. Achieved consistent 60fps with 10,000+ listening records; offline caching cut API calls by 70%; average load time under 1.2 seconds. Design system reduced iteration time by 50%. Key learning: performance is a feature — users abandon interactions that feel sluggish, regardless of utility.",
     team: "Solo",
     duration: "Feb 2024 — Mar 2024",
-    platform: "Android · Java/Kotlin · Firebase · Material Design 3",
+    platform: "Android Studio · Kotlin · Firebase · Material Design 3",
     links: [{ label: "View project", href: "https://mewkat36.wixstudio.com/spotifywrapped" }],
   },
 ];
@@ -104,6 +104,16 @@ export const ILLUSTRATIONS = [
     ratio: "1 / 1",
     swatch: "#d4c9b0",
     note: "On-location sketch — doodles layered over a café shot. Part of an ongoing series of annotated places.",
+  },
+  {
+    id: "i00c",
+    no: "03",
+    label: "Unity in Contrast",
+    series: "3D",
+    year: "2026",
+    ratio: "3 / 4",
+    swatch: "#d4d4d4",
+    note: "Spent some time on this one. Six shapes, one center. Somewhere between black and bronze I started thinking about how things don't need to match to belong together. They just need to hold the same shape, the same direction.\n\nNot everything has to match to belong.",
   },
 ];
 

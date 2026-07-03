@@ -193,7 +193,7 @@ export default {
       id: "wireframes",
       title: "Wireframes",
       body:
-        "Paper wireframes tested thumb reach and navigation patterns, followed by Figma mid-fidelity layouts for the three-level progressive disclosure model before building in Jetpack Compose.",
+        "Paper wireframes tested thumb reach and navigation patterns, followed by Figma mid-fidelity layouts for the three-level progressive disclosure model before building in Android Studio with Jetpack Compose.",
     },
     {
       id: "visual",
