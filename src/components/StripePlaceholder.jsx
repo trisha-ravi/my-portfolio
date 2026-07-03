@@ -1,4 +1,4 @@
-import { shade } from "../utils";
+import { shade } from "../lib/utils";
 
 export default function StripePlaceholder({
   label,

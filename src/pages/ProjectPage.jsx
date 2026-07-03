@@ -4,7 +4,7 @@ import { ProjectShowcaseMedia } from "../components/ProjectMedia";
 import PageNav from "../components/PageNav";
 import { getVisibleProjects } from "../data";
 import NotFound from "./NotFound";
-import { getProjectMedia } from "../projectImages";
+import { getProjectMedia } from "../data/projectImages";
 import { getCaseStudy } from "../data/caseStudies";
 import ProjectCaseStudy from "../components/ProjectCaseStudy";
 

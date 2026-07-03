@@ -159,6 +159,18 @@ export const ROLES = [
   {
     no: "03",
     role: "Software Engineering Intern",
+    org: "JobAiro",
+    time: "Jun 2026 — Present",
+    where: "Remote",
+    bullets: [
+      "Own features end-to-end as a product designer and full-stack engineer — shaping UX and product direction, then building it out across frontend and backend.",
+      "Design and build both the interface and the services behind it, wiring UI to APIs, backend logic, and data.",
+      "Drive architecture decisions — structuring systems and data models so features stay clean and scale.",
+    ],
+  },
+  {
+    no: "04",
+    role: "Software Engineering Intern",
     org: "Narb",
     time: "May 2025 — Aug 2025",
     where: "Atlanta, GA",
@@ -169,7 +181,7 @@ export const ROLES = [
     ],
   },
   {
-    no: "04",
+    no: "05",
     role: "Co-Founder",
     org: "Apex Reviews — GT CREATE-X",
     time: "Aug 2024 — Present",
@@ -181,7 +193,7 @@ export const ROLES = [
     ],
   },
   {
-    no: "05",
+    no: "06",
     role: "Undergraduate Researcher",
     org: "PARCE-Lab — Georgia Tech",
     time: "Jan 2025 — May 2025",
@@ -192,7 +204,7 @@ export const ROLES = [
     ],
   },
   {
-    no: "06",
+    no: "07",
     role: "Associate Director & Graphic Designer",
     org: "Artificial Intelligence @ GT",
     time: "Mar 2024 — Present",

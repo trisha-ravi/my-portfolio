@@ -669,7 +669,7 @@ main > section:first-child {
   justify-content: space-between;
   margin-bottom: 56px;
 }
-.about__grid {
+.about__top {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 80px;
@@ -705,22 +705,22 @@ main > section:first-child {
 }
 .about__portrait-tag span:first-child { color: var(--accent); }
 
-.about__copy { padding-top: 8px; }
+.about__intro { padding-top: 8px; }
 .about__kicker {
   font-family: var(--sans);
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-mute);
-  margin: 0 0 28px;
+  margin: 0 0 24px;
 }
 .about__headline {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(34px, 4.4vw, 64px);
-  line-height: 1;
+  font-size: clamp(36px, 4.8vw, 68px);
+  line-height: 1.04;
   letter-spacing: -0.02em;
-  margin: 0 0 48px;
+  margin: 0 0 64px;
   text-wrap: pretty;
 }
 .about__headline .italic { font-size: 1.05em; }
@@ -740,36 +740,37 @@ main > section:first-child {
   opacity: 0.7;
   pointer-events: none;
 }
-.about__bio {
-  max-width: 520px;
-  color: var(--ink-soft);
-  font-size: 15.5px;
-  line-height: 1.65;
-}
-.about__bio p { margin: 0 0 18px; }
-
-.about__facts {
-  margin: 48px 0 0;
-  border-top: 1px solid var(--line);
-  padding-top: 28px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px 40px;
-}
-.about__facts > div { display: flex; gap: 16px; }
-.about__facts dt {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  width: 80px;
-  padding-top: 3px;
-}
-.about__facts dd {
+/* ───────── about note ───────── */
+.about-note {
+  max-width: 560px;
   margin: 0;
-  font-size: 14px;
+}
+.about-note__body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.about-note__body p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.about-note__body p.about-note__lead {
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.4;
   color: var(--ink);
+}
+.about-note__body .italic,
+.about-note__body em {
+  font-style: italic;
+  color: var(--ink);
+}
+.about-note__body p.about-note__sign {
+  margin-top: 6px;
+  font-style: italic;
+  color: var(--ink-mute);
 }
 
 /* ───────── work ───────── */
@@ -1310,7 +1311,7 @@ main > section:first-child {
   .home-projects__grid--bento .home-projects__card {
     border-radius: 16px;
   }
-  .hero__bottom, .about__grid, .coding__top, .foot__main {
+  .hero__bottom, .about__top, .coding__top, .foot__main {
     grid-template-columns: 1fr;
     gap: 40px;
   }

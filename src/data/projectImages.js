@@ -1,6 +1,6 @@
-import apexImg from "./assets/apex-reviews.png";
-import spotifyImg from "./assets/spotifywrapped.png";
-import moodlesPortfolio from "./assets/moodles-portfolio.png";
+import apexImg from "../assets/apex-reviews.png";
+import spotifyImg from "../assets/spotifywrapped.png";
+import moodlesPortfolio from "../assets/moodles-portfolio.png";
 
 export const PROJECT_IMAGES = {
   "apex-reviews": [apexImg],

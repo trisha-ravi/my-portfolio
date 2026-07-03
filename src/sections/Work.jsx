@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { getVisibleProjects } from "../data";
 import { useReveal } from "../hooks/useReveal";
 import { ProjectThumbnail } from "../components/ProjectMedia";
-import { getProjectMedia } from "../projectImages";
+import { getProjectMedia } from "../data/projectImages";
 
 const FILTERS = [
   { id: "all", label: "All" },
