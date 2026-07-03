@@ -3,8 +3,9 @@ import portrait from "../assets/portrait.jpg";
 import apexImg from "../assets/apex-reviews.png";
 import spotifyImg from "../assets/spotifywrapped.png";
 import { useReveal } from "../hooks/useReveal";
+import { useMagnetic } from "../hooks/useMagnetic";
 
-function HeroPill({ src, alt = "", wide = false, contain = false, portrait = false }) {
+function HeroPill({ src, alt = "", wide = false, contain = false, portrait = false, float = 0 }) {
   return (
     <span
       className={[
@@ -15,6 +16,7 @@ function HeroPill({ src, alt = "", wide = false, contain = false, portrait = fal
       ]
         .filter(Boolean)
         .join(" ")}
+      style={{ "--float-delay": `${float}s` }}
     >
       <img src={src} alt={alt} />
     </span>
@@ -23,6 +25,7 @@ function HeroPill({ src, alt = "", wide = false, contain = false, portrait = fal
 
 export default function Hero() {
   const ref = useReveal({ threshold: 0.05 });
+  const ctaRef = useMagnetic({ strength: 0.4 });
 
   return (
     <section className="hero" data-screen-label="01 Hero" ref={ref}>
@@ -31,17 +34,17 @@ export default function Hero() {
           <span className="hero__line" data-reveal data-delay="1">
             <span className="hero__bold">I&apos;m </span>
             <span className="hero__italic">Trisha</span>
-            <HeroPill src={portrait} wide portrait alt="Trisha Ravichandran" />
+            <HeroPill src={portrait} wide portrait alt="Trisha Ravichandran" float={0} />
           </span>
           <span className="hero__line" data-reveal data-delay="2">
             <span className="hero__bold">a UX/Product </span>
-            <HeroPill src={apexImg} />
+            <HeroPill src={apexImg} float={0.9} />
             <span className="hero__italic">Designer</span>
           </span>
           <span className="hero__line" data-reveal data-delay="3">
             <span className="hero__bold">based in </span>
             <span className="hero__italic">Atlanta</span>
-            <HeroPill src={spotifyImg} />
+            <HeroPill src={spotifyImg} float={1.7} />
           </span>
         </h1>
 
@@ -51,9 +54,11 @@ export default function Hero() {
           CS · HCI at <em>Georgia Tech</em>. Currently testing AI search at Google &amp; leading iOS at GT Dev Club.
         </p>
 
-        <Link className="hero__cta" to="/work" data-reveal data-delay="5">
-          <span>See the work</span>
-          <span className="hero__cta-icon" aria-hidden="true">↗</span>
+        <Link className="hero__cta" to="/work" data-reveal data-delay="5" ref={ctaRef}>
+          <span className="hero__cta-label">
+            <span>See the work</span>
+            <span className="hero__cta-icon" aria-hidden="true">↗</span>
+          </span>
         </Link>
       </div>
     </section>
