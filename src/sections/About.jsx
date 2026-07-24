@@ -1,4 +1,5 @@
 import Scribble from "../components/Scribble";
+import Typewriter from "../components/Typewriter";
 import portrait from "../assets/portrait.jpg";
 import { useReveal } from "../hooks/useReveal";
 
@@ -32,33 +33,40 @@ export default function About() {
           <div className="about-note" data-reveal data-delay="3">
             <div className="about-note__body">
               <p className="about-note__lead">
-                hi! I'm Trisha, and I have a slight obsession with making things
-                feel like they <span className="italic">get you</span> 🌻
+                hi! I'm Trisha, and this whole thing started with a soft
+                obsession: making products feel like they{" "}
+                <span className="italic">get you</span> 🌻
               </p>
               <p>
-                I'm currently at Georgia Tech studying computer science, with a
-                soft spot for Human-Computer Interaction — basically the art of
-                making things not just work, but feel like they actually
-                understand you.
+                I landed at Georgia Tech studying Literature, Media, and
+                Communication with a focus on Human Computer Interaction,
+                because I kept noticing the same gap everywhere. Tools that
+                worked fine on paper, then fell apart the moment a real person
+                tried to live with them. LMC gave me the language for that gap.
+                HCI gave me a way to close it.
               </p>
               <p>
-                I'm always sneaking in side projects whenever I get the itch to
-                build something. that itch has turned into a couple of
-                job-hunting tools and a tiny app called <em>Moodles</em> —
-                twelve cute little faces, one tap a day, for tracking how you're
-                feeling.
+                Somewhere along the way the itch to build stopped being optional.
+                Side projects piled up: little job hunting tools, unfinished
+                experiments, and then <em>Moodles</em>: twelve illustrated
+                faces, one tap a day, for tracking how you feel without turning
+                wellness into homework. That one stuck, because it was the first
+                time the design and the code were answering the same question:
+                how do you make something people will actually come back to?
               </p>
               <p>
-                I've got a thing for clean, editorial, slightly vintage design,
-                and I'm always thinking about how to make technology feel a
-                little more human — especially now that AI is changing so much
-                of what this field looks like.
+                These days I'm testing AI search at Google and leading iOS design
+                at GT Dev Club, still chasing that same thread. Clean,
+                editorial, slightly vintage interfaces that feel human even as
+                the tech underneath gets stranger. Graduating in 2027, still
+                figuring out the next chapter, and honestly pretty excited about
+                not knowing it yet.
               </p>
-              <p>
-                graduating in 2027, still figuring out what's next, and
-                genuinely excited about it.
-              </p>
-              <p className="about-note__sign">to be continued. 🤍</p>
+              <Typewriter
+                as="p"
+                className="about-note__sign"
+                text="to be continued. 🤍"
+              />
             </div>
           </div>
         </div>

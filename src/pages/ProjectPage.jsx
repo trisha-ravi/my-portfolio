@@ -99,6 +99,27 @@ export default function ProjectPage() {
           </div>
         </header>
 
+        {(project.problem || project.approach) && (
+          <section
+            className="project__story project__story--blur"
+            style={{ animationDelay: "1s" }}
+            aria-label="Problem and solution"
+          >
+            {project.problem && (
+              <div className="project__story-block">
+                <h2 className="project__story-label">Problem</h2>
+                <p className="project__story-text">{project.problem}</p>
+              </div>
+            )}
+            {project.approach && (
+              <div className="project__story-block">
+                <h2 className="project__story-label">Solution</h2>
+                <p className="project__story-text">{project.approach}</p>
+              </div>
+            )}
+          </section>
+        )}
+
         {caseStudy && <ProjectCaseStudy study={caseStudy} project={project} />}
 
         {gallery.length > 0 && (

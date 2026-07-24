@@ -6,7 +6,6 @@ import { ILLUSTRATIONS, ILLUSTRATION_SERIES } from "../data";
 import aigt from "../assets/aigt.png";
 import cafeDoodle from "../assets/cafe_doodle.png";
 import unityInContrast from "../assets/unity-in-contrast.png";
-import oceanTrio from "../assets/ocean-trio.png";
 import mAnimated from "../assets/manimated.png";
 import { useReveal } from "../hooks/useReveal";
 
@@ -14,7 +13,6 @@ const ILLO_IMAGES = {
   "i00a": aigt,
   "i00b": cafeDoodle,
   "i00c": unityInContrast,
-  "i00d": oceanTrio,
 };
 
 const SERIES = ["All", ...ILLUSTRATION_SERIES];

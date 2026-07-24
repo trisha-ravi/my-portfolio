@@ -1,7 +1,8 @@
 export default {
   overview: {
+    title: "Overview",
     what:
-      "A mobile-first Spotify analytics app redesigned for year-round discovery — touch-optimized visualizations, AI-powered pattern insights, and real-time Spotify API sync on native Android.",
+      "Spotify Wrapped is beloved — but locking music insights to one day a year leaves a year-long gap. This native Android app makes discovery continuous: touch-first visualizations, real-time Spotify sync, and AI insights that explain how tastes shift, not just what topped December.",
     role: "Solo Designer & Developer",
     timeline: "Feb 2024 — Mar 2024",
     team: "Solo",
@@ -9,165 +10,117 @@ export default {
   sections: [
     {
       id: "problem",
-      title: "The Problem",
+      title: "The problem",
       body:
-        "Spotify Wrapped is a cultural phenomenon — but music insights locked to one day a year create a frustrating gap for users who want to understand their listening habits continuously.",
+        "Spotify Wrapped is a cultural phenomenon, but music insights locked to one day a year create a frustrating gap for people who want to understand their listening habits continuously — on the phone where they actually stream.",
       subsections: [
         {
-          title: "Who has the problem?",
+          title: "Who has this problem",
           body:
-            "Mobile-first Spotify listeners who want to explore their taste evolution year-round — not just share a December recap.",
+            "Mobile-first Spotify listeners who want to explore how their taste evolves year-round — not just share a December recap when everyone else posts theirs.",
         },
         {
-          title: "Why is it important?",
+          title: "Why it matters",
           body:
-            "Music data can reveal mood patterns, discovery habits, and taste shifts — but only if it's accessible when users actually want to explore it.",
+            "Music data can reveal mood patterns, discovery habits, and taste shifts — but only if it's available when curiosity hits, not eleven months later as a nostalgia card.",
         },
         {
-          title: "Evidence",
-          list: [
-            "85% of users interviewed wanted year-round access to listening analytics.",
-            "92% of streaming happens on mobile, yet analytics experiences were built for quick social sharing, not deep exploration.",
-            "Competitive analysis of Last.fm, Apple Music Replay, and Stats.fm confirmed no solution optimized for mobile-first, continuous, meaningful analytics.",
+          title: "What the research showed",
+          bodies: [
+            "Competitive analysis of Last.fm, Apple Music Replay, Stats.fm, and Spotify's own Wrapped experience surfaced a consistent gap: annual-only access, desktop-first analytics, and surface-level metrics that never explained why taste changed. Nothing optimized for continuous, mobile-first, meaningful exploration.",
+            "I interviewed twelve Spotify users about how they used Wrapped and what they wished they could see the rest of the year. Three quotes shaped almost everything that came after:",
           ],
-        },
-      ],
-    },
-    {
-      id: "goals",
-      title: "Goals & Success Metrics",
-      list: [
-        "Enable year-round music discovery and self-reflection",
-        "Design a mobile-first experience optimized for thumb reach and touch",
-        "Explain taste evolution with AI-powered insights, not just top-10 lists",
-        "Achieve sub-2-second load times with 10,000+ listening records",
-        "Validate that users prefer continuous access over annual-only formats",
-      ],
-    },
-    {
-      id: "research",
-      title: "Research",
-      subsections: [
-        {
-          title: "Competitive Analysis",
-          body: "Compared Last.fm, Apple Music Replay, Stats.fm, and Spotify's own Wrapped experience.",
-          lists: [
-            {
-              label: "What works",
-              items: [
-                "Shareable recap cards",
-                "Top artists and songs summaries",
-                "Genre breakdowns",
-              ],
-            },
-            {
-              label: "Gaps",
-              items: [
-                "Annual-only access (Spotify Wrapped)",
-                "Desktop-first analytics (Last.fm)",
-                "Surface-level metrics without context",
-                "No mobile-optimized deep exploration",
-              ],
-            },
-          ],
-        },
-        {
-          title: "User Interviews",
-          body: "Interviewed 12 Spotify users about how they interact with Wrapped and what they wish they could see year-round.",
-        },
-        {
-          title: "Key Insights",
           quotes: [
             "I love Wrapped but forget about it until December.",
             "I want to know why my taste changed, not just what changed.",
             "I tried Last.fm but the mobile experience felt like a website, not an app.",
           ],
+          after:
+            "That second quote changed the product. Top-ten lists answer what. They don't answer why. Any year-round tool that only repeated Wrapped's format — more often — would still leave the interesting question unsolved. The third quote locked the platform: if it didn't feel native on a phone, it wouldn't get used between Decembers.",
         },
         {
-          title: "Patterns & Surprises",
+          title: "Goals",
+          body:
+            "If the app worked, it would mean people could explore their listening habits whenever curiosity hit — without fighting a desktop tool on a phone:",
           list: [
-            "Users wanted progressive disclosure — overview first, details on demand.",
-            "Touch gestures (pinch, swipe) felt natural for exploring charts on mobile.",
-            "Performance mattered as much as features — sluggish charts killed engagement in testing.",
+            "Enable year-round music discovery and self-reflection",
+            "Design a mobile-first experience optimized for thumb reach and touch",
+            "Explain taste evolution with AI-powered insights, not just top-ten lists",
+            "Achieve sub-2-second load times with 10,000+ listening records",
+            "Validate that users prefer continuous access over annual-only formats",
           ],
         },
       ],
     },
     {
       id: "users",
-      title: "Define the User",
+      title: "Defining the user",
+      body:
+        "I built two lightweight personas out of the interviews, since the two clearest use cases had different appetites for depth on the same core need.",
       personas: [
         {
           name: "Morgan, 24 — Music Enthusiast",
           description:
-            "Listens 3+ hours daily, shares Wrapped every year, curious about taste evolution.",
-          needs: ["Year-round stats", "Shareable insights", "Genre and mood breakdowns"],
-          painPoints: ["Annual-only data", "Shallow metrics", "Desktop-only tools"],
-          motivations: ["Understand changing taste", "Discover patterns in listening"],
+            "Listens three or more hours daily, shares Wrapped every year, curious about taste evolution. Needs year-round stats, shareable insights, and genre or mood breakdowns — without being stuck waiting for December or bouncing to a desktop tool.",
         },
         {
           name: "Casey, 30 — Casual Listener",
           description:
-            "Uses Spotify daily but only engages with Wrapped when friends post about it.",
-          needs: ["Simple overview", "Quick load times", "Easy navigation"],
-          painPoints: ["Overwhelming data dashboards", "Slow apps", "Too many steps"],
-          motivations: ["Occasional curiosity about listening habits", "Low-effort exploration"],
+            "Uses Spotify daily but only engages with Wrapped when friends post about it. Needs a simple overview, quick load times, and easy navigation — curiosity without a dashboard that feels like homework.",
         },
       ],
-    },
-    {
-      id: "challenge",
-      title: "Problem Statement",
       challenge:
         "How might we give Spotify users meaningful, year-round listening insights on mobile — without the friction of desktop analytics tools?",
     },
     {
       id: "ideation",
-      title: "Ideation",
-      body: "Explored multiple approaches to mobile music analytics:",
-      list: [
-        "Wrapped-style annual cards only",
-        "Dashboard with all metrics visible",
-        "Progressive disclosure (overview → detail → deep dive)",
-        "Chat-based AI insights",
-        "Social comparison features",
-      ],
+      title: "Ideation: why progressive disclosure won",
+      body:
+        "I explored several approaches to mobile music analytics before committing to one, and each of the ones I rejected failed for a specific reason.",
       rejected: [
         {
+          concept: "Wrapped-style annual cards only",
+          reason:
+            "Kept the cultural format people loved, but preserved the exact access problem the project existed to solve. More polish on once-a-year wasn't year-round.",
+        },
+        {
           concept: "All-metrics dashboard",
-          reason: "Overwhelming on mobile — users couldn't find what they cared about.",
+          reason:
+            "Overwhelming on a phone. Users couldn't find what they cared about when everything competed at the same level.",
         },
         {
-          concept: "Chat-based AI",
-          reason: "Interesting but slower than visual exploration for music data.",
+          concept: "Chat-based AI insights",
+          reason:
+            "Interesting for open questions, but slower than visual exploration for music data people wanted to scan and poke at with their thumbs.",
         },
         {
-          concept: "Social comparison",
-          reason: "Out of scope for v1; privacy concerns in interviews.",
+          concept: "Social comparison features",
+          reason:
+            "Out of scope for v1, and privacy concerns showed up early in interviews. Better as a later layer than a launch dependency.",
         },
       ],
       footer:
-        "Progressive disclosure won — three levels (overview cards → expandable details → full-screen deep dives) matched how users wanted to explore.",
+        "Progressive disclosure won — three levels: overview cards, expandable details, full-screen deep dives. It matched how people wanted to explore: light by default, deeper on demand. That pattern is the thread that runs through almost every decision after this one.",
     },
     {
       id: "ia",
-      title: "Information Architecture",
+      title: "Information architecture",
       subsections: [
         {
           title: "Navigation",
           body:
-            "Bottom tab bar with thumb-friendly reach: Overview, Artists, Tracks, Insights, and Profile. Primary content lives within one thumb zone.",
+            "A bottom tab bar with thumb-friendly reach: Overview, Artists, Tracks, Insights, and Profile. Primary content lives inside one thumb zone so exploration never requires a stretch across the screen.",
         },
         {
-          title: "Feature Prioritization",
+          title: "Feature prioritization",
           list: [
-            "Must-have: Spotify API sync, overview cards, top artists/tracks",
-            "Should-have: touch-responsive charts, offline caching, AI insights",
-            "Nice-to-have: mood analysis, shareable cards, listening timeline",
+            "Must have: Spotify API sync, overview cards, top artists and tracks",
+            "Should have: touch-responsive charts, offline caching, AI insights",
+            "Nice to have: mood analysis, shareable cards, listening timeline",
           ],
         },
         {
-          title: "User Flow",
+          title: "User flow",
           steps: [
             "Connect Spotify account",
             "Overview dashboard",
@@ -178,53 +131,55 @@ export default {
           ],
         },
         {
-          title: "Site Map",
+          title: "Site map",
           list: [
-            "Overview → Summary cards → Expanded detail → Full-screen chart",
-            "Artists → Ranked list → Artist detail → Related tracks",
-            "Tracks → Ranked list → Track detail → Play count timeline",
-            "Insights → AI-generated patterns → Explanation cards",
-            "Profile → Account, sync status, settings",
+            "Overview → summary cards → expanded detail → full-screen chart",
+            "Artists → ranked list → artist detail → related tracks",
+            "Tracks → ranked list → track detail → play count timeline",
+            "Insights → AI-generated patterns → explanation cards",
+            "Profile → account, sync status, settings",
           ],
         },
       ],
-    },
-    {
-      id: "wireframes",
-      title: "Wireframes",
-      body:
-        "Paper wireframes tested thumb reach and navigation patterns, followed by Figma mid-fidelity layouts for the three-level progressive disclosure model before building in Android Studio with Jetpack Compose.",
+      footer:
+        "The three-level model keeps Overview calm for casual curiosity while still giving enthusiasts a path into charts and AI explanations — without forcing either user through the other's preferred depth.",
     },
     {
       id: "visual",
-      title: "Visual Design",
+      title: "Visual design",
       subsections: [
         {
-          title: "Brand Personality",
+          title: "Brand personality",
           list: ["Bold", "Data-rich", "Mobile-native", "Spotify-adjacent", "Exploratory"],
         },
         {
-          title: "Color & Typography",
+          title: "Color and typography",
           body:
-            "Material Design 3 dark theme with Spotify-inspired accent colors. Typography scales for readability on small screens with clear hierarchy between metrics and labels.",
+            "Material Design 3 dark theme with Spotify-inspired accent colors. Typography scales for readability on small screens, with clear hierarchy between metrics and labels so dense data still scans.",
         },
         {
-          title: "Design System",
+          title: "Design system",
           body:
-            "40+ component Figma design system translated to Android at 95% visual fidelity — cards, charts, tab bar, insight chips, and loading skeletons.",
+            "A 40+ component Figma system translated to Android at about 95% visual fidelity — cards, charts, tab bar, insight chips, and loading skeletons — so the Compose build stayed consistent as features landed.",
+        },
+        {
+          title: "Microinteractions",
+          list: [
+            "Card expand and collapse with shared element transitions between overview and detail",
+            "Pinch-to-zoom on charts for exploring dense listening data",
+            "Swipe between time periods on trend visualizations",
+            "Pull-to-refresh for Spotify API sync with optimistic UI updates",
+            "Skeleton loading states during data fetch for perceived performance",
+          ],
         },
       ],
-    },
-    {
-      id: "screens",
-      title: "High-Fidelity Screens",
       screens: [
         {
           title: "Overview",
           body: "Summary cards for top artists, tracks, genres, and listening time — the entry point for exploration.",
         },
         {
-          title: "Artist / Track Detail",
+          title: "Artist / Track detail",
           body: "Expandable cards with play counts, trend lines, and related content for deeper discovery.",
         },
         {
@@ -232,43 +187,35 @@ export default {
           body: "AI-powered mood and pattern analysis explaining listening shifts in plain language.",
         },
         {
-          title: "Charts & Deep Dives",
+          title: "Charts and deep dives",
           body: "Full-screen touch-responsive visualizations with pinch, zoom, and swipe gestures.",
         },
       ],
     },
     {
-      id: "prototyping",
-      title: "Prototyping & Interactions",
-      list: [
-        "Card expand/collapse with shared element transitions between overview and detail",
-        "Pinch-to-zoom on charts for exploring dense listening data",
-        "Swipe between time periods on trend visualizations",
-        "Pull-to-refresh for Spotify API sync with optimistic UI updates",
-        "Skeleton loading states during data fetch for perceived performance",
-      ],
-    },
-    {
       id: "testing",
-      title: "Testing",
-      body: "Tested with 12 users using the Figma prototype and native Android build.",
+      title: "Testing and what changed because of it",
+      body:
+        "I tested with twelve users across a Figma prototype and the native Android build.",
       findings: [
         {
-          label: "What users struggled with",
+          label: "What people struggled with",
           items: [
-            "Initial chart density was too high on small screens — labels overlapped.",
-            "Some users didn't discover the expand gesture on overview cards.",
+            "Initial chart density was too high on small screens — labels overlapped",
+            "Some users didn't discover the expand gesture on overview cards",
           ],
         },
         {
-          label: "What changed afterward",
+          label: "What I changed in response",
           items: [
-            "Simplified chart labels and increased tap targets.",
-            "Added visual affordance (chevron + 'tap to expand') on overview cards.",
-            "Implemented offline caching after users reported frustration with slow reloads.",
+            "Simplified chart labels and increased tap targets",
+            "Added a visual affordance — chevron plus tap to expand — on overview cards",
+            "Implemented offline caching after users reported frustration with slow reloads",
           ],
         },
       ],
+      footer:
+        "None of these were aesthetic preferences. Each one came from watching where people hesitated or abandoned a screen.",
     },
     {
       id: "accessibility",
@@ -280,48 +227,51 @@ export default {
         "Content descriptions on charts for screen reader users",
         "Reduced motion option for card transitions and chart animations",
       ],
+      footer:
+        "Year-round access only matters if the charts are actually usable — including for people who rely on larger type, screen readers, or reduced motion.",
     },
     {
       id: "product-thinking",
-      title: "Product Thinking",
+      title: "Product thinking",
       items: [
         {
           label: "Year-round vs. annual",
-          text: "100% of tested users preferred year-round access — the core differentiator over Spotify Wrapped.",
+          text: "100% of tested users preferred year-round access. That preference is the core differentiator over Spotify Wrapped, not a secondary nice-to-have.",
         },
         {
           label: "Progressive disclosure",
-          text: "Three levels of detail prevent overwhelm while still serving power users who want deep dives.",
+          text: "Three levels of detail prevent overwhelm while still serving power users who want deep dives. Default light, optional deep.",
         },
         {
           label: "Performance as a feature",
-          text: "Users abandon sluggish interactions regardless of utility — 60fps and sub-1.2s load times were non-negotiable.",
+          text: "Users abandon sluggish interactions regardless of utility. Consistent 60fps and sub-1.2s loads were non-negotiable, not polish.",
         },
         {
-          label: "Edge case: sparse listeners",
-          text: "Users with fewer than 100 plays see encouragement messaging instead of empty charts.",
+          label: "Sparse listeners",
+          text: "Users with fewer than 100 plays see encouragement messaging instead of empty charts — so early curiosity doesn't look like a broken product.",
         },
       ],
     },
     {
       id: "measuring",
-      title: "Measuring Success",
-      metricGroups: [
+      title: "Measuring success",
+      body: "I'd track this across four layers:",
+      items: [
         {
-          title: "Engagement",
-          items: ["Daily active users", "Card expansion rate", "Deep dive session length"],
+          label: "Engagement",
+          text: "daily active users, card expansion rate, deep dive session length",
         },
         {
-          title: "Performance",
-          items: ["Average load time (target: under 1.2s)", "Frame rate consistency (60fps)", "API call reduction via caching (achieved 70%)"],
+          label: "Performance",
+          text: "average load time under 1.2s, frame rate consistency at 60fps, API call reduction via caching — achieved 70%",
         },
         {
-          title: "Retention",
-          items: ["7-day return rate", "Sync frequency"],
+          label: "Retention",
+          text: "7-day return rate, sync frequency",
         },
         {
-          title: "Satisfaction",
-          items: ["Preference for year-round vs. annual (100% in testing)", "Mobile visualization ease (10 of 12 rated significantly easier)"],
+          label: "Satisfaction",
+          text: "preference for year-round vs. annual — 100% in testing; mobile visualization ease — 10 of 12 rated significantly easier",
         },
       ],
     },
@@ -330,20 +280,20 @@ export default {
       title: "Reflection",
       reflection: {
         worked:
-          "Progressive disclosure matched natural mobile exploration patterns. Native Android performance (60fps, offline caching) made the experience feel premium compared to web-wrapped competitors.",
+          "Progressive disclosure matched natural mobile exploration patterns. Native Android performance — 60fps, offline caching — made the experience feel premium compared to web-wrapped competitors.",
         didnt:
-          "First chart designs were too dense — I underestimated how much simplification mobile screens require.",
+          "First chart designs were too dense. I underestimated how much simplification small screens require.",
         surprised:
           "Performance feedback was as strong as feature feedback. Users noticed speed before they noticed AI insights.",
         improve:
-          "I'd run a longer longitudinal study to see if year-round access actually changes listening behavior, not just satisfaction.",
+          "I'd run a longer longitudinal study to see if year-round access actually changes listening behavior, not just satisfaction scores.",
         learned:
           "Performance is a feature. Users abandon interactions that feel sluggish, regardless of how useful the data is.",
       },
     },
     {
       id: "next-steps",
-      title: "Next Steps",
+      title: "Next steps",
       list: [
         "iOS version with SwiftUI",
         "Social sharing cards for individual insights",

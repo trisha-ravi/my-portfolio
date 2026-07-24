@@ -76,6 +76,11 @@ function CaseSubsection({ sub }) {
   return (
     <div className="case__block">
       <h3 className="case__subheading">{sub.title}</h3>
+      {sub.bodies?.map((paragraph) => (
+        <p key={paragraph.slice(0, 48)} className="case__text">
+          {paragraph}
+        </p>
+      ))}
       {sub.body && <p className="case__text">{sub.body}</p>}
       {sub.lists?.map((group) => (
         <div key={group.label} className="case__list-group">
@@ -88,6 +93,7 @@ function CaseSubsection({ sub }) {
           {quote}
         </blockquote>
       ))}
+      {sub.after && <p className="case__text case__text--after">{sub.after}</p>}
       {sub.list && <CaseList items={sub.list} />}
       {sub.steps && <CaseFlow steps={sub.steps} />}
       {sub.images && <CaseImages images={sub.images} />}
@@ -129,7 +135,6 @@ function CasePersonas({ personas }) {
 function CaseRejected({ items }) {
   return (
     <div className="case__rejected">
-      <p className="case__list-label">Alternatives rejected</p>
       {items.map((item) => (
         <p key={item.concept} className="case__principle">
           <strong>{item.concept}</strong> — {item.reason}
@@ -197,13 +202,13 @@ function CaseSection({ section }) {
         <h3 className="case__subheading case__subheading--solution">{section.subtitle}</h3>
       )}
 
-      {section.body && <p className="case__text">{section.body}</p>}
+      {section.bodies?.map((paragraph) => (
+        <p key={paragraph.slice(0, 48)} className="case__text">
+          {paragraph}
+        </p>
+      ))}
 
-      {section.challenge && (
-        <blockquote className="case__quote case__quote--challenge">
-          {section.challenge}
-        </blockquote>
-      )}
+      {section.body && <p className="case__text">{section.body}</p>}
 
       {section.subsections?.map((sub) => (
         <CaseSubsection key={sub.title} sub={sub} />
@@ -211,23 +216,27 @@ function CaseSection({ section }) {
 
       {section.personas && <CasePersonas personas={section.personas} />}
 
+      {section.challenge && (
+        <blockquote className="case__quote case__quote--challenge">
+          {section.challenge}
+        </blockquote>
+      )}
+
       {section.items?.map((item) => (
         <p key={item.label} className="case__principle">
           <strong>{item.label}</strong> — {item.text}
         </p>
       ))}
 
-      {section.list && <CaseList items={section.list} />}
-
       {section.rejected && <CaseRejected items={section.rejected} />}
 
-      {section.footer && <p className="case__text case__text--after">{section.footer}</p>}
+      {section.list && <CaseList items={section.list} />}
 
       {section.steps && <CaseFlow steps={section.steps} />}
 
-      {section.images && <CaseImages images={section.images} />}
-
       {section.screens && <CaseScreens screens={section.screens} />}
+
+      {section.images && <CaseImages images={section.images} />}
 
       {section.findings && <CaseFindings findings={section.findings} />}
 
@@ -239,6 +248,8 @@ function CaseSection({ section }) {
           <CaseList items={group.items} />
         </div>
       ))}
+
+      {section.footer && <p className="case__text case__text--after">{section.footer}</p>}
     </section>
   );
 }
@@ -252,8 +263,13 @@ export default function ProjectCaseStudy({ study, project }) {
   return (
     <div className={`case case--${project.slug}`}>
       <section className="case__section case__section--overview" id="overview">
-        <h2 className="case__heading">Project Overview</h2>
-        <p className="case__text">{overview.what}</p>
+        <h2 className="case__heading">{overview.title ?? "Overview"}</h2>
+        {overview.bodies?.map((paragraph) => (
+          <p key={paragraph.slice(0, 48)} className="case__text">
+            {paragraph}
+          </p>
+        ))}
+        {overview.what && <p className="case__text">{overview.what}</p>}
 
         <dl className="case__meta">
           <div>

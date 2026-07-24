@@ -3,240 +3,193 @@ import moodlesCare from "../../assets/moodles-care.png";
 
 export default {
   overview: {
+    title: "Overview",
     what:
-      "Moodles is a mood-tracking app that uses 12 expressive illustrated faces to help users log how they feel in one tap — no journaling required.",
+      "Moodles is a mood tracking app built around one idea: logging how you feel shouldn't take longer than feeling it. Instead of journaling, users tap one of twelve illustrated faces. No typing, no required text, no multi step flow. The whole interaction is designed to fit inside five seconds.",
     role: "Product Designer (UX/UI)",
-    timeline: "4–6 weeks (concept project)",
+    timeline: "4 to 6 weeks (concept project)",
     team: "Solo",
   },
   sections: [
     {
       id: "problem",
-      title: "The Problem",
+      title: "The problem",
       body:
-        "People abandon mood-tracking apps because daily journaling takes too much time and effort. What starts as a wellness habit quickly becomes another task on an already full to-do list.",
+        "Most mood tracking apps get abandoned within weeks. I wanted to understand why, not guess at it, so I started with competitive analysis and five user interviews before designing anything.",
       subsections: [
         {
-          title: "Who has the problem?",
+          title: "Who has this problem",
           body:
-            "Students, busy professionals, and anyone curious about their emotional patterns — especially people who have tried wellness or journaling apps before but couldn't stick with them.",
+            "Students, busy professionals, and anyone who's tried a wellness or journaling app before and quietly stopped using it.",
         },
         {
-          title: "Why is it important?",
+          title: "Why it matters",
           body:
-            "Emotional awareness supports better decision-making, stress management, and self-understanding. But that only works if check-ins happen consistently — and most apps make consistency hard.",
+            "Emotional awareness supports better decision making and stress management, but only if the check in habit actually holds. Most apps make that habit hard to keep.",
         },
         {
-          title: "Evidence",
-          list: [
-            "Competitive analysis showed most mood apps require typing, multi-step flows, or lengthy onboarding.",
-            "Five user interviews revealed a shared pattern: users want to track mood, but skip when it takes longer than a minute.",
-            "Interviewees described knowing how they feel but struggling to describe it in words — a friction point journaling-heavy apps don't solve.",
+          title: "What the research showed",
+          bodies: [
+            "Competitive analysis of existing mood apps surfaced a consistent set of pain points: too much typing, too many mood options, complicated onboarding, and information overload for what's supposed to be a thirty second daily habit.",
+            "The interviews sharpened that further. Three quotes shaped almost everything that came after:",
           ],
-        },
-      ],
-    },
-    {
-      id: "goals",
-      title: "Goals & Success Metrics",
-      body: "If Moodles launched, success would mean users actually build the habit — not just download the app.",
-      list: [
-        "Increase daily check-ins by making logging take under five seconds",
-        "Reduce friction by removing journaling as a required step",
-        "Improve retention through low-pressure, repeatable interactions",
-        "Make mood tracking accessible to users who find writing difficult",
-        "Surface useful insights without overwhelming users with data",
-      ],
-    },
-    {
-      id: "research",
-      title: "Research",
-      subsections: [
-        {
-          title: "Competitive Analysis",
-          body: "I reviewed several mood-tracking apps to identify common patterns across the category.",
-          lists: [
-            {
-              label: "What works",
-              items: [
-                "Mood history and trends",
-                "Helpful reminders",
-                "Visual calendars",
-              ],
-            },
-            {
-              label: "Pain points",
-              items: [
-                "Too much typing",
-                "Too many mood options",
-                "Complex onboarding",
-                "Information overload",
-                "High effort for a daily habit",
-              ],
-            },
-          ],
-        },
-        {
-          title: "User Interviews",
-          body: "I interviewed five people ages 18–35 who had previously used wellness or journaling apps.",
-        },
-        {
-          title: "Key Insights",
           quotes: [
             "I want to track my mood, but I don't want to write every day.",
             "If it takes longer than a minute, I'll probably skip it.",
-            "Sometimes I know how I feel—I just don't know how to describe it.",
+            "Sometimes I know how I feel, I just don't know how to describe it.",
           ],
+          after:
+            "That third one changed my whole approach. It's not a speed problem, it's a translation problem. Asking someone to turn a feeling into words is hard on its own, independent of how fast they can type. Any solution that still required verbalizing the feeling, even briefly, was solving the wrong layer of the problem.",
         },
         {
-          title: "Patterns & Surprises",
+          title: "Goals",
+          body:
+            "If Moodles worked, it would mean people were actually building the habit, not just downloading the app:",
           list: [
-            "Consistency mattered more than detail — users cared about showing up, not writing paragraphs.",
-            "Visual selection felt faster than rating scales or color pickers in early concept tests.",
-            "Users wanted insights, but only after the core check-in felt effortless.",
+            "Get daily check ins under five seconds",
+            "Remove journaling as a required step entirely",
+            "Improve retention through low pressure, repeatable interactions",
+            "Make tracking accessible to people who find writing difficult",
+            "Surface insights without overwhelming the core experience",
           ],
         },
       ],
     },
     {
       id: "users",
-      title: "Define the User",
+      title: "Defining the user",
+      body:
+        "I built two lightweight personas out of the interview patterns, since the two clearest use cases had different pressure points on the same core problem.",
       personas: [
         {
           name: "Jordan, 22 — Student",
           description:
-            "Uses wellness apps during stressful semesters but drops off when journaling feels like homework.",
-          needs: ["Quick daily check-ins", "Low-pressure tracking", "Simple mood history"],
-          painPoints: ["Too much typing", "Guilt when skipping days", "Overwhelming mood scales"],
-          motivations: ["Understand stress patterns", "Build a small daily habit"],
+            "Uses wellness apps during stressful semesters, drops off once journaling starts to feel like homework. Needs quick check ins and no guilt when she skips a day. Motivated by wanting to understand her own stress patterns without it becoming another obligation.",
         },
         {
           name: "Alex, 29 — Busy Professional",
           description:
-            "Interested in emotional awareness but only has a few seconds between meetings.",
-          needs: ["One-tap logging", "Clear weekly summaries", "Optional reminders"],
-          painPoints: ["Multi-step flows", "Apps that feel clinical", "Feature bloat"],
-          motivations: ["Notice burnout early", "Track mood without extra mental load"],
+            "Curious about emotional awareness but has a few seconds between meetings, not a few minutes. Needs one tap logging and clear summaries, not a clinical feeling tool or feature bloat. Motivated by wanting to catch burnout early without adding mental load.",
         },
       ],
-    },
-    {
-      id: "challenge",
-      title: "Problem Statement",
       challenge:
-        "How might we help busy people build a daily mood-tracking habit without requiring journaling?",
+        "How might we help busy people build a daily mood tracking habit without requiring journaling?",
     },
     {
       id: "ideation",
-      title: "Ideation",
-      body: "I explored several input methods before committing to a direction:",
-      list: ["Emoji picker", "Color wheel", "Mood slider", "Emotion cards", "Illustrated faces"],
+      title: "Ideation: why faces won",
+      body:
+        "I tested five directions before committing to one, and each of the four I rejected failed for a specific, different reason.",
       rejected: [
         {
           concept: "Emoji picker",
-          reason: "Felt informal and ambiguous — users weren't sure which emoji matched their mood.",
+          reason:
+            "Rejected for ambiguity. Emoji already carry meaning from texting, so users weren't sure which one actually matched their mood. Same translation problem as writing, just wearing a different costume.",
         },
         {
           concept: "Color wheel",
-          reason: "Pretty but abstract; color alone didn't communicate emotion clearly enough.",
+          reason:
+            "Visually appealing, but color alone doesn't communicate emotion clearly enough on its own. Pretty, but underspecified.",
         },
         {
           concept: "Mood slider",
-          reason: "Implied a linear good-to-bad scale, which felt judgmental.",
+          reason:
+            "This was the one I expected to win, since sliders are the standard fast input pattern. It didn't. A single good to bad axis implied judgment, and that undercut the low pressure tone the whole app was trying to set.",
         },
         {
           concept: "Emotion cards",
-          reason: "Better than text, but still required reading labels on every check-in.",
+          reason:
+            "Better than plain text, but still required reading a label every time, which brings back the exact friction the project was trying to remove.",
         },
       ],
       footer:
-        "Illustrated faces tested best — they reduced cognitive effort, felt approachable, and made selection instant.",
+        "Illustrated faces tested best. They reduced cognitive effort, felt approachable, and made selection near instant. The mechanism is recognition instead of construction: instead of building a description of how you feel, you scan a set of expressions and recognize the one that matches. Recognition is a faster, lower effort cognitive task than construction, and that difference is the thread that runs through almost every decision after this one.",
     },
     {
       id: "ia",
-      title: "Information Architecture",
+      title: "Information architecture",
       subsections: [
         {
           title: "Navigation",
           body:
-            "A simple tab structure keeps the app focused: Home (check-in), History, Insights, and Settings. The daily check-in is always one tap away from Home.",
+            "A flat, four tab structure — Home, History, Insights, Settings — with the daily check in always one tap away from Home.",
         },
         {
-          title: "Feature Prioritization",
+          title: "Feature prioritization",
           list: [
-            "Must-have: one-tap mood logging, mood history",
-            "Should-have: weekly insights, streaks, optional notes",
-            "Nice-to-have: reminders, monthly trends, tags",
+            "Must have: one tap mood logging, mood history",
+            "Should have: weekly insights, streaks, optional notes",
+            "Nice to have: reminders, monthly trends, tags",
           ],
         },
         {
-          title: "User Flow",
+          title: "User flow",
           steps: [
             "Home",
             "Tap today's mood",
-            "(Optional) Add a short note or tag",
+            "(Optional) Add a note or tag",
             "Save",
-            "Updated mood history",
+            "Updated history",
             "Weekly insights",
           ],
         },
         {
-          title: "Site Map",
+          title: "Site map",
           list: [
-            "Home → Mood grid → Save confirmation",
-            "History → Calendar / list view → Day detail",
-            "Insights → Weekly summary → Monthly trends",
-            "Settings → Reminders, labels, accessibility",
+            "Home → mood grid → save confirmation",
+            "History → calendar or list view → day detail",
+            "Insights → weekly summary → monthly trends",
+            "Settings → reminders, labels, accessibility",
           ],
         },
       ],
-    },
-    {
-      id: "wireframes",
-      title: "Wireframes",
-      body:
-        "I started with low-fidelity sketches to test layout and flow, then moved to mid-fidelity screens in Figma to validate spacing, hierarchy, and the 12-face grid before applying visual polish.",
+      footer:
+        "The flat structure matters here. Every layer of navigation between opening the app and completing the check in is a chance for the user's intention to decay before they act on it. Keeping check in on Home and everything else one tap away was a direct response to that.",
     },
     {
       id: "visual",
-      title: "Visual Design",
+      title: "Visual design",
       subsections: [
         {
-          title: "Brand Personality",
-          list: ["Friendly", "Calm", "Playful", "Minimal", "Non-judgmental"],
+          title: "Brand personality",
+          list: ["Friendly", "Calm", "Playful", "Minimal", "Non judgmental"],
         },
         {
-          title: "Color & Typography",
+          title: "Color and typography",
           body:
-            "Soft gradients and warm colors create a welcoming experience without feeling childish or clinical. Large, readable type with generous spacing keeps interactions simple.",
+            "Soft gradients and warm colors, aiming for welcoming without tipping into childish or clinical. Large, readable type with generous spacing to keep every interaction simple to parse.",
         },
         {
-          title: "Components & Illustrations",
+          title: "Components",
           body:
-            "Twelve custom illustrated faces are the core design system element — each mood is distinct through expression, not just color. Supporting components (cards, streak badges, insight charts) reuse the same rounded corners, soft shadows, and calm palette for consistency.",
+            "The twelve illustrated faces are the core design system element, each mood distinct through expression rather than color alone. Supporting components — cards, streak badges, insight charts — reuse the same rounded corners, soft shadows, and calm palette so the whole app feels like one continuous system rather than a collection of screens.",
+        },
+        {
+          title: "Microinteractions",
+          list: [
+            "Subtle scale and color feedback on face selection so the tap registers instantly",
+            "A brief animation on save instead of an interrupting modal",
+            "Lightweight streak celebrations with no guilt messaging when a day is missed",
+            "Swipeable insight cards with progressive disclosure so deeper detail is available without cluttering the first view",
+          ],
         },
       ],
-    },
-    {
-      id: "screens",
-      title: "High-Fidelity Screens",
-      body: "Each screen serves a clear job in the habit loop:",
       screens: [
         {
-          title: "Home / Check-in",
-          body: "The primary screen — 12 mood faces in a scannable grid. One tap to log; optional note afterward.",
+          title: "Home / Check in",
+          body: "The primary screen — twelve mood faces in a scannable grid, one tap to log, optional note afterward.",
         },
         {
           title: "History",
-          body: "Calendar and list views show past check-ins at a glance so users can spot patterns over time.",
+          body: "Calendar and list views for spotting patterns over time.",
         },
         {
           title: "Insights",
-          body: "Weekly summaries and monthly trends translate raw data into simple, actionable takeaways.",
+          body: "Weekly summaries and monthly trends, translating raw data into simple takeaways.",
         },
         {
           title: "Settings",
-          body: "Reminders, optional mood labels, and accessibility preferences — kept secondary so check-in stays front and center.",
+          body: "Reminders, optional labels, accessibility preferences — deliberately secondary so check in stays front and center.",
         },
       ],
       images: [
@@ -253,97 +206,91 @@ export default {
       ],
     },
     {
-      id: "prototyping",
-      title: "Prototyping & Interactions",
-      body: "Microinteractions were designed to reinforce speed and delight without slowing the core task:",
-      list: [
-        "Face selection — subtle scale and color feedback on tap so users know their mood registered instantly",
-        "Save confirmation — a brief, friendly animation instead of a modal interrupting the flow",
-        "Streak updates — lightweight celebration when users hit milestones, without guilt when they miss a day",
-        "Insight cards — swipeable weekly summaries with progressive disclosure for deeper detail",
-      ],
-    },
-    {
       id: "testing",
-      title: "Testing",
-      body: "I ran informal usability tests with five participants using a Figma prototype of the core check-in flow.",
+      title: "Testing and what changed because of it",
+      body:
+        "I ran informal usability tests on a Figma prototype of the core check in flow with five participants.",
       findings: [
         {
-          label: "What users struggled with",
+          label: "What people struggled with",
           items: [
-            "An early 16-face grid felt overwhelming — users took noticeably longer to decide.",
-            "Some participants wanted text labels under faces on first use, then hid them once familiar.",
-            "History view was initially too dense; a calendar-first layout tested better.",
+            "An early sixteen face grid felt overwhelming — people took noticeably longer to decide",
+            "Some wanted text labels under faces the first time they used the app, then wanted them gone once they were familiar",
+            "The history view was too dense at first — a calendar first layout tested much better",
           ],
         },
         {
-          label: "What changed afterward",
+          label: "What I changed in response",
           items: [
-            "Reduced moods from 16 to 12 to speed up decision time.",
-            "Added optional labels beneath every face for clarity and accessibility.",
-            "Simplified history to calendar view with expandable day details.",
+            "Cut moods from sixteen to twelve, which measurably sped up decision time",
+            "Added optional labels beneath every face, serving new users and doubling as an accessibility feature",
+            "Simplified history to a calendar first view with expandable day detail",
           ],
         },
       ],
+      footer:
+        "None of these were stylistic calls. Each one came directly out of watching where people hesitated.",
     },
     {
       id: "accessibility",
       title: "Accessibility",
       list: [
-        "High color contrast across text and UI elements",
-        "Large touch targets on every mood face (minimum 44×44pt)",
+        "High color contrast across text and UI",
+        "Large touch targets on every mood face, minimum 44 by 44pt",
         "Screen reader support with descriptive mood labels",
         "Color is never the only indicator of mood — expression and optional text labels provide redundancy",
-        "Optional labels beneath every face for users who prefer text",
+        "Optional labels beneath every face for anyone who prefers text",
         "Reduced motion option for save animations and insight transitions",
       ],
+      footer:
+        "A five second check in only holds as a claim if it's actually five seconds for everyone. Accessibility here wasn't a pass at the end, it was a check on whether the core promise of the app was actually true across different users.",
     },
     {
       id: "product-thinking",
-      title: "Product Thinking",
+      title: "Product thinking",
       items: [
         {
-          label: "12 moods vs. more options",
-          text: "I chose 12 faces because more options increased decision time during testing. Twelve provides enough emotional variety while keeping check-ins under five seconds.",
+          label: "Twelve moods, not more",
+          text: "More options increased decision time in testing. Twelve gave enough emotional range without pushing the check in past five seconds.",
         },
         {
           label: "No required journaling",
-          text: "Notes and tags are optional — requiring text would undermine the core value proposition of speed and low pressure.",
+          text: "Notes and tags are optional. Requiring text would have quietly rebuilt the exact problem the app exists to solve.",
         },
         {
           label: "Insights as secondary",
-          text: "Trends and streaks motivate retention, but only after logging is effortless. The IA keeps insights one tab away, not in the critical path.",
+          text: "Trends and streaks help retention, but only after logging feels effortless. The IA keeps insights one tab away, out of the critical path, because people don't want to analyze a habit they haven't built yet.",
         },
         {
-          label: "Edge case: missed days",
-          text: "Streaks celebrate consistency but don't punish gaps — the UI avoids shame language to reduce abandonment after a missed check-in.",
+          label: "Missed days aren't failures",
+          text: "Streaks celebrate consistency but don't punish gaps. Shame language was deliberately left out, because the moment opening the app feels bad, people stop opening it.",
         },
       ],
     },
     {
       id: "measuring",
-      title: "Measuring Success",
-      body: "Post-launch, I'd track both engagement and habit formation:",
-      metricGroups: [
+      title: "Measuring success",
+      body: "Post launch, I'd track this across five layers:",
+      items: [
         {
-          title: "Activation",
-          items: ["First check-in completion rate"],
+          label: "Activation",
+          text: "first check in completion rate",
         },
         {
-          title: "Daily Engagement",
-          items: ["Daily check-in completion rate", "Average session length (target: under 10 seconds)"],
+          label: "Daily engagement",
+          text: "daily check in completion rate, average session length under 10 seconds",
         },
         {
-          title: "Retention",
-          items: ["7-day retention", "30-day retention"],
+          label: "Retention",
+          text: "7 day and 30 day retention",
         },
         {
-          title: "Habit Formation",
-          items: ["Average check-in streak length", "Task success rate for one-tap logging"],
+          label: "Habit formation",
+          text: "average streak length, task success rate for one tap logging",
         },
         {
-          title: "User Satisfaction",
-          items: ["Qualitative feedback", "App store ratings", "Optional note usage rate"],
+          label: "Satisfaction",
+          text: "qualitative feedback, app store ratings, optional note usage rate",
         },
       ],
     },
@@ -352,28 +299,27 @@ export default {
       title: "Reflection",
       reflection: {
         worked:
-          "Reducing the daily task to a single tap made the concept immediately understandable in testing. Illustrated faces communicated emotion faster than text or scales.",
+          "Reducing the daily task to a single tap made the concept click immediately in testing. Illustrated faces communicated emotion faster than any text based or scale based option.",
         didnt:
-          "My first IA included too many insight views upfront. Users wanted a simpler home screen and deferred analytics until after they'd logged a few days.",
+          "My first IA put too many insight views up front. Testing showed people wanted a simpler home screen and preferred to defer analytics until they'd logged a few days.",
         surprised:
-          "Participants cared less about mood precision and more about whether the app felt judgmental. Tone and illustration style mattered as much as speed.",
+          "Participants cared less about precision and more about whether the app felt judgmental. Tone and illustration style mattered as much as raw speed.",
         improve:
-          "I'd run a longer diary study to validate retention assumptions, and test reminder timing with real users over several weeks.",
+          "I'd run a longer diary study to actually validate the retention assumptions, and test reminder timing with real users over several weeks instead of a single testing session.",
         learned:
-          "Designing a successful product isn't about adding features — it's about removing friction. Consistency beats detail for daily wellness habits.",
+          "Designing a good product isn't about adding features, it's about finding every point of friction and removing it. Consistency beats detail for a daily habit.",
       },
     },
     {
       id: "next-steps",
-      title: "Next Steps",
-      body: "If I continued building Moodles beyond this concept:",
+      title: "Next steps",
       list: [
-        "Apple Health integration for correlating mood with sleep and activity",
-        "Home screen widgets for check-in without opening the app",
-        "AI-generated insights that surface patterns in plain language",
-        "Apple Watch quick-log for even faster check-ins",
+        "Apple Health integration to correlate mood with sleep and activity",
+        "Home screen widget so logging doesn't require opening the app",
+        "AI generated insights that surface patterns in plain language",
+        "Apple Watch quick log for an even faster check in",
         "Optional journaling layer for users who want more depth over time",
-        "Mood sharing with trusted contacts or therapists (opt-in)",
+        "Opt in mood sharing with a trusted contact or therapist",
       ],
     },
   ],

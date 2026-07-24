@@ -784,19 +784,19 @@ main > section:first-child {
 }
 /* ───────── about note ───────── */
 .about-note {
-  max-width: 560px;
+  max-width: 580px;
   margin: 0;
 }
 .about-note__body {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
 .about-note__body p {
   margin: 0;
   font-family: var(--serif);
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--ink-soft);
 }
 .about-note__body p.about-note__lead {
@@ -810,9 +810,33 @@ main > section:first-child {
   color: var(--ink);
 }
 .about-note__body p.about-note__sign {
-  margin-top: 6px;
+  margin-top: 8px;
   font-style: italic;
   color: var(--ink-mute);
+}
+
+.typewriter__cursor {
+  display: inline-block;
+  width: 0.085em;
+  height: 0.95em;
+  margin-left: 0.12em;
+  background: currentColor;
+  vertical-align: -0.08em;
+  animation: typewriter-blink 0.85s step-end infinite;
+}
+.typewriter__cursor--done {
+  animation-iteration-count: 8;
+  animation-fill-mode: forwards;
+}
+@keyframes typewriter-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .typewriter__cursor {
+    display: none;
+  }
 }
 
 /* ───────── work ───────── */
@@ -2518,7 +2542,7 @@ body.illo-lightbox-open #root {
   flex-direction: column;
   align-items: stretch;
   gap: 24px;
-  margin-bottom: 56px;
+  margin-bottom: 36px;
   text-align: left;
 }
 
@@ -2638,9 +2662,38 @@ body.illo-lightbox-open #root {
 }
 
 .project__story {
-  max-width: 640px;
-  margin: 0 auto 64px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 40px;
+  width: 100%;
+  margin: 0 0 4px;
+  text-align: left;
+}
+
+.project__story-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.project__story-label {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin: 0;
+}
+
+.project__story-text {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 42em;
 }
 
 .project__gallery {
@@ -2742,7 +2795,8 @@ body.illo-lightbox-open #root {
 .project__desc.blur-text,
 .project__hero--blur,
 .project__showcase--blur,
-.project__details--blur {
+.project__details--blur,
+.project__story--blur {
   opacity: 0;
   animation: blur-text-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
@@ -2753,7 +2807,8 @@ body.illo-lightbox-open #root {
   .project__desc.blur-text,
   .project__hero--blur,
   .project__showcase--blur,
-  .project__details--blur {
+  .project__details--blur,
+  .project__story--blur {
     animation: none;
     opacity: 1;
   }
@@ -2838,7 +2893,7 @@ body.illo-lightbox-open #root {
 .case {
   width: 100%;
   max-width: 100%;
-  margin: 72px 0 80px;
+  margin: 40px 0 48px;
   padding: 0;
   text-align: left;
 }
@@ -2846,9 +2901,9 @@ body.illo-lightbox-open #root {
 .case__meta {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px 32px;
-  margin: 24px 0 0;
-  padding: 24px;
+  gap: 16px 28px;
+  margin: 16px 0 0;
+  padding: 18px 20px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.45);
@@ -2861,8 +2916,8 @@ body.illo-lightbox-open #root {
 }
 
 .case__section--overview + .case__section {
-  margin-top: 56px;
-  padding-top: 56px;
+  margin-top: 24px;
+  padding-top: 24px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
@@ -2889,105 +2944,105 @@ body.illo-lightbox-open #root {
 }
 
 .case__section + .case__section {
-  margin-top: 56px;
-  padding-top: 56px;
+  margin-top: 24px;
+  padding-top: 24px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .case__heading {
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 400;
   letter-spacing: -0.02em;
-  margin: 0 0 18px;
+  margin: 0 0 12px;
   color: var(--ink);
 }
 
 .case__subheading {
   font-family: var(--serif);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: -0.01em;
-  margin: 28px 0 14px;
+  margin: 16px 0 6px;
   color: var(--ink);
 }
 
 .case__subheading--solution {
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .case__subheading--small {
-  font-size: 18px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 17px;
+  margin-top: 16px;
+  margin-bottom: 8px;
 }
 
 .case__text {
   font-family: var(--sans);
-  font-size: 18px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.65;
   color: var(--ink-soft);
-  margin: 0 0 18px;
+  margin: 0 0 12px;
 }
 
 .case__text--after {
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .case__block + .case__block {
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 .case__quote {
-  margin: 16px 0 0;
-  padding: 18px 22px;
+  margin: 12px 0 0;
+  padding: 14px 18px;
   border-left: 2px solid rgba(61, 184, 176, 0.55);
   font-family: var(--serif);
-  font-size: 20px;
-  line-height: 1.55;
+  font-size: 18px;
+  line-height: 1.5;
   color: var(--ink);
   font-style: italic;
 }
 
 .case__quote--challenge {
-  margin-top: 20px;
+  margin-top: 16px;
   background: rgba(255, 255, 255, 0.55);
   border-radius: 0 12px 12px 0;
 }
 
 .case__quote + .case__quote {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .case__list-label {
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--ink);
-  margin: 20px 0 10px;
+  margin: 14px 0 6px;
 }
 
 .case__list {
-  margin: 0 0 8px;
+  margin: 0 0 4px;
   padding-left: 1.2em;
   font-family: var(--sans);
-  font-size: 18px;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.55;
   color: var(--ink-soft);
 }
 
 .case__list li + li {
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .case__principle {
   font-family: var(--sans);
-  font-size: 18px;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.55;
   color: var(--ink-soft);
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 }
 
 .case__principle strong {
@@ -2996,8 +3051,8 @@ body.illo-lightbox-open #root {
 }
 
 .case__flow-wrap {
-  margin-top: 24px;
-  padding: clamp(20px, 3vw, 28px);
+  margin-top: 16px;
+  padding: clamp(16px, 2.5vw, 22px);
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 16px;
@@ -3026,10 +3081,10 @@ body.illo-lightbox-open #root {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px;
-  width: clamp(148px, 14vw, 180px);
-  min-height: 132px;
-  padding: 20px 16px 18px;
+  gap: 8px;
+  width: clamp(136px, 14vw, 168px);
+  min-height: 112px;
+  padding: 16px 14px 14px;
   text-align: center;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.07);
@@ -3124,12 +3179,12 @@ body.illo-lightbox-open #root {
 .case__personas {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 8px;
+  gap: 16px;
+  margin-top: 4px;
 }
 
 .case__persona {
-  padding: 20px;
+  padding: 16px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.35);
@@ -3140,32 +3195,32 @@ body.illo-lightbox-open #root {
 }
 
 .case__rejected {
-  margin-top: 20px;
+  margin-top: 14px;
 }
 
 .case__screens {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 8px;
+  gap: 14px;
+  margin-top: 4px;
 }
 
 .case__screen {
-  padding-left: 16px;
+  padding-left: 14px;
   border-left: 2px solid rgba(0, 0, 0, 0.08);
 }
 
 .case__figures {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-top: 24px;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .case__figures--grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  gap: 16px;
 }
 
 .case__figure {
@@ -3187,17 +3242,17 @@ body.illo-lightbox-open #root {
 }
 
 .case__caption {
-  margin-top: 10px;
+  margin-top: 8px;
   font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.45;
   color: var(--ink-mute);
 }
 
 .case__reflection {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 
 .case__reflection-item .case__text {
@@ -3213,6 +3268,11 @@ body.illo-lightbox-open #root {
   .project__tags {
     justify-content: flex-start;
     max-width: none;
+  }
+
+  .project__story {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .project__details {
@@ -3231,7 +3291,7 @@ body.illo-lightbox-open #root {
   }
 
   .case {
-    margin-top: 48px;
+    margin-top: 28px;
     padding: 0;
   }
 

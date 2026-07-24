@@ -8,20 +8,20 @@ export const PROJECTS = [
     year: "2025",
     type: "ux/ui",
     summary:
-      "A mood-tracking app that makes emotional check-ins effortless.",
+      "A mood tracking app that makes emotional check-ins effortless.",
     role: "Product Designer (UX/UI)",
     tags: ["iOS", "UX/UI", "Figma", "Mobile", "Supabase"],
     swatch: "#3db8b0",
     context:
-      "Moodles is a mood-tracking app designed around one simple idea: checking in with your emotions should take seconds, not minutes. Instead of asking users to write journal entries or answer long questionnaires, Moodles uses 12 expressive illustrated faces — each representing a different mood — making it easy to identify how you're feeling with a single tap.",
+      "Moodles is a mood tracking app built around one idea: logging how you feel shouldn't take longer than feeling it. Instead of journaling, users tap one of twelve illustrated faces. No typing, no required text, no multi step flow. The whole interaction is designed to fit inside five seconds.",
     problem:
-      "Most mood-tracking apps expect too much from users. They ask people to write about their day, rate multiple emotions, answer prompts, and remember to journal consistently. Over time, these steps become time-consuming, causing many people to stop using the app.",
+      "Most mood tracking apps get abandoned within weeks. The real issue isn't just speed — it's translation. People often know how they feel but struggle to put it into words, so any flow that still requires journaling solves the wrong layer of the problem.",
     approach:
-      "Moodles removes that friction with a 5-second daily check-in: open the app, tap the face that best matches how you feel, and save. Twelve carefully designed faces represent common emotional states — happy, calm, excited, motivated, loved, okay, thoughtful, tired, confused, anxious, sad, and frustrated. Daily check-ins build a personal mood history with simple insights: happiest days, weekly summaries, monthly trends, streaks, and most common moods. The design is playful, calming, welcoming, and non-judgmental — built for students, busy professionals, and anyone who finds journaling difficult.",
+      "I designed for recognition instead of construction: twelve illustrated faces you scan and match, not a feeling you have to describe. One tap logs the check-in in under five seconds, with optional notes only if you want them — so the habit can hold without becoming another chore.",
     outcome:
-      "Moodles encourages emotional awareness through the simplest daily habit possible. By making mood tracking effortless, the app helps users recognize patterns in their emotions without adding stress or extra work to their day. Tagline: A face for every mood.",
+      "Moodles encourages emotional awareness through the simplest daily habit possible. By making mood tracking effortless, the app helps users recognize patterns in their emotions without adding stress or extra work to their day.",
     team: "Solo",
-    duration: "4–6 weeks (concept project)",
+    duration: "4 to 6 weeks (concept project)",
     platform: "iOS · Figma",
   },
   {
@@ -33,18 +33,18 @@ export const PROJECTS = [
     year: "2024",
     type: "coding",
     summary:
-      "Frontier technology company reimagining how game developers understand player feedback. Apex Reviews uses AI to synthesize scattered player opinions from forums, Steam, Reddit, and social media into precise, real-time insights — so studios can move faster and iterate smarter.",
+      "An AI platform that turns scattered player feedback into prioritized, actionable insights.",
     role: "Co-Founder · Product",
     tags: ["React JS", "MongoDB", "AI", "CREATE-X"],
     swatch: "#1f1c1a",
     context:
-      "Co-founded through Georgia Tech's CREATE-X accelerator. Apex Reviews is a frontier technology company on a mission to empower studios with intelligent, accessible tools that bring clarity to chaos — turning player opinions into precise, real-time insights.",
+      "Apex Reviews is a feedback platform built around one idea: game studios shouldn't have to choose between drowning in player comments and flattening them into a useless score. AI clusters feedback into themed insights — with every claim linked to the original post.",
     problem:
-      "Game studios drown in unstructured player feedback spread across forums, Steam, Reddit, and social media. Existing tools flatten nuanced signals into blunt sentiment scores, or demand analysts re-read everything by hand — neither scales with a live-service game.",
+      "Live-service studios drown in unstructured player feedback across Steam, Reddit, forums, and social. Sentiment scores say players are angry without saying why, and manual reading doesn't scale when the next patch window is days away.",
     approach:
-      "Built a platform that uses cutting-edge AI to synthesize player reviews, social media commentary, and community conversations across the web. Automated the tedious process of scraping forums, tagging sentiment, and prioritizing feedback — so studios can move faster, iterate smarter, and connect deeper with their players. Engineered on a React 18 micro-frontend with a 47-component design system; sub-2s loads via Redis caching and 45% bundle reduction.",
+      "We built for prioritization with proof: AI clusters feedback into ranked themes, and every insight links back to source posts so teams can verify before they act. Speed without a black box — because studios won't ship a fix on a claim they can't check.",
     outcome:
-      "Demo day landed two paid pilots. Looking ahead: building the foundation for a future where developers, publishers, and players collaborate through data — from early prototypes to live-service updates. Every team member is a co-creator; every user, a partner in shaping what comes next.",
+      "Demo day landed two paid pilots. Looking ahead: deeper gaming-specific models, team collaboration around themes, and integrations that put insights where studios already work.",
     team: "2 co-founders",
     duration: "Aug 2024 — Present",
     platform: "Web · React 18 · Node · AI",
@@ -58,18 +58,18 @@ export const PROJECTS = [
     year: "2024",
     type: "coding",
     summary:
-      "A mobile-first Spotify analytics app redesigned for year-round discovery. Built natively on Android with Jetpack Compose, it offers touch-optimized visualizations, AI-powered pattern insights, and real-time Spotify API sync — because music data shouldn't only surface once a year.",
+      "A mobile-first Spotify analytics app for year-round discovery — not just December.",
     role: "Solo Designer & Developer",
     tags: ["Android Studio", "Kotlin", "UX Research", "Figma"],
     swatch: "#231f1c",
     context:
-      "Spotify Wrapped is a cultural phenomenon — but music insights locked to one day a year create a frustrating gap. 85% of users interviewed wanted year-round access. 92% of streaming happens on mobile, yet analytics were built for quick social sharing, not deep personal discovery. I set out to fix both.",
+      "Spotify Wrapped is beloved — but locking music insights to one day a year leaves a year-long gap. This native Android app makes discovery continuous with touch-first visualizations, real-time Spotify sync, and AI insights that explain how tastes shift.",
     problem:
-      "Three compounding pain points: music data only surfaces once a year in December; the mobile experience is optimized for shareability over exploration; and surface-level metrics (top songs, top artists) never explain why tastes evolve. Competitive analysis confirmed no existing solution — Last.fm, Apple Music Replay, Stats.fm — solved for mobile-first, continuous, meaningful analytics.",
+      "Music insights only surface once a year, mobile analytics are built for sharing over exploration, and top-ten lists never explain why taste changed. Interviews made the gap clear: people wanted year-round access on the phone where they actually listen.",
     approach:
-      "Started with user interviews and competitive analysis to validate the problem, then moved through paper wireframes → Figma prototypes → native Android build in Android Studio. Core decisions: mobile-first architecture with thumb-friendly navigation and progressive disclosure across three levels (overview cards → expandable details → full-screen deep dives); real-time Spotify API sync with offline caching; touch-responsive charts with pinch, zoom, and swipe; and AI-powered mood and pattern analysis that explains listening shifts in plain language. Built with Jetpack Compose, Material Design 3, and a 40+ component Figma design system that translated to Android at 95% visual fidelity.",
+      "I designed for progressive disclosure — overview cards, expandable detail, full-screen deep dives — so curiosity stays light by default and deeper when you want it. Native Android with Jetpack Compose kept charts touch-first and fast enough that performance felt like part of the product.",
     outcome:
-      "Tested with 12 users: 100% preferred year-round access over the annual format; 10 of 12 found mobile visualizations significantly easier to explore than Spotify's web interface. Achieved consistent 60fps with 10,000+ listening records; offline caching cut API calls by 70%; average load time under 1.2 seconds. Design system reduced iteration time by 50%. Key learning: performance is a feature — users abandon interactions that feel sluggish, regardless of utility.",
+      "Tested with 12 users: 100% preferred year-round access; 10 of 12 found mobile visualizations significantly easier than desktop analytics. Hit consistent 60fps with 10,000+ records, cut API calls 70% with offline caching, and kept average load under 1.2 seconds.",
     team: "Solo",
     duration: "Feb 2024 — Mar 2024",
     platform: "Android Studio · Kotlin · Firebase · Material Design 3",
@@ -114,16 +114,6 @@ export const ILLUSTRATIONS = [
     ratio: "3 / 4",
     swatch: "#d4d4d4",
     note: "Spent some time on this one. Six shapes, one center. Somewhere between black and bronze I started thinking about how things don't need to match to belong together. They just need to hold the same shape, the same direction.\n\nNot everything has to match to belong.",
-  },
-  {
-    id: "i00d",
-    no: "04",
-    label: "Ocean Trio",
-    series: "3D",
-    year: "2026",
-    ratio: "16 / 9",
-    swatch: "#f2a48c",
-    note: "Three little clay companions — a spiky dragon, a shy devil, and a bunny — drifting together in a warm coral glow.",
   },
 ];
 

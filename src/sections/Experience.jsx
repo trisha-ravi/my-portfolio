@@ -55,7 +55,7 @@ export default function Experience() {
           </div>
           <div>
             <p className="exp__skill-label">Education</p>
-            <p className="exp__skill-list">Georgia Institute of Technology · B.S. CS — Human-Computer Interaction · Dec 2027</p>
+            <p className="exp__skill-list">Georgia Institute of Technology · B.S. LMC, Human Computer Interaction · Dec 2027</p>
           </div>
         </div>
       </div>

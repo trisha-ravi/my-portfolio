@@ -1,7 +1,8 @@
 export default {
   overview: {
+    title: "Overview",
     what:
-      "Apex Reviews is a platform that uses AI to synthesize scattered player feedback from forums, Steam, Reddit, and social media into precise, real-time insights for game studios.",
+      "Apex Reviews is a feedback platform built around one idea: game studios shouldn't have to choose between drowning in player comments and flattening them into a useless score. We use AI to pull reviews and community chatter into themed, prioritized insights — with every claim linked back to the original post — so teams can act on signal instead of noise.",
     role: "Co-Founder · Product Designer",
     timeline: "Aug 2024 — Present",
     team: "2 co-founders",
@@ -9,166 +10,117 @@ export default {
   sections: [
     {
       id: "problem",
-      title: "The Problem",
+      title: "The problem",
       body:
-        "Game studios drown in unstructured player feedback spread across dozens of channels. Existing tools either flatten nuanced signals into blunt sentiment scores or demand analysts re-read everything by hand.",
+        "Live-service studios drown in unstructured player feedback across Steam, Reddit, forums, and social. Existing tools either flatten nuanced complaints into blunt positive/negative scores, or demand analysts re-read everything by hand. Neither scales when a game is live and the next patch window is days away.",
       subsections: [
         {
-          title: "Who has the problem?",
+          title: "Who has this problem",
           body:
-            "Live-service game studios, community managers, and product teams who need to understand player sentiment quickly but lack scalable tools to process volume.",
+            "Community managers, product managers, and live-ops teams at studios that need to understand player sentiment quickly — without hiring another full-time analyst just to read Reddit.",
         },
         {
-          title: "Why is it important?",
+          title: "Why it matters",
           body:
-            "Player feedback drives patches, balance changes, and retention. Missing a critical signal — or misreading sentiment — can cost studios players and revenue.",
+            "Player feedback drives patches, balance changes, and retention. Missing a critical signal — or misreading why players are upset — can cost studios players and revenue. Speed without context is just as dangerous as context without speed.",
         },
         {
-          title: "Evidence",
-          list: [
-            "Studios we spoke with described spending hours manually reading Reddit threads and Steam reviews.",
-            "Existing sentiment tools scored comments as positive/negative but lost context like specific feature complaints.",
-            "CREATE-X accelerator context validated demand for AI-assisted feedback synthesis in gaming.",
+          title: "What the research showed",
+          bodies: [
+            "Competitive analysis of sentiment tools and community platforms surfaced a consistent gap: automated scraping and dashboards existed, but nuance died in the summary. Gaming jargon, sarcasm, and meme-heavy language broke general models. Analysts still had to validate every insight by hand.",
+            "Early conversations with developers and community managers during CREATE-X sharpened that further. Three quotes shaped almost everything that came after:",
           ],
-        },
-      ],
-    },
-    {
-      id: "goals",
-      title: "Goals & Success Metrics",
-      list: [
-        "Reduce time-to-insight for player feedback from hours to minutes",
-        "Surface actionable themes, not just sentiment scores",
-        "Improve signal quality by preserving context from original posts",
-        "Enable non-analyst team members to understand player priorities",
-        "Land pilot partnerships with live-service studios",
-      ],
-    },
-    {
-      id: "research",
-      title: "Research",
-      subsections: [
-        {
-          title: "Competitive Analysis",
-          body: "Reviewed sentiment analysis tools, community management platforms, and manual workflows studios currently use.",
-          lists: [
-            {
-              label: "What works",
-              items: [
-                "Automated scraping and aggregation",
-                "Dashboard visualizations",
-                "Alert systems for spikes in volume",
-              ],
-            },
-            {
-              label: "Gaps",
-              items: [
-                "Loss of nuance in AI summaries",
-                "No gaming-specific taxonomy",
-                "Analysts still needed to validate every insight",
-                "Poor handling of sarcasm and community-specific language",
-              ],
-            },
-          ],
-        },
-        {
-          title: "Studio Conversations",
-          body:
-            "Early conversations with game developers and community managers during CREATE-X shaped the product direction.",
-        },
-        {
-          title: "Key Insights",
           quotes: [
             "I don't need another dashboard — I need to know what to fix this week.",
             "Sentiment scores tell me players are angry, not why.",
             "We can't hire another analyst just to read Reddit.",
           ],
+          after:
+            "That second quote changed the product. The problem wasn't aggregation — studios already had too much raw text. It was prioritization with proof. A score without a theme is noise. A theme without a source link is a claim nobody will ship a fix on.",
         },
         {
-          title: "Patterns & Surprises",
+          title: "Goals",
+          body:
+            "If Apex Reviews worked, it would mean studios could move from reading to deciding without losing the detail that makes feedback actionable:",
           list: [
-            "Studios cared more about theme clustering than raw volume metrics.",
-            "Trust in AI summaries was low until users could click through to source posts.",
-            "Speed mattered — insights needed to be near real-time for live-service games.",
+            "Cut time-to-insight from hours of manual reading to minutes",
+            "Surface actionable themes, not just sentiment scores",
+            "Preserve context by linking every insight to original posts",
+            "Let non-analysts understand player priorities without a specialist bottleneck",
+            "Land pilot partnerships with live-service studios",
           ],
         },
       ],
     },
     {
       id: "users",
-      title: "Define the User",
+      title: "Defining the user",
+      body:
+        "I built two lightweight personas out of the studio conversations, since the two clearest buyers sat on different sides of the same workflow.",
       personas: [
         {
           name: "Sam, 31 — Community Manager",
           description:
-            "Manages Discord, Reddit, and Steam for a mid-size studio. Spends hours triaging feedback manually.",
-          needs: ["Prioritized issue lists", "Source links for context", "Volume spike alerts"],
-          painPoints: ["Information overload", "Tools that miss gaming jargon", "No time for deep analysis"],
-          motivations: ["Respond to players faster", "Give the dev team clear priorities"],
+            "Owns Discord, Reddit, and Steam for a mid-size studio. Spends hours triaging feedback manually before anyone on the product team sees it. Needs prioritized issue lists, source links for context, and alerts when volume spikes — not another wall of equal-weight charts.",
         },
         {
           name: "Riley, 27 — Product Manager",
           description:
-            "Decides what goes into the next patch based on player data and team capacity.",
-          needs: ["Theme-level summaries", "Trend over time", "Exportable reports"],
-          painPoints: ["Subjective prioritization", "Delayed feedback loops", "Siloed data sources"],
-          motivations: ["Ship fixes players actually want", "Reduce churn after bad patches"],
+            "Decides what goes into the next patch based on player data and team capacity. Needs theme-level summaries, trends over time, and something exportable for standup — because subjective prioritization and siloed sources keep delaying the feedback loop.",
         },
       ],
-    },
-    {
-      id: "challenge",
-      title: "Problem Statement",
       challenge:
         "How might we help game studios understand player feedback across channels quickly — without losing the nuance that makes it actionable?",
     },
     {
       id: "ideation",
-      title: "Ideation",
-      body: "Explored several product directions before landing on the current platform:",
-      list: [
-        "Pure sentiment dashboard",
-        "AI chatbot for querying feedback",
-        "Theme-based insight feed with source links",
-        "Automated patch note generator",
-        "Community health score",
-      ],
+      title: "Ideation: why themes with sources won",
+      body:
+        "I explored several product directions before committing to one, and each of the ones we rejected failed for a specific reason.",
       rejected: [
         {
           concept: "Pure sentiment dashboard",
-          reason: "Studios said scores alone weren't actionable — they needed themes and context.",
+          reason:
+            "Studios were clear: scores alone aren't actionable. Knowing players are angry doesn't tell you what to fix this week. Same information problem as raw volume, just wearing a chart.",
         },
         {
-          concept: "Automated patch notes",
-          reason: "Too risky without human review; better as a future feature.",
+          concept: "AI chatbot for querying feedback",
+          reason:
+            "Interesting for exploration, but busy teams needed a ranked feed they could open and act on — not an open-ended conversation they had to drive every morning.",
+        },
+        {
+          concept: "Automated patch note generator",
+          reason:
+            "Too risky without human review. Better as a future assistive feature than a core promise studios would bet a release on.",
         },
         {
           concept: "Community health score",
-          reason: "Single number hid the detail studios needed to prioritize work.",
+          reason:
+            "A single number hid the detail studios needed to prioritize work. It looked decisive and explained nothing.",
         },
       ],
       footer:
-        "Theme-based insight feed with source links won — it balanced AI speed with human trust through transparency.",
+        "A theme-based insight feed with source links won. It balanced AI speed with human trust through transparency: the model clusters and ranks, the human verifies before acting. That trust loop is the thread that runs through almost every decision after this one.",
     },
     {
       id: "ia",
-      title: "Information Architecture",
+      title: "Information architecture",
       subsections: [
         {
           title: "Navigation",
           body:
-            "Primary nav: Dashboard (overview), Themes (clustered insights), Sources (raw feed), and Settings (integrations, alerts).",
+            "A flat structure — Dashboard, Themes, Sources, Settings — so the path from overview to proof is short. Dashboard answers what needs attention now. Themes hold clustered insights. Sources keep the raw feed for verification.",
         },
         {
-          title: "Feature Prioritization",
+          title: "Feature prioritization",
           list: [
-            "Must-have: multi-source ingestion, theme clustering, source drill-down",
-            "Should-have: volume alerts, time-range filters, export",
-            "Nice-to-have: team collaboration, custom taxonomies, patch note drafts",
+            "Must have: multi-source ingestion, theme clustering, source drill-down",
+            "Should have: volume alerts, time-range filters, export",
+            "Nice to have: team collaboration, custom taxonomies, patch note drafts",
           ],
         },
         {
-          title: "User Flow",
+          title: "User flow",
           steps: [
             "Connect data sources",
             "Dashboard overview",
@@ -179,95 +131,89 @@ export default {
           ],
         },
         {
-          title: "Site Map",
+          title: "Site map",
           list: [
-            "Dashboard → Top themes, volume trends, alerts",
-            "Themes → Cluster detail → Related posts",
-            "Sources → Filtered feed → Post detail",
-            "Settings → Integrations, notifications, team",
+            "Dashboard → top themes, volume trends, alerts",
+            "Themes → cluster detail → related posts",
+            "Sources → filtered feed → post detail",
+            "Settings → integrations, notifications, team",
           ],
         },
       ],
-    },
-    {
-      id: "wireframes",
-      title: "Wireframes",
-      body:
-        "Started with paper sketches mapping the insight hierarchy (overview → theme → source), then moved to low- and mid-fidelity Figma wireframes to test information density and drill-down patterns before building the React interface.",
+      footer:
+        "The hierarchy mirrors how studios already triage: scan priorities, dig into one theme, verify against sources, then hand off. We didn't invent a new workflow — we removed the manual copy-paste between tabs that used to sit in the middle of it.",
     },
     {
       id: "visual",
-      title: "Visual Design",
+      title: "Visual design",
       subsections: [
         {
-          title: "Brand Personality",
+          title: "Brand personality",
           list: ["Professional", "Data-forward", "Trustworthy", "Modern", "Gaming-aware"],
         },
         {
-          title: "Color & Typography",
+          title: "Color and typography",
           body:
-            "Dark, high-contrast UI suited for long analyst sessions. Clear typographic hierarchy separates AI-generated summaries from source material.",
+            "A dark, high-contrast UI suited for long reading sessions. Clear typographic hierarchy separates AI-generated summaries from source material so users always know what is synthesis and what is evidence.",
         },
         {
-          title: "Design System",
+          title: "Design system",
           body:
-            "Built a 47-component design system in React — cards, data tables, filter bars, insight chips, and source preview panels — ensuring consistency across dashboard, themes, and source views.",
+            "Built a 47-component React design system — cards, data tables, filter bars, insight chips, source preview panels — so dashboard, themes, and source views feel like one continuous product instead of three separate tools.",
+        },
+        {
+          title: "Microinteractions",
+          list: [
+            "Theme cards expand inline to show top posts without a full page load",
+            "Source preview panel slides in from the right for quick context checks",
+            "Filter chips update the feed in real time with loading skeletons for perceived speed",
+            "Alert badges pulse subtly when new high-volume themes emerge",
+          ],
         },
       ],
-    },
-    {
-      id: "screens",
-      title: "High-Fidelity Screens",
       screens: [
         {
           title: "Dashboard",
-          body: "At-a-glance view of top themes, feedback volume, and recent spikes — answers 'what needs attention now?'",
+          body: "At-a-glance view of top themes, feedback volume, and recent spikes — answers what needs attention now.",
         },
         {
-          title: "Theme Detail",
+          title: "Theme detail",
           body: "Clustered insights with sentiment context, related posts, and trend over time — bridges summary and source.",
         },
         {
-          title: "Source Feed",
-          body: "Filterable feed of raw posts from connected channels for analysts who want to verify AI output.",
+          title: "Source feed",
+          body: "Filterable feed of raw posts from connected channels for anyone who wants to verify AI output.",
         },
         {
-          title: "Settings & Integrations",
+          title: "Settings and integrations",
           body: "Connect Steam, Reddit, and other sources; configure alerts and team access.",
         },
       ],
     },
     {
-      id: "prototyping",
-      title: "Prototyping & Interactions",
-      list: [
-        "Theme cards expand inline to show top posts without a full page load",
-        "Source preview panel slides in from the right for quick context checks",
-        "Filter chips update the feed in real time with loading skeletons for perceived speed",
-        "Alert badges pulse subtly when new high-volume themes emerge",
-      ],
-    },
-    {
       id: "testing",
-      title: "Testing",
-      body: "Demo-day pitches and pilot conversations with two studios shaped the product.",
+      title: "Testing and what changed because of it",
+      body:
+        "Demo-day pitches and pilot conversations with two studios shaped the product more than any internal review.",
       findings: [
         {
-          label: "What users struggled with",
+          label: "What people struggled with",
           items: [
-            "Early dashboards showed too many themes at equal weight — users couldn't prioritize.",
-            "AI summaries without source links eroded trust immediately.",
+            "Early dashboards showed too many themes at equal weight — users couldn't prioritize",
+            "AI summaries without source links eroded trust immediately",
           ],
         },
         {
-          label: "What changed afterward",
+          label: "What I changed in response",
           items: [
-            "Added ranked theme prioritization based on volume and sentiment shift.",
-            "Every insight now links to original posts for verification.",
-            "Simplified onboarding to connect one source first, then expand.",
+            "Added ranked theme prioritization based on volume and sentiment shift",
+            "Every insight now links to original posts for verification",
+            "Simplified onboarding to connect one source first, then expand",
           ],
         },
       ],
+      footer:
+        "None of these were polish passes. Each one came from watching studios refuse to act on a claim they couldn't open and check.",
     },
     {
       id: "accessibility",
@@ -279,52 +225,55 @@ export default {
         "Scalable typography for long reading sessions",
         "Motion-reduced mode for alert animations",
       ],
+      footer:
+        "A tool for triage only works if the people who need the insight can actually use it under deadline pressure — including keyboard-first and assistive workflows.",
     },
     {
       id: "product-thinking",
-      title: "Product Thinking",
+      title: "Product thinking",
       items: [
         {
           label: "AI speed vs. human trust",
-          text: "Every AI insight links to source material — studios won't act on summaries they can't verify.",
+          text: "Every AI insight links to source material. Studios won't ship a fix on a summary they can't verify.",
         },
         {
           label: "Breadth vs. depth",
-          text: "Launched with theme clustering over a chatbot interface — structured insights beat open-ended queries for busy teams.",
+          text: "We launched with theme clustering over a chatbot. Structured, ranked insights beat open-ended queries for teams that need a decision before standup.",
         },
         {
-          label: "Edge case: sarcasm & memes",
-          text: "Gaming communities use language general sentiment models miss — gaming-specific training data is a ongoing priority.",
+          label: "Sarcasm and memes",
+          text: "Gaming communities use language general sentiment models miss. Gaming-specific training data remains an ongoing priority, not a solved checkbox.",
         },
         {
           label: "Business goal alignment",
-          text: "Pilot partnerships validated willingness to pay before building advanced collaboration features.",
+          text: "Pilot partnerships validated willingness to pay before we invested in advanced collaboration features. Build the workflow people will renew, then deepen it.",
         },
       ],
     },
     {
       id: "measuring",
-      title: "Measuring Success",
-      metricGroups: [
+      title: "Measuring success",
+      body: "Post launch, I'd track this across five layers:",
+      items: [
         {
-          title: "Activation",
-          items: ["Source connection rate", "Time to first insight"],
+          label: "Activation",
+          text: "source connection rate, time to first insight",
         },
         {
-          title: "Engagement",
-          items: ["Daily active users", "Theme drill-down rate", "Source verification clicks"],
+          label: "Engagement",
+          text: "daily active users, theme drill-down rate, source verification clicks",
         },
         {
-          title: "Retention",
-          items: ["Weekly return rate", "Pilot renewal rate"],
+          label: "Retention",
+          text: "weekly return rate, pilot renewal rate",
         },
         {
-          title: "Business",
-          items: ["Pilot conversion to paid", "Time saved vs. manual review (self-reported)"],
+          label: "Business",
+          text: "pilot conversion to paid, self-reported time saved vs. manual review",
         },
         {
-          title: "Quality",
-          items: ["Insight accuracy (validated by analysts)", "False positive theme rate"],
+          label: "Quality",
+          text: "insight accuracy validated by analysts, false positive theme rate",
         },
       ],
     },
@@ -333,11 +282,11 @@ export default {
       title: "Reflection",
       reflection: {
         worked:
-          "Linking every AI summary to source posts built immediate trust. Theme-based prioritization matched how studios actually triage feedback.",
+          "Linking every AI summary to source posts built immediate trust. Theme-based prioritization matched how studios already triage feedback.",
         didnt:
-          "Early versions tried to show everything at once. Studios wanted a ranked 'fix this first' view, not a wall of equal-weight data.",
+          "Early versions tried to show everything at once. Studios wanted a ranked fix this first view, not a wall of equal-weight data.",
         surprised:
-          "Demo day landed two paid pilots — validation came faster than expected when we focused on one clear workflow instead of a broad platform pitch.",
+          "Demo day landed two paid pilots — validation came faster than expected once we focused on one clear workflow instead of a broad platform pitch.",
         improve:
           "I'd invest earlier in gaming-specific NLP evaluation and run structured usability tests with community managers, not just founder intuition.",
         learned:
@@ -346,7 +295,7 @@ export default {
     },
     {
       id: "next-steps",
-      title: "Next Steps",
+      title: "Next steps",
       list: [
         "Gaming-specific sentiment model fine-tuning",
         "Team collaboration — assign themes, track resolution",
