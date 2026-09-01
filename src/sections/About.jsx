@@ -55,8 +55,8 @@ export default function About() {
                 how do you make something people will actually come back to?
               </p>
               <p>
-                These days I'm testing AI search at Google and leading iOS design
-                at GT Dev Club, still chasing that same thread. Clean,
+                These days I'm testing AI search at Google and building partnerships
+                as outreach chair at Creative Media Ambassadors, still chasing that same thread. Clean,
                 editorial, slightly vintage interfaces that feel human even as
                 the tech underneath gets stranger. Graduating in 2027, still
                 figuring out the next chapter, and honestly pretty excited about

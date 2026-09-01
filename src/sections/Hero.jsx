@@ -50,7 +50,7 @@ export default function Hero() {
         <p className="hero__sub" data-reveal data-delay="4">
           <strong>Trisha Ravichandran</strong> — UX/UI designer &amp; software engineer.
           <br />
-          LMC · HCI at <em>Georgia Tech</em>. Currently testing AI search at Google &amp; leading iOS at GT Dev Club.
+          LMC · HCI at <em>Georgia Tech</em>. Currently testing AI search at Google &amp; outreach chair at CMA @ GT.
         </p>
 
         <Link className="hero__cta" to="/work" data-reveal data-delay="5" ref={ctaRef}>

@@ -42,16 +42,16 @@ export default function Experience() {
         <h3 className="exp__skills-title">Stack &amp; tools</h3>
         <div className="exp__skills-grid">
           <div>
-            <p className="exp__skill-label">Design</p>
-            <p className="exp__skill-list">Figma · Sketch · Framer · Balsamiq · Adobe CC (Ai · Ps · XD)</p>
+            <p className="exp__skill-label">Design &amp; UX</p>
+            <p className="exp__skill-list">UX/UI Design · Visual Design · Wireframing · Prototyping · Interaction Design · Information Architecture · Usability Testing · Figma · Adobe CC (Ai · Ps · XD) · Sketch · Framer · Balsamiq</p>
           </div>
           <div>
-            <p className="exp__skill-label">Engineering</p>
-            <p className="exp__skill-list">React (16–18) · TypeScript · Next.js · Node · Python · Java · Kotlin · Swift</p>
+            <p className="exp__skill-label">Languages &amp; Frameworks</p>
+            <p className="exp__skill-list">React (16–18) · JavaScript (ES6+) · TypeScript · Python · Java/Kotlin · Swift (iOS) · Node.js · HTML · CSS · Android · Linux · Machine Learning · Git · Google Cloud Platform</p>
           </div>
           <div>
-            <p className="exp__skill-label">Research</p>
-            <p className="exp__skill-list">A/B Testing · User Interviews · Journey Mapping · Affinity · Card Sorting · Tree Testing</p>
+            <p className="exp__skill-label">Research Methods</p>
+            <p className="exp__skill-list">A/B Testing · User Interviews · Journey Mapping · Affinity Mapping · Card Sorting · Tree Testing</p>
           </div>
           <div>
             <p className="exp__skill-label">Education</p>
