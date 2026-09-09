@@ -13,7 +13,6 @@ export default function Typewriter({
 }) {
   const [ref, inView] = useInView({ threshold: 0.5 });
   const [shown, setShown] = useState("");
-  const [done, setDone] = useState(false);
 
   useEffect(() => {
     if (!inView) return;
@@ -25,7 +24,6 @@ export default function Typewriter({
 
     if (prefersReduced) {
       setShown(text);
-      setDone(true);
       return;
     }
 
@@ -37,7 +35,6 @@ export default function Typewriter({
         setShown(chars.slice(0, i).join(""));
         if (i >= chars.length) {
           clearInterval(intervalId);
-          setDone(true);
         }
       }, speed);
     }, startDelay);
@@ -51,10 +48,7 @@ export default function Typewriter({
   return (
     <Tag ref={ref} className={className} aria-label={text}>
       <span aria-hidden="true">{shown}</span>
-      <span
-        className={`typewriter__cursor${done ? " typewriter__cursor--done" : ""}`}
-        aria-hidden="true"
-      />
+      <span className="typewriter__cursor" aria-hidden="true" />
     </Tag>
   );
 }

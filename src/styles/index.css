@@ -824,10 +824,6 @@ main > section:first-child {
   vertical-align: -0.08em;
   animation: typewriter-blink 0.85s step-end infinite;
 }
-.typewriter__cursor--done {
-  animation-iteration-count: 8;
-  animation-fill-mode: forwards;
-}
 @keyframes typewriter-blink {
   50% {
     opacity: 0;
