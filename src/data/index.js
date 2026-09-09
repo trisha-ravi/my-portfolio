@@ -115,6 +115,16 @@ export const ILLUSTRATIONS = [
     swatch: "#d4d4d4",
     note: "Spent some time on this one. Six shapes, one center. Somewhere between black and bronze I started thinking about how things don't need to match to belong together. They just need to hold the same shape, the same direction.\n\nNot everything has to match to belong.",
   },
+  {
+    id: "i00d",
+    no: "04",
+    label: "August · Behind the Bricks",
+    series: "Sketch",
+    year: "2026",
+    ratio: "3 / 4",
+    swatch: "#8b4a3a",
+    note: "Campus brickwork with white line-art koi swimming the sky — part of an ongoing series of annotated places.",
+  },
 ];
 
 export const ILLUSTRATION_SERIES = [
