@@ -45,7 +45,7 @@ export const PROJECTS = [
       "We built for prioritization with proof: AI clusters feedback into ranked themes, and every insight links back to source posts so teams can verify before they act. Speed without a black box — because studios won't ship a fix on a claim they can't check.",
     outcome:
       "Demo day landed two paid pilots. Looking ahead: deeper gaming-specific models, team collaboration around themes, and integrations that put insights where studios already work.",
-    team: "2 co-founders",
+    team: "3 co-founders",
     duration: "Aug 2024 — Present",
     platform: "Web · React 18 · Node · AI",
   },

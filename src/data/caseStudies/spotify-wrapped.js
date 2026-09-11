@@ -7,9 +7,21 @@ export default {
     timeline: "Feb 2024 — Mar 2024",
     team: "Solo",
   },
+  fastTrack: {
+    label: "Fast track",
+    tagline: "Year-round discovery — why taste changes, not just what topped December.",
+    challenge:
+      "Music insights locked to one day a year leave curiosity stranded — and desktop analytics feel like a website on the phone where people actually listen.",
+    outcomes: [
+      { label: "Preference", text: "12/12 preferred year-round access" },
+      { label: "Mobile UX", text: "10/12 found visualizations easier" },
+      { label: "Performance", text: "<1.2s load · 70% fewer API calls" },
+    ],
+  },
   sections: [
     {
       id: "problem",
+      beat: "The hook",
       title: "The problem",
       body:
         "Spotify Wrapped is a cultural phenomenon, but music insights locked to one day a year create a frustrating gap for people who want to understand their listening habits continuously — on the phone where they actually stream.",
@@ -54,6 +66,7 @@ export default {
     },
     {
       id: "users",
+      beat: "Who it's for",
       title: "Defining the user",
       body:
         "I built two lightweight personas out of the interviews, since the two clearest use cases had different appetites for depth on the same core need.",
@@ -74,6 +87,7 @@ export default {
     },
     {
       id: "ideation",
+      beat: "Turning point",
       title: "Ideation: why progressive disclosure won",
       body:
         "I explored several approaches to mobile music analytics before committing to one, and each of the ones I rejected failed for a specific reason.",
@@ -104,6 +118,7 @@ export default {
     },
     {
       id: "ia",
+      beat: "The solution",
       title: "Information architecture",
       subsections: [
         {
@@ -146,6 +161,7 @@ export default {
     },
     {
       id: "visual",
+      beat: "The solution",
       title: "Visual design",
       subsections: [
         {
@@ -194,6 +210,7 @@ export default {
     },
     {
       id: "testing",
+      beat: "What redirected the work",
       title: "Testing and what changed because of it",
       body:
         "I tested with twelve users across a Figma prototype and the native Android build.",
@@ -254,6 +271,7 @@ export default {
     },
     {
       id: "measuring",
+      beat: "Outcomes",
       title: "Measuring success",
       body: "I'd track this across four layers:",
       items: [
@@ -277,6 +295,7 @@ export default {
     },
     {
       id: "reflection",
+      beat: "Takeaways",
       title: "Reflection",
       reflection: {
         worked:

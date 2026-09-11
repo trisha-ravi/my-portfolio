@@ -10,9 +10,21 @@ export default {
     timeline: "4 to 6 weeks (concept project)",
     team: "Solo",
   },
+  fastTrack: {
+    label: "Fast track",
+    tagline: "Recognition over construction — mood check-ins in under five seconds.",
+    challenge:
+      "People abandon mood apps when journaling becomes homework. The real blocker isn't typing speed — it's translating a feeling into words.",
+    outcomes: [
+      { label: "Interaction", text: "One tap · under 5 seconds" },
+      { label: "Core mechanic", text: "12 illustrated faces, no required text" },
+      { label: "Design bet", text: "Optional notes only — habit over homework" },
+    ],
+  },
   sections: [
     {
       id: "problem",
+      beat: "The hook",
       title: "The problem",
       body:
         "Most mood tracking apps get abandoned within weeks. I wanted to understand why, not guess at it, so I started with competitive analysis and five user interviews before designing anything.",
@@ -57,6 +69,7 @@ export default {
     },
     {
       id: "users",
+      beat: "Who it's for",
       title: "Defining the user",
       body:
         "I built two lightweight personas out of the interview patterns, since the two clearest use cases had different pressure points on the same core problem.",
@@ -77,6 +90,7 @@ export default {
     },
     {
       id: "ideation",
+      beat: "Turning point",
       title: "Ideation: why faces won",
       body:
         "I tested five directions before committing to one, and each of the four I rejected failed for a specific, different reason.",
@@ -107,6 +121,7 @@ export default {
     },
     {
       id: "ia",
+      beat: "The solution",
       title: "Information architecture",
       subsections: [
         {
@@ -148,6 +163,7 @@ export default {
     },
     {
       id: "visual",
+      beat: "The solution",
       title: "Visual design",
       subsections: [
         {
@@ -207,6 +223,7 @@ export default {
     },
     {
       id: "testing",
+      beat: "What redirected the work",
       title: "Testing and what changed because of it",
       body:
         "I ran informal usability tests on a Figma prototype of the core check in flow with five participants.",
@@ -269,6 +286,7 @@ export default {
     },
     {
       id: "measuring",
+      beat: "Outcomes",
       title: "Measuring success",
       body: "Post launch, I'd track this across five layers:",
       items: [
@@ -296,6 +314,7 @@ export default {
     },
     {
       id: "reflection",
+      beat: "Takeaways",
       title: "Reflection",
       reflection: {
         worked:

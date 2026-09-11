@@ -193,9 +193,55 @@ function CaseReflection({ reflection }) {
   );
 }
 
-function CaseSection({ section }) {
+function CaseFastTrack({ fastTrack }) {
+  if (!fastTrack) return null;
+
   return (
-    <section className="case__section" id={section.id}>
+    <section className="case__fast-track" id="fast-track" aria-label="Fast track to outcomes">
+      <div className="case__fast-track-inner">
+        <p className="case__fast-track-label">
+          <span className="case__fast-track-mark" aria-hidden="true" />
+          {fastTrack.label ?? "Fast track"}
+        </p>
+        <p className="case__fast-track-tagline">{fastTrack.tagline}</p>
+        {fastTrack.challenge && (
+          <p className="case__fast-track-challenge">
+            <span className="case__fast-track-kicker">The challenge</span>
+            {fastTrack.challenge}
+          </p>
+        )}
+        {fastTrack.outcomes?.length > 0 && (
+          <dl className="case__fast-track-outcomes">
+            {fastTrack.outcomes.map((item, i) => (
+              <div key={item.label} className="case__fast-track-outcome">
+                <span className="case__fast-track-index" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <dt>{item.label}</dt>
+                <dd>{item.text}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function CaseSection({ section, beatIndex }) {
+  return (
+    <section
+      className={`case__section${section.beat ? " case__section--beat" : ""}`}
+      id={section.id}
+    >
+      {section.beat && (
+        <p className="case__beat">
+          <span className="case__beat-index" aria-hidden="true">
+            {String(beatIndex).padStart(2, "0")}
+          </span>
+          <span className="case__beat-label">{section.beat}</span>
+        </p>
+      )}
       <h2 className="case__heading">{section.title}</h2>
 
       {section.subtitle && (
@@ -255,13 +301,16 @@ function CaseSection({ section }) {
 }
 
 export default function ProjectCaseStudy({ study, project }) {
-  const { overview, sections } = study;
+  const { overview, sections, fastTrack } = study;
   const team = overview.team ?? project.team;
   const role = overview.role ?? project.role;
   const timeline = overview.timeline ?? project.duration;
+  let beatCount = 0;
 
   return (
     <div className={`case case--${project.slug}`}>
+      <CaseFastTrack fastTrack={fastTrack} />
+
       <section className="case__section case__section--overview" id="overview">
         <h2 className="case__heading">{overview.title ?? "Overview"}</h2>
         {overview.bodies?.map((paragraph) => (
@@ -291,9 +340,16 @@ export default function ProjectCaseStudy({ study, project }) {
         </dl>
       </section>
 
-      {sections.map((section) => (
-        <CaseSection key={section.id} section={section} />
-      ))}
+      {sections.map((section) => {
+        const beatIndex = section.beat ? ++beatCount : null;
+        return (
+          <CaseSection
+            key={section.id}
+            section={section}
+            beatIndex={beatIndex}
+          />
+        );
+      })}
     </div>
   );
 }

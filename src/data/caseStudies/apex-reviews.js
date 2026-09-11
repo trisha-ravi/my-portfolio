@@ -5,11 +5,23 @@ export default {
       "Apex Reviews is a feedback platform built around one idea: game studios shouldn't have to choose between drowning in player comments and flattening them into a useless score. We use AI to pull reviews and community chatter into themed, prioritized insights — with every claim linked back to the original post — so teams can act on signal instead of noise.",
     role: "Co-Founder · Product Designer",
     timeline: "Aug 2024 — Present",
-    team: "2 co-founders",
+    team: "3 co-founders",
+  },
+  fastTrack: {
+    label: "Fast track",
+    tagline: "Prioritization with proof — themes studios can verify before they ship.",
+    challenge:
+      "Live-service teams drown in player feedback that sentiment scores can't explain — and manual reading doesn't scale when the next patch is days away.",
+    outcomes: [
+      { label: "Traction", text: "2 paid pilots from demo day" },
+      { label: "Product bet", text: "Ranked themes with source links" },
+      { label: "Trust model", text: "Every AI claim is verifiable" },
+    ],
   },
   sections: [
     {
       id: "problem",
+      beat: "The hook",
       title: "The problem",
       body:
         "Live-service studios drown in unstructured player feedback across Steam, Reddit, forums, and social. Existing tools either flatten nuanced complaints into blunt positive/negative scores, or demand analysts re-read everything by hand. Neither scales when a game is live and the next patch window is days away.",
@@ -54,6 +66,7 @@ export default {
     },
     {
       id: "users",
+      beat: "Who it's for",
       title: "Defining the user",
       body:
         "I built two lightweight personas out of the studio conversations, since the two clearest buyers sat on different sides of the same workflow.",
@@ -74,6 +87,7 @@ export default {
     },
     {
       id: "ideation",
+      beat: "Turning point",
       title: "Ideation: why themes with sources won",
       body:
         "I explored several product directions before committing to one, and each of the ones we rejected failed for a specific reason.",
@@ -104,6 +118,7 @@ export default {
     },
     {
       id: "ia",
+      beat: "The solution",
       title: "Information architecture",
       subsections: [
         {
@@ -145,6 +160,7 @@ export default {
     },
     {
       id: "visual",
+      beat: "The solution",
       title: "Visual design",
       subsections: [
         {
@@ -192,6 +208,7 @@ export default {
     },
     {
       id: "testing",
+      beat: "What redirected the work",
       title: "Testing and what changed because of it",
       body:
         "Demo-day pitches and pilot conversations with two studios shaped the product more than any internal review.",
@@ -252,6 +269,7 @@ export default {
     },
     {
       id: "measuring",
+      beat: "Outcomes",
       title: "Measuring success",
       body: "Post launch, I'd track this across five layers:",
       items: [
@@ -279,6 +297,7 @@ export default {
     },
     {
       id: "reflection",
+      beat: "Takeaways",
       title: "Reflection",
       reflection: {
         worked:
