@@ -134,6 +134,20 @@ export const ILLUSTRATION_SERIES = [
 export const ROLES = [
   {
     no: "01",
+    role: "Strategic Communications & Development Assistant",
+    org: "Center for Digital Human Security (CDHS) — Georgia Tech",
+    time: "Sep 2026 — Present",
+    where: "Atlanta, GA",
+    bullets: [
+      "Develop strategic communications and marketing initiatives to increase awareness of CDHS research addressing digital harms, cybersecurity, and human security.",
+      "Translate complex technology and policy research into accessible content for government, industry, humanitarian, academic, and public audiences.",
+      "Support brand strategy, messaging, social media campaigns, website communications, and digital content development.",
+      "Conduct competitive and audience analysis to inform communications strategy, stakeholder engagement, and brand positioning.",
+      "Support strategic events and develop presentations, one-pagers, and other materials for partnerships, fundraising, and external engagement.",
+    ],
+  },
+  {
+    no: "02",
     role: "Outreach Chair",
     org: "Creative Media Ambassadors — Georgia Tech",
     time: "Aug 2026 — Present",
@@ -145,7 +159,7 @@ export const ROLES = [
     ],
   },
   {
-    no: "02",
+    no: "03",
     role: "AI Tester — Search Priority User Program",
     org: "Google",
     time: "Apr 2026 — Present",
@@ -157,7 +171,7 @@ export const ROLES = [
     ],
   },
   {
-    no: "03",
+    no: "04",
     role: "Senior iOS Designer",
     org: "iOS Development Club — Georgia Tech",
     time: "Aug 2025 — May 2026",
@@ -170,7 +184,7 @@ export const ROLES = [
     ],
   },
   {
-    no: "04",
+    no: "05",
     role: "Software Engineering Intern",
     org: "Narb",
     time: "May 2025 — Aug 2025",
@@ -182,7 +196,7 @@ export const ROLES = [
     ],
   },
   {
-    no: "05",
+    no: "06",
     role: "Undergraduate Researcher",
     org: "PARCE-Lab — Georgia Tech",
     time: "Jan 2025 — May 2025",
@@ -194,7 +208,7 @@ export const ROLES = [
     ],
   },
   {
-    no: "06",
+    no: "07",
     role: "Co-Founder",
     org: "Apex Reviews — Georgia Tech CREATE-X",
     time: "Aug 2024 — Present",
@@ -207,7 +221,7 @@ export const ROLES = [
     ],
   },
   {
-    no: "07",
+    no: "08",
     role: "Associate Director & Graphic Designer",
     org: "Artificial Intelligence @ GT",
     time: "Mar 2024 — May 2025",
